@@ -23,17 +23,17 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Body>
         <Row className="mt-3 d-flex align-items-baseline">
           <Col xs={12} md={4}>
-            <p className="h6">Buy Now Url</p>
+            <p className="modal-body-text">Buy Now Url</p>
           </Col>
           <Col xs={6} md={8}>
             <div className="buyNowContainer">
-              <div>https://www.oral-b.co.in/en-in</div>
+              <p className="modal-body-url">https://www.oral-b.co.in/en-in</p>
             </div>
           </Col>
         </Row>
         <Row className="mt-3 d-flex align-items-baseline">
           <Col xs={12} md={4}>
-            <p className="h6">Secondary Buy Now Url</p>
+            <p className="modal-body-text">Secondary Buy Now Url</p>
           </Col>
           <Col xs={6} md={8}>
             <div className="buyNowContainer">
@@ -50,7 +50,7 @@ function MyVerticallyCenteredModal(props) {
           </Col>
         </Row>
 
-        <div className="d-flex align-item-center justify-content-center btn-container mt-3">
+        <div className="d-flex align-item-center justify-content-center btn-container mt-3 mb-4">
           <Button className="submit-btn">Submit</Button>{" "}
           <Button
             variant="Link"

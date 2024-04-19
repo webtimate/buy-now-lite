@@ -5,12 +5,7 @@ import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <Navbar
-      bg="rgba(255, 255, 255, 1)"
-      expand="lg"
-      className="navbar"
-      sticky="top"
-    >
+    <Navbar bg="#FFFFFF" expand="lg" className="navbar" sticky="top">
       <Container>
         <Navbar.Brand href="#home">
           <img
@@ -22,12 +17,11 @@ const Header = () => {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav
-            className="m-auto ml-3"
-            defaultActiveKey={"/link1"}
-            // variant="underline"
-          >
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="reset-default-chevron"
+        >
+          <Nav className="m-auto ml-3" defaultActiveKey={"/link1"}>
             <Nav.Link href="/link1" className="nav-link">
               Dashboard
             </Nav.Link>
@@ -40,18 +34,25 @@ const Header = () => {
             <Nav.Link href="#link4" className="nav-link-padding">
               Product Summary
             </Nav.Link>
-            <NavDropdown title="Admin" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-            </NavDropdown>
-            <div className="navbarPillsWrapper">
+            <div>
+              <NavDropdown
+                title="Admin"
+                id="basic-nav-dropdown"
+                className="navbar-chevron-down"
+              >
+                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+              </NavDropdown>
+            </div>
+
+            <div className="navbar-pills-wrapper">
               <NavDropdown
                 title="Pampers Arial Gill.."
                 id="basic-nav-dropdown"
                 disabled
-                className="navbarPills"
+                className="navbar-pills navbar-pills-chevron-down"
               >
                 <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
@@ -70,10 +71,11 @@ const Header = () => {
                   className="d-inline-block align-top"
                   alt="brand logo"
                 />
-                <Navbar.Text className="p-2">Hello Jha</Navbar.Text>
+                <Navbar.Text className="p-2 ">Hello Jha</Navbar.Text>
               </>
             }
             id="basic-nav-dropdown"
+            className="navbar-chevron-down"
           >
             <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>

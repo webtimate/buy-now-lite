@@ -2,8 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import MyVerticallyCenteredModal from "./Modal";
-
-
+import DownChevron from "../assets/images/downChevron.svg";
 
 const Tables = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -14,10 +13,16 @@ const Tables = () => {
         <p className="table-title">Broken Link Summary</p>
         <div className="d-flex ">
           <p className="table-subTitle titleSpacing">
-            Primary Broken Links <b>12</b>{" "}
+            Primary Broken Links{" "}
+            <span style={{ marginLeft: 10 }}>
+              <b>12</b>
+            </span>{" "}
           </p>
           <p className="table-subTitle">
-            Secondary Broken Links <b>8</b>
+            Secondary Broken Links{" "}
+            <span style={{ marginLeft: 10 }}>
+              <b>8</b>
+            </span>{" "}
           </p>
         </div>
       </div>
@@ -28,9 +33,15 @@ const Tables = () => {
           <tr>
             <th className="text-center">Actions</th>
             <th>SKU GTINS</th>
-            <th>Product Names</th>
-            <th className="text-center">Primary Broken Links</th>
-            <th className="text-center">Secondary Broken Links</th>
+            <th className="d-flex align-items-center">
+              <span class="chevron-down">Product Names</span>
+            </th>
+            <th className="text-center">
+              <span class="chevron-down">Primary Broken Links</span>
+            </th>
+            <th className="text-center">
+              <span class="chevron-down">Secondary Broken Links</span>
+            </th>
           </tr>
         </thead>
         <tbody className="custom-tr">
@@ -66,7 +77,7 @@ const Tables = () => {
           </tr>
           <tr className="custom-tr">
             <td className="text-center">
-            <i
+              <i
                 class="bi bi-pencil-fill"
                 onClick={() => setModalShow(true)}
               ></i>
@@ -88,7 +99,7 @@ const Tables = () => {
           </tr>
           <tr>
             <td className="text-center">
-            <i
+              <i
                 class="bi bi-pencil-fill"
                 onClick={() => setModalShow(true)}
               ></i>
@@ -118,7 +129,7 @@ const Tables = () => {
           </tr>
           <tr className="custom-tr">
             <td className="text-center">
-            <i
+              <i
                 class="bi bi-pencil-fill"
                 onClick={() => setModalShow(true)}
               ></i>
@@ -148,7 +159,7 @@ const Tables = () => {
           </tr>
           <tr className="custom-tr">
             <td className="text-center">
-            <i
+              <i
                 class="bi bi-pencil-fill"
                 onClick={() => setModalShow(true)}
               ></i>
