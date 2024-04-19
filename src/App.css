@@ -1,4 +1,5 @@
 @import url("./assets/fonts/lato.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 .navbar {
   height: 80px;
@@ -36,24 +37,141 @@ nav > link {
   border-bottom: 3px solid rgba(0, 0, 0, 1) !important;
   position: absolute;
   bottom: 0;
-  content: ""; 
-  display: flex; 
-  width: 90px;
-
+  content: "";
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
+
 .table-title {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
   color: rgba(25, 29, 63, 1);
 }
+
 .table-subTitle {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   color: rgba(25, 29, 63, 1);
 }
-.titleSpacing{
+
+.titleSpacing {
   padding-right: 40px;
 }
 
+tbody,
+td,
+tfoot,
+th,
+tr,
+thead {
+  border-style: none !important;
+  border-width: 0px !important;
+  border-color: transparent !important;
+  /* height: 60px; */
+  padding: 20px !important;
+}
+
+thead th:first-child {
+  border-top-left-radius: 35px !important;
+  border-bottom-left-radius: 35px !important;
+  background-color: rgba(239, 239, 239, 1) !important;
+}
+
+thead th:last-child {
+  border-top-right-radius: 35px !important;
+  border-bottom-right-radius: 35px !important;
+  background-color: rgba(239, 239, 239, 1) !important;
+}
+
+.table thead th {
+  border-style: none !important;
+  background-color: rgba(239, 239, 239, 1) !important;
+  font-size: 16px !important;
+  font-weight: 400;
+}
+
+tbody tr td:first-child {
+  border-top-left-radius: 35px !important;
+  border-bottom-left-radius: 35px !important;
+}
+
+tbody tr td:last-child {
+  border-top-right-radius: 35px !important;
+  border-bottom-right-radius: 35px !important;
+}
+
+.bi-pencil-fill {
+  color: #6b6b6b;
+}
+
+.navbar .nav-link {
+  position: relative;
+}
+
+.btn-container .submit-btn {
+  background-color: #191d3f;
+  height: 40px;
+  border-radius: 40px;
+  opacity: 0px;
+  width: 120px;
+}
+
+.btn-container .close-btn {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  color: #191d3f;
+}
+
+.buyNowContainer {
+  display: flex;
+  width: 412px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  align-items: center;
+  padding-left: 20px;
+}
+
+tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
+  background-color: #ffffff;
+}
+
+tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
+  background-color: #f9f9f9;
+}
+
+.modal-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: left;
+  color: #004fc6;
+  margin-left: 22px;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: rgba(25, 29, 63, 1);
+  font-weight: bold;
+}
+.bi .bi-x {
+  height: 10px;
+  width: 10px;
+  color: #6b6b6b;
+}
+.modal-header-container {
+  background-color: rgba(239, 239, 239, 1);
+}
+.modal-body-text {
+  font-size: 16px;
+  font-weight: 600;
+}
