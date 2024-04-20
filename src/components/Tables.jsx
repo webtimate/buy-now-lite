@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import MyVerticallyCenteredModal from "./Modal";
-import DownChevron from "../assets/images/downChevron.svg";
 
 const Tables = () => {
   const [modalShow, setModalShow] = React.useState(false);
+  const [isChevronDown, setIsChevronDown] = useState(true);
 
   return (
     <Container className="mt-4">
@@ -33,14 +33,29 @@ const Tables = () => {
           <tr>
             <th className="text-center">Actions</th>
             <th>SKU GTINS</th>
-            <th className="d-flex align-items-center">
-              <span class="chevron-down">Product Names</span>
+            <th
+              className="d-flex align-items-center"
+              onClick={() => setIsChevronDown(!isChevronDown)}
+            >
+              <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
+                Product Names
+              </span>
             </th>
-            <th className="text-center">
-              <span class="chevron-down">Primary Broken Links</span>
+            <th
+              className="text-center"
+              onClick={() => setIsChevronDown(!isChevronDown)}
+            >
+              <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
+                Primary Broken Links
+              </span>
             </th>
-            <th className="text-center">
-              <span class="chevron-down">Secondary Broken Links</span>
+            <th
+              className="text-center"
+              onClick={() => setIsChevronDown(!isChevronDown)}
+            >
+              <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
+                Secondary Broken Links
+              </span>
             </th>
           </tr>
         </thead>

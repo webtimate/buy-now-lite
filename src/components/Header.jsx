@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
+import Input from "./Input";
 
 const Header = () => {
   return (
@@ -25,20 +26,14 @@ const Header = () => {
             <Nav.Link href="/link1" className="nav-link">
               Dashboard
             </Nav.Link>
-            <Nav.Link href="#link2" className="nav-link-padding">
-              Broken Links
-            </Nav.Link>
-            <Nav.Link href="#link3" className="nav-link-padding">
-              Retailer Summary
-            </Nav.Link>
-            <Nav.Link href="#link4" className="nav-link-padding">
-              Product Summary
-            </Nav.Link>
+            <Nav.Link href="#link2">Broken Links</Nav.Link>
+            <Nav.Link href="#link3">Retailer Summary</Nav.Link>
+            <Nav.Link href="#link4">Product Summary</Nav.Link>
             <div>
               <NavDropdown
                 title="Admin"
                 id="basic-nav-dropdown"
-                className="navbar-chevron-down"
+                className="navbar-chevron-down "
               >
                 <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
@@ -48,17 +43,7 @@ const Header = () => {
             </div>
 
             <div className="navbar-pills-wrapper">
-              <NavDropdown
-                title="Pampers Arial Gill.."
-                id="basic-nav-dropdown"
-                disabled
-                className="navbar-pills navbar-pills-chevron-down"
-              >
-                <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-              </NavDropdown>
+              <Input text={""} placeholderText={"Pampers Arial Gill..."} />
             </div>
           </Nav>
           <NavDropdown
