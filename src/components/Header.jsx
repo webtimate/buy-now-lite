@@ -71,7 +71,7 @@ const Header = () => {
                   className="d-inline-block align-top"
                   alt="brand logo"
                 />
-                <Navbar.Text className="p-2 ">Hello Jha</Navbar.Text>
+                <Navbar.Text className="p-2">Hello Jha</Navbar.Text>
               </>
             }
             id="basic-nav-dropdown"
