@@ -81,6 +81,8 @@ nav > link {
   background-size: contain;
 }
 
+/* broken link section css starts  */
+
 /* table css  */
 
 .table-title {
@@ -96,7 +98,6 @@ nav > link {
   line-height: 20px;
   color: rgba(25, 29, 63, 1);
 }
-
 
 .table-subTitle-spacing {
   padding-right: 40px;
@@ -297,4 +298,86 @@ tbody > tr:nth-child(even) > th {
   font-weight: 600;
   line-height: 19.2px;
   color: #000000;
+}
+
+/* broken links section css  ends  */
+/* product summary section css starts  */
+.icon-btn-wrapper [type="button"]:not(:disabled),
+button:not(:disabled) {
+  border-radius: 20px;
+  width: fit-content;
+  background-color: #efefef;
+  color: #191d3f;
+  font-size: 16px;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+  font-weight: 400;
+}
+.icon-style {
+  margin-right: 7px;
+  font-size: 20px;
+}
+.search-input-wrapper {
+  width: 300px;
+}
+.search-input-wrapper
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
+  background-color: #efefef;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+}
+.search-input-wrapper
+  .input-group:not(.has-validation)
+  > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-control,
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-select,
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
+  background-color: #efefef;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+}
+
+.search-input-wrapper .form-control:focus {
+  box-shadow: none;
+}
+.search-input-wrapper .btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: #efefef !important;
+  color: #191d3f !important;
+  border-color: transparent !important;
+}
+.horizontal-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Disable vertical scrolling */
+  white-space: nowrap; /* Prevent table rows from wrapping */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for WebKit browsers */
+}
+
+.active-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
 }
