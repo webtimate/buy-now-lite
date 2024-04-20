@@ -18,10 +18,7 @@ const Header = () => {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          className="reset-default-chevron"
-        >
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto ml-3" defaultActiveKey={"/link1"}>
             <Nav.Link href="/link1" className="nav-link">
               Dashboard
@@ -29,7 +26,7 @@ const Header = () => {
             <Nav.Link href="#link2">Broken Links</Nav.Link>
             <Nav.Link href="#link3">Retailer Summary</Nav.Link>
             <Nav.Link href="#link4">Product Summary</Nav.Link>
-            <div>
+            <div className="reset-default-chevron">
               <NavDropdown
                 title="Admin"
                 id="basic-nav-dropdown"
@@ -42,9 +39,7 @@ const Header = () => {
               </NavDropdown>
             </div>
 
-            <div className="navbar-pills-wrapper">
-              <Input text={""} placeholderText={"Pampers Arial Gill..."} />
-            </div>
+            <Input text={""} placeholderText={"Pampers Arial Gill..."} />
           </Nav>
           <NavDropdown
             title={
@@ -60,7 +55,7 @@ const Header = () => {
               </>
             }
             id="basic-nav-dropdown"
-            className="navbar-chevron-down"
+            className="navbar-chevron-down reset-default-chevron "
           >
             <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>

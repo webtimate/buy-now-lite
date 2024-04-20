@@ -7,7 +7,7 @@
   background-color: #fff;
 }
 
-.navbar-pills {
+/* .navbar-pills {
   border-radius: 20px;
   background-color: rgba(239, 239, 239, 1);
   width: 181px !important;
@@ -22,7 +22,7 @@
 .navbar-pills-wrapper {
   display: flex;
   align-items: center;
-}
+} */
 
 nav > link {
   font-size: 16px !important;
@@ -265,68 +265,53 @@ tbody > tr:nth-child(even) > th {
   align-items: center;
   width: 100%;
 }
-.custom-input .input-group > .form-control {
-  border-radius: 20px;
-  background-color: rgba(239, 239, 239, 1);
-  width: 181px !important;
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
+.custom-input {
+  width: 181px;
   height: 30px;
-  justify-content: center;
-  font-size: 14px;
-  border: none;
-}
-
-.custom-input .form-control:focus {
-  box-shadow: none;
+  margin-left: 30px;
 }
 .custom-input
   .input-group:not(.has-validation)
   > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
     .form-floating
   ) {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.custom-input {
-  position: relative;
-  z-index: 2;
-}
-
-.navbar-input-chevron-down {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #efefef;
+  border: none;
+  font-size: 14px;
 }
 .custom-input
   .input-group
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
     .valid-feedback
   ):not(.invalid-tooltip):not(.invalid-feedback) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #efefef;
+  border: none;
+}
+.custom-input .form-control:focus {
+  box-shadow: none;
+}
+.navbar-input-chevron-down::after {
+  content: "";
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 8px;
   transform: translateY(-50%);
-  width: 1px; /* Adjust the width as needed */
-  height: 1px; /* Adjust the height as needed */
+  width: 12px; /* Adjust the width as needed */
+  height: 6px; /* Adjust the height as needed */
   background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
-  border: none;
-  z-index: 2;
+  z-index: 5;
 }
-/* .custom-input
-  .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-    .valid-feedback
-  ):not(.invalid-tooltip):not(.invalid-feedback) {
-  border: none;
-} */
+.custom-input .dropdown-toggle::after {
+  display: hidden;
+}
+
+.custom-input .btn {
+  box-shadow: none;
+  color: #efefef;
+}

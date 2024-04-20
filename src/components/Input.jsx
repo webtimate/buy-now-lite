@@ -7,18 +7,18 @@ import InputGroup from "react-bootstrap/InputGroup";
 const Input = ({ text, placeholderText }) => {
   return (
     <div className="custom-input ">
-      <InputGroup>
+      <InputGroup className="mb-3 navbar-input-chevron-down">
         <Form.Control
           aria-label="Text input with dropdown button"
           placeholder={placeholderText}
           value={text}
         />
+
         <DropdownButton
           variant="outline-secondary"
-          title=""
+          title={""}
           id="input-group-dropdown-2"
           align="end"
-          className="navbar-input-chevron-down"
         >
           <Dropdown.Item href="#">Action</Dropdown.Item>
           <Dropdown.Item href="#">Another action</Dropdown.Item>
