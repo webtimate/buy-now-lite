@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-const Input = ({ text, placeholderText }) => {
+const Input = ({ text, placeholderText, setTextValue }) => {
   return (
-    <div className="custom-input ">
-      <InputGroup className="mb-3 navbar-input-chevron-down">
+    <div className="custom-input d-flex justify-content-center align-items-center">
+      <InputGroup className="">
         <Form.Control
           aria-label="Text input with dropdown button"
           placeholder={placeholderText}
           value={text}
+          onChange={(e) => setTextValue(e.target.value)}
         />
 
         <DropdownButton
           variant="outline-secondary"
-          title={""}
+          title={
+            <img
+              src={require("../assets/images/downChevron.png")}
+              width="10"
+              height="5"
+              className="d-flex align-items-center"
+              alt="down chevron icon"
+            />
+          }
           id="input-group-dropdown-2"
           align="end"
         >
