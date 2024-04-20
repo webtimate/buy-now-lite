@@ -19,8 +19,8 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto ml-3" defaultActiveKey={"/link1"}>
-            <Nav.Link href="/link1" className="nav-link">
+          <Nav className="m-auto ml-3" defaultActiveKey={"#link1"}>
+            <Nav.Link href="#link1" className="nav-link">
               Dashboard
             </Nav.Link>
             <Nav.Link href="#link2">Broken Links</Nav.Link>

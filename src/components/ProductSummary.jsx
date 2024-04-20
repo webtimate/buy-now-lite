@@ -27,7 +27,7 @@ function ProductSummary() {
         <Table className="custom-table mt-4">
           <thead>
             <tr>
-              <th className="text-center">
+              <th>
                 <Form.Check // prettier-ignore
                   type="checkbox"
                   id={`default-checkbox`}
@@ -47,39 +47,73 @@ function ProductSummary() {
             </tr>
           </thead>
           <tbody>
-            <tr className="custom-tr">
-              <td className="text-center ">
-                <Form.Check // prettier-ignore
-                  type="checkbox"
-                  id={`default-checkbox`}
-                  label={""}
-                />
-              </td>
-              <td className="d-flex">
-                <div className="pr-4">
-                  <i
-                    class="bi bi-pencil-fill"
-                    onClick={() => setModalShow(true)}
-                  ></i>
-                </div>
-                <div>
-                  <i class="bi bi-trash3"></i>
-                </div>
-              </td>
-              <td>
-                <div className="active-circle"></div>
-              </td>
-              <td className="text-center">4902430725675</td>
-              <td className="text-center">
-                <b>Pamper - Baby Dry Dispers N..</b>
-              </td>
-              <td className="text-center">Amazon</td>
-              <td className="text-center">Amazon</td>
-              <td className="text-center">Amazon</td>
-              <td className="text-center">11 April 2024</td>
-              <td className="text-center">11 April 2024</td>
-              <td className="text-center"></td>
-            </tr>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
+              <tr className="custom-tr" key={index}>
+                <td className="text-center ">
+                  <Form.Check // prettier-ignore
+                    type="checkbox"
+                    id={`default-checkbox`}
+                    label={""}
+                  />
+                </td>
+                <td className="d-flex justify-content-around">
+                  <div className="pr-4">
+                    <i
+                      class="bi bi-pencil-fill"
+                      onClick={() => setModalShow(true)}
+                    ></i>
+                  </div>
+                  <div>
+                    <i class="bi bi-trash3"></i>
+                  </div>
+                </td>
+                <td>
+                  <div className="d-flex justify-content-center">
+                    <div
+                      className={
+                        index % 2 === 0 ? "active-circle" : "inActive-circle"
+                      }
+                    ></div>
+                  </div>
+                </td>
+                <td className="text-center">4902430725675</td>
+                <td className="text-center">
+                  <b>Pamper - Baby Dry Dispers N..</b>
+                </td>
+                <td className="text-center">
+                  <div className="d-flex align-items-center">
+                    Amazon{" "}
+                    {index % 4 === 0 && (
+                      <img
+                        src={require("../assets/images/warning.png")}
+                        width="16px"
+                        height="16px"
+                        className="image-spacing"
+                        alt="warning logo"
+                      />
+                    )}
+                  </div>
+                </td>
+                <td className="text-center">
+                  <div className="d-flex align-items-center">
+                    Amazon{" "}
+                    {index % 3 === 0 && (
+                      <img
+                        src={require("../assets/images/warning.png")}
+                        width="16px"
+                        height="16px"
+                        className="image-spacing"
+                        alt="warning logo"
+                      />
+                    )}
+                  </div>
+                </td>
+                <td className="text-center">Amazon</td>
+                <td className="text-center">11 April 2024</td>
+                <td className="text-center">11 April 2024</td>
+                <td className="text-center"></td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>

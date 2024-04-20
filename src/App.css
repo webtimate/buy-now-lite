@@ -312,8 +312,8 @@ button:not(:disabled) {
   border: none;
   margin-left: 5px;
   margin-right: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   height: 40px;
   font-weight: 400;
 }
@@ -379,5 +379,14 @@ button:not(:disabled) {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #13c803;
+}
+.inActive-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c5c5c5;
+}
+.image-spacing {
+  margin-left: 10px;
 }
