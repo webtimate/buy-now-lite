@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import TextInput from "./TextInput";
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -25,20 +26,16 @@ function MyVerticallyCenteredModal(props) {
           <Col xs={12} md={4}>
             <p className="modal-body-text">Buy Now Url</p>
           </Col>
-          <Col xs={6} md={8}>
-            <div className="buyNowContainer">
-              <p className="modal-body-url">https://www.oral-b.co.in/en-in</p>
-            </div>
+          <Col xs={6} md={7}>
+            <TextInput text={"https://www.oral-b.co.in/en-in"} />
           </Col>
         </Row>
         <Row className="mt-3 d-flex align-items-baseline">
           <Col xs={12} md={4}>
             <p className="modal-body-text">Secondary Buy Now Url</p>
           </Col>
-          <Col xs={6} md={8}>
-            <div className="buyNowContainer">
-              <div>https://www.oral-b.co.in</div>
-            </div>
+          <Col xs={6} md={7}>
+            <TextInput text={"https://www.oral-b.co.in"} />
           </Col>
         </Row>
         <Row>

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
-
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import Input from "./Input";
 
 const Header = () => {
+  const [navAutoFillText, setNavAutoFillText] = useState("");
   return (
     <Navbar bg="#FFFFFF" expand="lg" className="navbar" sticky="top">
       <Container>
@@ -39,7 +39,11 @@ const Header = () => {
               </NavDropdown>
             </div>
 
-            <Input text={""} placeholderText={"Pampers Arial Gill..."} />
+            <Input
+              text={navAutoFillText}
+              placeholderText={"Pampers Arial Gill..."}
+              setTextValue={setNavAutoFillText}
+            />
           </Nav>
           <NavDropdown
             title={
@@ -55,7 +59,7 @@ const Header = () => {
               </>
             }
             id="basic-nav-dropdown"
-            className="navbar-chevron-down reset-default-chevron "
+            className="navbar-chevron-down reset-default-chevron"
           >
             <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>

@@ -1,28 +1,11 @@
 @import url("./assets/fonts/lato.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-
+/* navbar css  */
 .navbar {
   height: 80px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
   background-color: #fff;
 }
-
-/* .navbar-pills {
-  border-radius: 20px;
-  background-color: rgba(239, 239, 239, 1);
-  width: 181px !important;
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-  height: 30px;
-  justify-content: center;
-  font-size: 14px;
-}
-
-.navbar-pills-wrapper {
-  display: flex;
-  align-items: center;
-} */
 
 nav > link {
   font-size: 16px !important;
@@ -31,6 +14,28 @@ nav > link {
 .nav-link.active {
   font-size: 16px;
   font-weight: 700;
+}
+.navbar .nav-link {
+  position: relative;
+}
+.chevron-down,
+.navbar-chevron-down,
+.chevron-up {
+  position: relative;
+  padding-right: 20px; /* Adjust the padding as needed */
+  cursor: pointer;
+}
+.chevron-up::after {
+  content: "";
+  position: absolute;
+  top: 58%;
+  right: 0;
+  transform: translateY(-50%) rotate(180deg);
+  width: 16px; /* Adjust the width as needed */
+  height: 8px; /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .nav-link.active::after {
@@ -43,6 +48,40 @@ nav > link {
   transform: translateX(-50%);
   width: 100%;
 }
+.navbar-chevron-down {
+  padding-right: 10px; /* Adjust the padding as needed */
+  cursor: pointer;
+}
+
+.navbar-chevron-down::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 12px; /* Adjust the width as needed */
+  height: 6px; /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.navbar-pills-chevron-down {
+  cursor: pointer;
+}
+.navbar-pills-chevron-down::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 12px; /* Adjust the width as needed */
+  height: 6px; /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* table css  */
 
 .table-title {
   font-size: 20px;
@@ -58,7 +97,8 @@ nav > link {
   color: rgba(25, 29, 63, 1);
 }
 
-.titleSpacing {
+
+.table-subTitle-spacing {
   padding-right: 40px;
 }
 
@@ -106,10 +146,17 @@ tbody tr td:last-child {
 .bi-pencil-fill {
   color: #6b6b6b;
 }
-
-.navbar .nav-link {
-  position: relative;
+tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
+  background-color: #ffffff;
 }
+
+tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
+  background-color: #f9f9f9;
+}
+
+/* table modal css  */
 
 .btn-container .submit-btn {
   background-color: #191d3f;
@@ -132,26 +179,6 @@ tbody tr td:last-child {
   line-height: 19.2px;
   text-align: left;
   color: #191d3f;
-}
-
-.buyNowContainer {
-  display: flex;
-  width: 412px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #f9f9f9;
-  align-items: center;
-  padding-left: 20px;
-}
-
-tbody > tr:nth-child(odd) > td,
-tbody > tr:nth-child(odd) > th {
-  background-color: #ffffff;
-}
-
-tbody > tr:nth-child(even) > td,
-tbody > tr:nth-child(even) > th {
-  background-color: #f9f9f9;
 }
 
 .modal-text {
@@ -190,27 +217,6 @@ tbody > tr:nth-child(even) > th {
   color: #000000;
 }
 
-.chevron-down,
-.navbar-chevron-down,
-.chevron-up {
-  position: relative;
-  padding-right: 20px; /* Adjust the padding as needed */
-  cursor: pointer;
-}
-.chevron-up::after {
-  content: "";
-  position: absolute;
-  top: 58%;
-  right: 0;
-  transform: translateY(-50%) rotate(180deg);
-  width: 16px; /* Adjust the width as needed */
-  height: 8px; /* Adjust the height as needed */
-  background-image: url("./assets/images/downChevron.svg"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: 100;
-}
-
 .chevron-down::after {
   content: "";
   position: absolute;
@@ -226,38 +232,7 @@ tbody > tr:nth-child(even) > th {
 .reset-default-chevron .dropdown-toggle::after {
   display: none !important;
 }
-.navbar-chevron-down {
-  padding-right: 10px; /* Adjust the padding as needed */
-  cursor: pointer;
-}
-
-.navbar-chevron-down::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.navbar-pills-chevron-down {
-  cursor: pointer;
-}
-.navbar-pills-chevron-down::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+/* footer css  */
 .custom-footer {
   background-color: #009fe3;
   height: 60px;
@@ -265,9 +240,9 @@ tbody > tr:nth-child(even) > th {
   align-items: center;
   width: 100%;
 }
+/* navbar text input css  */
 .custom-input {
   width: 181px;
-  height: 30px;
   margin-left: 30px;
 }
 .custom-input
@@ -280,7 +255,9 @@ tbody > tr:nth-child(even) > th {
   background-color: #efefef;
   border: none;
   font-size: 14px;
+  height: 30px;
 }
+/* input toggle drop menu  */
 .custom-input
   .input-group
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
@@ -290,28 +267,34 @@ tbody > tr:nth-child(even) > th {
   border-bottom-right-radius: 20px;
   background-color: #efefef;
   border: none;
+  height: 30px;
 }
 .custom-input .form-control:focus {
   box-shadow: none;
 }
-.navbar-input-chevron-down::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 5;
-}
+
 .custom-input .dropdown-toggle::after {
-  display: hidden;
+  display: none;
+  color: transparent;
 }
 
 .custom-input .btn {
   box-shadow: none;
-  color: #efefef;
+  color: transparent;
+}
+
+.custom-text-input .input-group > .form-control {
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  border: none;
+  padding: 12px 12px 12px 25px;
+}
+.custom-text-input .form-control:focus {
+  box-shadow: none;
+}
+.custom-text-input input {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  color: #000000;
 }

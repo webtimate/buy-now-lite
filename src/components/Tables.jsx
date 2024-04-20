@@ -12,7 +12,7 @@ const Tables = () => {
       <div className="d-flex justify-content-between">
         <p className="table-title">Broken Link Summary</p>
         <div className="d-flex ">
-          <p className="table-subTitle titleSpacing">
+          <p className="table-subTitle table-subTitle-spacing">
             Primary Broken Links{" "}
             <span style={{ marginLeft: 10 }}>
               <b>12</b>
@@ -61,7 +61,7 @@ const Tables = () => {
         </thead>
         <tbody className="custom-tr">
           <tr className="custom-tr">
-            <td className="text-center">
+            <td className="text-center ">
               <i
                 class="bi bi-pencil-fill"
                 onClick={() => setModalShow(true)}
