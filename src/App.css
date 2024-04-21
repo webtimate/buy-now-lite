@@ -1,28 +1,11 @@
 @import url("./assets/fonts/lato.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-
+/* navbar css  */
 .navbar {
   height: 80px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
   background-color: #fff;
 }
-
-/* .navbar-pills {
-  border-radius: 20px;
-  background-color: rgba(239, 239, 239, 1);
-  width: 181px !important;
-  margin-left: 30px;
-  display: flex;
-  align-items: center;
-  height: 30px;
-  justify-content: center;
-  font-size: 14px;
-}
-
-.navbar-pills-wrapper {
-  display: flex;
-  align-items: center;
-} */
 
 nav > link {
   font-size: 16px !important;
@@ -31,6 +14,28 @@ nav > link {
 .nav-link.active {
   font-size: 16px;
   font-weight: 700;
+}
+.navbar .nav-link {
+  position: relative;
+}
+.chevron-down,
+.navbar-chevron-down,
+.chevron-up {
+  position: relative;
+  padding-right: 20px; /* Adjust the padding as needed */
+  cursor: pointer;
+}
+.chevron-up::after {
+  content: "";
+  position: absolute;
+  top: 58%;
+  right: 0;
+  transform: translateY(-50%) rotate(180deg);
+  width: 16px; /* Adjust the width as needed */
+  height: 8px; /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .nav-link.active::after {
@@ -43,6 +48,42 @@ nav > link {
   transform: translateX(-50%);
   width: 100%;
 }
+.navbar-chevron-down {
+  padding-right: 10px; /* Adjust the padding as needed */
+  cursor: pointer;
+}
+
+.navbar-chevron-down::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 12px; /* Adjust the width as needed */
+  height: 6px; /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.navbar-pills-chevron-down {
+  cursor: pointer;
+}
+.navbar-pills-chevron-down::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 12px; /* Adjust the width as needed */
+  height: 6px; /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* broken link section css starts  */
+
+/* table css  */
 
 .table-title {
   font-size: 20px;
@@ -58,7 +99,7 @@ nav > link {
   color: rgba(25, 29, 63, 1);
 }
 
-.titleSpacing {
+.table-subTitle-spacing {
   padding-right: 40px;
 }
 
@@ -71,7 +112,7 @@ thead {
   border-style: none !important;
   border-width: 0px !important;
   border-color: transparent !important;
-  padding: 20px !important;
+  padding: 15px 10px !important;
 }
 
 thead th:first-child {
@@ -106,10 +147,17 @@ tbody tr td:last-child {
 .bi-pencil-fill {
   color: #6b6b6b;
 }
-
-.navbar .nav-link {
-  position: relative;
+tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
+  background-color: #ffffff;
 }
+
+tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
+  background-color: #f9f9f9;
+}
+
+/* table modal css  */
 
 .btn-container .submit-btn {
   background-color: #191d3f;
@@ -117,6 +165,7 @@ tbody tr td:last-child {
   border-radius: 40px;
   width: 120px;
   border: none;
+  color: #fff;
 }
 .btn-container .submit-btn:hover {
   background-color: #191d3f;
@@ -132,26 +181,7 @@ tbody tr td:last-child {
   line-height: 19.2px;
   text-align: left;
   color: #191d3f;
-}
-
-.buyNowContainer {
-  display: flex;
-  width: 412px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #f9f9f9;
-  align-items: center;
-  padding-left: 20px;
-}
-
-tbody > tr:nth-child(odd) > td,
-tbody > tr:nth-child(odd) > th {
-  background-color: #ffffff;
-}
-
-tbody > tr:nth-child(even) > td,
-tbody > tr:nth-child(even) > th {
-  background-color: #f9f9f9;
+  border: none;
 }
 
 .modal-text {
@@ -190,27 +220,6 @@ tbody > tr:nth-child(even) > th {
   color: #000000;
 }
 
-.chevron-down,
-.navbar-chevron-down,
-.chevron-up {
-  position: relative;
-  padding-right: 20px; /* Adjust the padding as needed */
-  cursor: pointer;
-}
-.chevron-up::after {
-  content: "";
-  position: absolute;
-  top: 58%;
-  right: 0;
-  transform: translateY(-50%) rotate(180deg);
-  width: 16px; /* Adjust the width as needed */
-  height: 8px; /* Adjust the height as needed */
-  background-image: url("./assets/images/downChevron.svg"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: 100;
-}
-
 .chevron-down::after {
   content: "";
   position: absolute;
@@ -226,38 +235,7 @@ tbody > tr:nth-child(even) > th {
 .reset-default-chevron .dropdown-toggle::after {
   display: none !important;
 }
-.navbar-chevron-down {
-  padding-right: 10px; /* Adjust the padding as needed */
-  cursor: pointer;
-}
-
-.navbar-chevron-down::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.navbar-pills-chevron-down {
-  cursor: pointer;
-}
-.navbar-pills-chevron-down::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+/* footer css  */
 .custom-footer {
   background-color: #009fe3;
   height: 60px;
@@ -265,9 +243,9 @@ tbody > tr:nth-child(even) > th {
   align-items: center;
   width: 100%;
 }
+/* navbar text input css  */
 .custom-input {
   width: 181px;
-  height: 30px;
   margin-left: 30px;
 }
 .custom-input
@@ -280,7 +258,9 @@ tbody > tr:nth-child(even) > th {
   background-color: #efefef;
   border: none;
   font-size: 14px;
+  height: 30px;
 }
+/* input toggle drop menu  */
 .custom-input
   .input-group
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
@@ -290,28 +270,194 @@ tbody > tr:nth-child(even) > th {
   border-bottom-right-radius: 20px;
   background-color: #efefef;
   border: none;
+  height: 30px;
 }
 .custom-input .form-control:focus {
   box-shadow: none;
 }
-.navbar-input-chevron-down::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 5;
-}
+
 .custom-input .dropdown-toggle::after {
-  display: hidden;
+  display: none;
+  color: transparent;
 }
 
 .custom-input .btn {
   box-shadow: none;
-  color: #efefef;
+  color: transparent;
+}
+
+.custom-text-input .input-group > .form-control {
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  border: none;
+  padding: 12px 12px 12px 25px;
+}
+.custom-text-input .form-control:focus {
+  box-shadow: none;
+}
+.custom-text-input input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: #000000;
+}
+
+/* broken links section css  ends  */
+/* product summary section css starts  */
+.icon-btn-wrapper [type="button"]:not(:disabled),
+button:not(:disabled) {
+  border-radius: 20px;
+  width: fit-content;
+  background-color: #efefef;
+  color: #191d3f;
+  font-size: 16px;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  font-weight: 400;
+}
+.icon-style {
+  margin-right: 7px;
+  font-size: 20px;
+}
+/* search bar input with icon css */
+.search-input-wrapper {
+  width: 300px;
+}
+.search-input-wrapper .input-group {
+  height: 40px;
+}
+
+.search-input-wrapper
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
+  background-color: #efefef;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+}
+.search-input-wrapper
+  .input-group:not(.has-validation)
+  > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-control,
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-select,
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
+  background-color: #efefef;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+}
+
+.search-input-wrapper .form-control:focus {
+  box-shadow: none;
+}
+.search-input-wrapper .btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: #efefef !important;
+  color: #191d3f !important;
+  border-color: transparent !important;
+}
+.horizontal-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Disable vertical scrolling */
+  white-space: nowrap; /* Prevent table rows from wrapping */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for WebKit browsers */
+}
+
+.active-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #13c803;
+}
+.inActive-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c5c5c5;
+}
+.image-spacing {
+  margin-left: 10px;
+}
+
+/* retails summary section css  */
+.outline-btn-wrapper [type="button"]:not(:disabled),
+button:not(:disabled) {
+  border-radius: 20px;
+  width: fit-content;
+  background-color: #fff;
+  color: #191d3f;
+  font-size: 16px;
+  border: 1px solid #6b6b6b;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  font-weight: 400;
+}
+.modal-upload-file-title {
+  text-decoration: underline;
+  font-size: 16px;
+  margin-left: 15px;
+  color: #000;
+  line-height: 19.2px;
+}
+/* product summary section css  */
+.custom-dropdown .btn {
+  box-shadow: none;
+  color: transparent;
+}
+.custom-dropdown
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #efefef;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.custom-dropdown .form-control:focus {
+  box-shadow: none;
+}
+/* to  make dropdown menu invisible */
+.custom-dropdown .btn {
+  box-shadow: none;
+  color: transparent;
+}
+.custom-dropdown .dropdown-toggle::after {
+  display: none;
+  color: transparent;
+}
+
+.initial-spacing-table {
+  margin-left: 15px;
+}
+.pointer-cursor {
+  cursor: pointer;
+}
+.main-container {
+  width: 100%;
+  height: 100vh;
 }
