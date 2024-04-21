@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import Input from "./Input";
+import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [navAutoFillText, setNavAutoFillText] = useState("");
   return (
     <Navbar bg="#FFFFFF" expand="lg" className="navbar" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand onClick={() => navigate("/")}>
           <img
             src={require("../assets/images/logo.png")}
             width="131"
@@ -19,13 +22,31 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto ml-3" defaultActiveKey={"#link1"}>
-            <Nav.Link href="#link1" className="nav-link">
+          <Nav className="m-auto ml-3">
+            <NavLink className="nav-link" activeClassName="active" to={"/"}>
               Dashboard
-            </Nav.Link>
-            <Nav.Link href="#link2">Broken Links</Nav.Link>
-            <Nav.Link href="#link3">Retailer Summary</Nav.Link>
-            <Nav.Link href="#link4">Product Summary</Nav.Link>
+            </NavLink>
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
+              to={"/broken-links"}
+            >
+              Broken Links
+            </NavLink>
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
+              to={"/retailer-summary"}
+            >
+              Retailer Summary
+            </NavLink>
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
+              to={"/product-summary"}
+            >
+              Product Summary
+            </NavLink>
             <div className="reset-default-chevron">
               <NavDropdown
                 title="Admin"

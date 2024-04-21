@@ -6,6 +6,7 @@ import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import CustomModal from "./Modal";
 import { PRODUCT_SUMMARY_SCREEN, productSummaryData } from "../constant";
+import withLayout from "../pages/Layout";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
@@ -128,13 +129,13 @@ function ProductSummary() {
                       />
                     </td>
                     <td className="d-flex justify-content-around">
-                      <div className="pr-4">
+                      <div className="pointer-cursor">
                         <i
                           class="bi bi-pencil-fill"
                           onClick={() => setModalShow(true)}
                         ></i>
                       </div>
-                      <div>
+                      <div className="pointer-cursor">
                         <i class="bi bi-trash3"></i>
                       </div>
                     </td>
@@ -204,4 +205,4 @@ function ProductSummary() {
   );
 }
 
-export default ProductSummary;
+export default withLayout(ProductSummary);

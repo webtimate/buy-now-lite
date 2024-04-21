@@ -6,14 +6,11 @@ import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import OutlineButton from "./OutlineButton";
 import CustomModal from "./Modal";
-import {
-  RETAIL_SUMMARY,
-  RETAIL_SUMMARY_SCREEN,
-  retailSummaryData,
-} from "../constant";
+import { RETAILER_SUMMARY_SCREEN, retailSummaryData } from "../constant";
+import withLayout from "../pages/Layout";
 
 const buttons = [
-  { id: 1, text: "Add", iconText: "bi-plus" },
+  { id: 1, text: "Add", iconText: "bi-plus-lg" },
   { id: 2, text: "Excel", iconText: "bi-upload" },
 ];
 const tableData = [
@@ -55,7 +52,7 @@ const tableData = [
   },
 ];
 
-function RetailSummary() {
+function RetailerSummary() {
   const [modalShow, setModalShow] = useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
 
@@ -70,7 +67,7 @@ function RetailSummary() {
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}
-          <p className="table-title ">Retail Summary</p>
+          <p className="table-title ">Retailer Summary</p>
           <div className="d-flex ">
             <SearchInputWithIcon />
             {buttons.map((item) => (
@@ -106,7 +103,7 @@ function RetailSummary() {
                   Retailer Name
                 </span>
               </th>
-              <th>url</th>
+              <th>Url</th>
               <th onClick={() => setIsChevronDown(!isChevronDown)}>
                 <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
                   logo
@@ -124,17 +121,17 @@ function RetailSummary() {
                     type="checkbox"
                     id={`default-checkbox`}
                     label={""}
-                    className="initial-spacing-table"
+                    className={"initial-spacing-table"}
                   />
                 </td>
                 <td className="d-flex justify-content-around">
-                  <div className="pr-4">
+                  <div className="pointer-cursor">
                     <i
                       class="bi bi-pencil-fill"
                       onClick={() => setModalShow(true)}
                     ></i>
                   </div>
-                  <div>
+                  <div className="pointer-cursor">
                     <i class="bi bi-trash3"></i>
                   </div>
                 </td>
@@ -147,12 +144,10 @@ function RetailSummary() {
                     ></div>
                   </div>
                 </td>
-                <td className="text-center">
+                <td>
                   <b>Amazon</b>{" "}
                 </td>
-                <td className="text-center">
-                  https://www.amazon.b.co.in/en-in
-                </td>
+                <td>https://www.amazon.b.co.in/en-in</td>
                 <td className="text-center">
                   <div className="d-flex align-items-center">
                     <img
@@ -181,10 +176,10 @@ function RetailSummary() {
         show={modalShow}
         onHide={() => setModalShow(false)}
         modalData={retailSummaryData}
-        screen={RETAIL_SUMMARY_SCREEN}
+        screen={RETAILER_SUMMARY_SCREEN}
       />
     </>
   );
 }
 
-export default RetailSummary;
+export default withLayout(RetailerSummary);

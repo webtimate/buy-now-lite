@@ -10,7 +10,7 @@ import {
   DROPDOWN_WITH_BTN,
   FILE_UPLOAD,
   PRODUCT_SUMMARY_SCREEN,
-  RETAIL_SUMMARY_SCREEN,
+  RETAILER_SUMMARY_SCREEN,
 } from "../constant";
 import OutlineButton from "./OutlineButton";
 import Form from "react-bootstrap/Form";
@@ -19,7 +19,7 @@ import ButtonWithIcon from "./ButtonWithIcon";
 
 const CustomModal = (props) => {
   const renderDynamicContent = (item) => {
-    if (props.screen === RETAIL_SUMMARY_SCREEN) {
+    if (props.screen === RETAILER_SUMMARY_SCREEN) {
       switch (item.type) {
         case FILE_UPLOAD:
           return (
@@ -101,7 +101,7 @@ const CustomModal = (props) => {
   };
   const renderDynamicBtnTitle = () => {
     switch (props.screen) {
-      case RETAIL_SUMMARY_SCREEN:
+      case RETAILER_SUMMARY_SCREEN:
         return {
           submitBtn: "Add",
           closeBtn: "Cancel",

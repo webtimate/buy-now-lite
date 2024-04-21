@@ -454,3 +454,6 @@ button:not(:disabled) {
 .initial-spacing-table {
   margin-left: 15px;
 }
+.pointer-cursor{
+  cursor: pointer;
+}

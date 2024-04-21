@@ -6,7 +6,7 @@ export const DROPDOWN_WITH_BTN = "DROPDOWN_WITH_BTN";
 
 // screen constants
 export const TABLE_SCREEN = "TABLE_SCREEN";
-export const RETAIL_SUMMARY_SCREEN = "RETAIL_SUMMARY_SCREEN";
+export const RETAILER_SUMMARY_SCREEN = "RETAILER_SUMMARY_SCREEN";
 export const PRODUCT_SUMMARY_SCREEN = "PRODUCT_SUMMARY_SCREEN";
 
 export const retailSummaryData = [
@@ -77,5 +77,63 @@ export const productSummaryData = [
     title: "Secondary Url",
     link: "https://dl.flipkart.com/dl/pamper-diaper-pants-products",
     type: TEXT_INPUT,
+  },
+];
+export const tableData = [
+  {
+    id: 1,
+    gtins: "4902430725675",
+    productName: "Pampers Baby Dry",
+    primaryBrokenLink: require("./assets/images/amazon.png"),
+
+  },
+  {
+    id: 2,
+    gtins: "4902430725334",
+    productName: "Arial - Laundry Products",
+    primaryBrokenLink: require("./assets/images/wallamart.png"),
+
+  },
+  {
+    id: 3,
+    gtins: "4902430725124",
+    productName: "Gillete - Razors, Blades and Men's",
+    primaryBrokenLink: require("./assets/images/walgreen.png"),
+
+  },
+  {
+    id: 4,
+    gtins: "4902430725124",
+    productName: "Gillete - Razors, Blades and Men's",
+    primaryBrokenLink: require("./assets/images/bigbasket.png"),
+
+  },
+  {
+    id: 5,
+    gtins: "4902430725124",
+    productName: "Gillete - Razors, Blades and Men's",
+    primaryBrokenLink: require("./assets/images/wallamart.png"),
+
+  },
+  {
+    id: 6,
+    gtins: "4902430725124",
+    productName: "Gillete - Razors, Blades and Men's",
+    primaryBrokenLink: require("./assets/images/walgreen.png"),
+
+  },
+  {
+    id: 7,
+    gtins: "4902430725124",
+    productName: "Gillete - Razors, Blades and Men's",
+    primaryBrokenLink: require("./assets/images/walgreen.png"),
+
+  },
+  {
+    id: 8,
+    gtins: "4902430725124",
+    productName: "Gillete - Razors, Blades and Men's",
+    primaryBrokenLink: require("./assets/images/bigbasket.png"),
+
   },
 ];

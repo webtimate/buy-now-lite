@@ -1,46 +1,21 @@
-import { Fragment, useEffect } from "react";
 import "./App.css";
-import Header from "./components/Header";
 import Tables from "./components/Tables";
-import Footer from "./components/Footer";
 import ProductSummary from "./components/ProductSummary";
-import RetailSummary from "./components/RetailSummary";
+import RetailerSummary from "./components/RetailerSummary";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  // to disable zooming in browser
-  // useEffect(() => {
-  //   const handleWheel = (event) => {
-  //     if (event.ctrlKey || event.metaKey) {
-  //       event.preventDefault();
-  //     }
-  //   };
-
-  //   const handleKeyDown = (event) => {
-  //     if (
-  //       (event.ctrlKey || event.metaKey) &&
-  //       (event.key === "+" || event.key === "-")
-  //     ) {
-  //       event.preventDefault();
-  //     }
-  //   };
-
-  //   window.addEventListener("wheel", handleWheel);
-  //   window.addEventListener("keydown", handleKeyDown);
-
-  //   return () => {
-  //     window.removeEventListener("wheel", handleWheel);
-  //     window.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, []);
-
   return (
-    <Fragment>
-      <Header />
-      <Tables />
-      <RetailSummary />
-      <ProductSummary />
-      <Footer />
-    </Fragment>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Tables />} />
+          <Route path="/broken-links" element={<Tables />} />
+          <Route path="/retailer-summary" element={<RetailerSummary />} />
+          <Route path="/product-summary" element={<ProductSummary />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
