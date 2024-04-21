@@ -96,6 +96,7 @@ function RetailSummary() {
                   type="checkbox"
                   id={`default-checkbox`}
                   label={""}
+                  className="initial-spacing-table"
                 />
               </th>
               <th>Select all</th>
@@ -123,6 +124,7 @@ function RetailSummary() {
                     type="checkbox"
                     id={`default-checkbox`}
                     label={""}
+                    className="initial-spacing-table"
                   />
                 </td>
                 <td className="d-flex justify-content-around">

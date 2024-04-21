@@ -112,7 +112,7 @@ thead {
   border-style: none !important;
   border-width: 0px !important;
   border-color: transparent !important;
-  padding: 20px !important;
+  padding: 15px 20px !important;
 }
 
 thead th:first-child {
@@ -449,4 +449,8 @@ button:not(:disabled) {
 .custom-dropdown .dropdown-toggle::after {
   display: none;
   color: transparent;
+}
+
+.initial-spacing-table {
+  margin-left: 15px;
 }

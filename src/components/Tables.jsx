@@ -53,7 +53,9 @@ const Tables = () => {
       <Table className="custom-table">
         <thead>
           <tr>
-            <th className="text-center">Actions</th>
+            <th className="text-center">
+              <div className="initial-spacing-table ">Actions</div>{" "}
+            </th>
             <th>SKU GTINS</th>
             <th
               className="d-flex align-items-center"
