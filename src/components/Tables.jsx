@@ -32,7 +32,7 @@ const Tables = () => {
   const [isChevronDown, setIsChevronDown] = useState(true);
 
   return (
-
+    <div className="main-container">
       <Container className="mt-4">
         <div className="d-flex justify-content-between">
           <p className="table-title">Broken Link Summary</p>
@@ -150,7 +150,7 @@ const Tables = () => {
           modalData={brokenLinkData}
         />
       </Container>
-
+    </div>
   );
 };
 

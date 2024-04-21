@@ -62,7 +62,7 @@ function RetailerSummary() {
     }
   };
   return (
-    <>
+    <div className="main-container">
       {" "}
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
@@ -178,7 +178,7 @@ function RetailerSummary() {
         modalData={retailSummaryData}
         screen={RETAILER_SUMMARY_SCREEN}
       />
-    </>
+    </div>
   );
 }
 

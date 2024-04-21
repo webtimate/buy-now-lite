@@ -46,7 +46,7 @@ function ProductSummary() {
     setIsDragging(false);
   };
   return (
-    <>
+    <div className="main-container">
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}
@@ -201,7 +201,7 @@ function ProductSummary() {
         modalData={productSummaryData}
         screen={PRODUCT_SUMMARY_SCREEN}
       />
-    </>
+    </div>
   );
 }
 
