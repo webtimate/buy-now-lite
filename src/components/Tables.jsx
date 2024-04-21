@@ -1,7 +1,29 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import MyVerticallyCenteredModal from "./Modal";
+import CustomModal from "./Modal";
+import { TEXT_INPUT } from "../constant";
+
+const brokenLinkData = [
+  {
+    id: 1,
+    title: "Buy Now Url",
+    link: "https://www.oral-b.co.in/en-in",
+    type: TEXT_INPUT,
+  },
+  {
+    id: 1,
+    title: "Secondary Buy Now Url",
+    link: "https://www.oral-b.co.in/en-in",
+    type: TEXT_INPUT,
+  },
+  {
+    id: 3,
+    title: "",
+    link: "Update successfully and changes will reflect after next run",
+    type: "INFO",
+  },
+];
 
 const Tables = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -264,9 +286,11 @@ const Tables = () => {
       </Table>
 
       {/* modal  */}
-      <MyVerticallyCenteredModal
+      <CustomModal
+        modalTitle="UPDATE PRODUCTS"
         show={modalShow}
         onHide={() => setModalShow(false)}
+        modalData={brokenLinkData}
       />
     </Container>
   );

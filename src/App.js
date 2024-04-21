@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Tables from "./components/Tables";
 import Footer from "./components/Footer";
 import ProductSummary from "./components/ProductSummary";
+import RetailSummary from "./components/RetailSummary";
 
 function App() {
   // to disable zooming in browser
@@ -35,7 +36,8 @@ function App() {
   return (
     <Fragment>
       <Header />
-      {/* <Tables /> */}
+      <Tables />
+      <RetailSummary />
       <ProductSummary />
       <Footer />
     </Fragment>
