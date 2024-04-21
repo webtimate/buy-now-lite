@@ -297,7 +297,7 @@ tbody > tr:nth-child(even) > th {
 }
 .custom-text-input input {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 19.2px;
   color: #000000;
 }
@@ -323,9 +323,14 @@ button:not(:disabled) {
   margin-right: 7px;
   font-size: 20px;
 }
+/* search bar input with icon css */
 .search-input-wrapper {
   width: 300px;
 }
+.search-input-wrapper .input-group {
+  height: 40px;
+}
+
 .search-input-wrapper
   .input-group
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
@@ -415,4 +420,33 @@ button:not(:disabled) {
   margin-left: 15px;
   color: #000;
   line-height: 19.2px;
+}
+/* product summary section css  */
+.custom-dropdown .btn {
+  box-shadow: none;
+  color: transparent;
+}
+.custom-dropdown
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #efefef;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.custom-dropdown .form-control:focus {
+  box-shadow: none;
+}
+/* to  make dropdown menu invisible */
+.custom-dropdown .btn {
+  box-shadow: none;
+  color: transparent;
+}
+.custom-dropdown .dropdown-toggle::after {
+  display: none;
+  color: transparent;
 }

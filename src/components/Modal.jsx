@@ -6,12 +6,16 @@ import TextInput from "./TextInput";
 import Container from "react-bootstrap/Container";
 import {
   CHECKBOX,
+  DROPDOWN,
+  DROPDOWN_WITH_BTN,
   FILE_UPLOAD,
   PRODUCT_SUMMARY_SCREEN,
   RETAIL_SUMMARY_SCREEN,
 } from "../constant";
 import OutlineButton from "./OutlineButton";
 import Form from "react-bootstrap/Form";
+import InputWithDropdown from "./InputWithDropdown";
+import ButtonWithIcon from "./ButtonWithIcon";
 
 const CustomModal = (props) => {
   const renderDynamicContent = (item) => {
@@ -24,6 +28,47 @@ const CustomModal = (props) => {
               <div className="modal-upload-file-title">
                 Upload file from system
               </div>
+            </div>
+          );
+        case CHECKBOX:
+          return (
+            <div className="d-flex align-items-center ">
+              <Form.Check // prettier-ignore
+                type="checkbox"
+                id={`default-checkbox`}
+                label={""}
+              />
+            </div>
+          );
+
+        default:
+          return <TextInput text={item.link} />;
+      }
+    } else if (props.screen === PRODUCT_SUMMARY_SCREEN) {
+      switch (item.type) {
+        case DROPDOWN_WITH_BTN:
+          return (
+            <div className="custom-dropdown  d-flex">
+              <InputWithDropdown
+                text={item.link}
+                placeholderText={""}
+                setTextValue={() => {}}
+              />
+              <ButtonWithIcon
+                text={"Add"}
+                iconName={"bi-plus-lg"}
+                onClick={() => {}}
+              />
+            </div>
+          );
+        case DROPDOWN:
+          return (
+            <div className="custom-dropdown  d-flex">
+              <InputWithDropdown
+                text={item.link}
+                placeholderText={""}
+                setTextValue={() => {}}
+              />
             </div>
           );
         case CHECKBOX:
@@ -98,7 +143,7 @@ const CustomModal = (props) => {
               <Col xs={12} md={4}>
                 <p className="modal-body-text">{item.title}</p>
               </Col>
-              <Col xs={6} md={7}>
+              <Col xs={6} md={8}>
                 {renderDynamicContent(item)}
               </Col>
             </Row>

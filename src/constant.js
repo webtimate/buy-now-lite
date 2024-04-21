@@ -69,13 +69,13 @@ export const productSummaryData = [
   {
     id: 5,
     title: "Buy Now Url",
-    link: "https://www.flipkart.com/abc",
+    link: "https://dl.flipkart.com/dl/pamper-diaper-pants",
     type: TEXT_INPUT,
   },
   {
     id: 6,
     title: "Secondary Url",
-    link: "https://www.flipkart.com/abc",
+    link: "https://dl.flipkart.com/dl/pamper-diaper-pants-products",
     type: TEXT_INPUT,
   },
 ];
