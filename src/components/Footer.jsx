@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <footer fluid className="text-white  custom-footer fixed-bottom">
+    <footer fluid className="text-white  custom-footer">
       <Container>Copyright 2024</Container>
     </footer>
   );
