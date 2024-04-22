@@ -55,6 +55,7 @@ const tableData = [
 function RetailerSummary() {
   const [modalShow, setModalShow] = useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
+  const [text, setText] = useState("");
 
   const handleModal = (args) => {
     if (args.id === 1) {
@@ -96,7 +97,7 @@ function RetailerSummary() {
                   className="initial-spacing-table"
                 />
               </th>
-              <th>Select all</th>
+              <th className="table-head-spacing">Select all</th>
               <th>Status</th>
               <th onClick={() => setIsChevronDown(!isChevronDown)}>
                 <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
@@ -124,7 +125,7 @@ function RetailerSummary() {
                     className={"initial-spacing-table"}
                   />
                 </td>
-                <td className="d-flex justify-content-around">
+                <td className="d-flex justify-content-around table-head-spacing">
                   <div className="pointer-cursor">
                     <i
                       class="bi bi-pencil-fill"
@@ -177,6 +178,8 @@ function RetailerSummary() {
         onHide={() => setModalShow(false)}
         modalData={retailSummaryData}
         screen={RETAILER_SUMMARY_SCREEN}
+        text={text}
+        setText={setText}
       />
     </div>
   );

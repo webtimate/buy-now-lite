@@ -1,4 +1,3 @@
-@import url("./assets/fonts/lato.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 /* navbar css  */
 .navbar {
@@ -17,6 +16,7 @@ nav > link {
 }
 .navbar .nav-link {
   position: relative;
+  color: #191d3f;
 }
 .chevron-down,
 .navbar-chevron-down,
@@ -217,7 +217,7 @@ tbody > tr:nth-child(even) > th {
   font-size: 16px;
   font-weight: 400;
   line-height: 19.2px;
-  color: #000000;
+  color: #191d3f !important;
 }
 
 .chevron-down::after {
@@ -299,7 +299,6 @@ tbody > tr:nth-child(even) > th {
   font-size: 16px;
   font-weight: 400;
   line-height: 19.2px;
-  color: #000000;
 }
 
 /* broken links section css  ends  */
@@ -414,6 +413,9 @@ button:not(:disabled) {
   height: 40px;
   font-weight: 400;
 }
+.custom-table .table-head-spacing {
+  padding-left: 0px !important;
+}
 .modal-upload-file-title {
   text-decoration: underline;
   font-size: 16px;
@@ -459,5 +461,23 @@ button:not(:disabled) {
 }
 .main-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.file-upload-button {
+  display: flex; /* Allow button and input to align horizontally */
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Add hover effect (optional) */
+}
+
+/* dashboard css  */
+.count-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  border: 2px rgb(43, 87, 243, 1);
 }

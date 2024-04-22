@@ -30,6 +30,7 @@ const brokenLinkData = [
 const Tables = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
+    const [text, setText] = useState("");
 
   return (
     <div className="main-container">
@@ -148,6 +149,7 @@ const Tables = () => {
           show={modalShow}
           onHide={() => setModalShow(false)}
           modalData={brokenLinkData}
+          setText={setText}
         />
       </Container>
     </div>
