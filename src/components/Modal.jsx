@@ -164,41 +164,32 @@ const CustomModal = (props) => {
     >
       <Modal.Header className="modal-header-container">
         <Container>
-          <Row className="d-flex align-items-baseline">
-            <Col xs={12} md={1}></Col>
-            <Col xs={12} md={11}>
-              <Row className="d-flex align-items-baseline">
-                <Col xs={12} md={10}>
-                  <Modal.Title
-                    id="contained-modal-title-vcenter"
-                    className="modal-title "
-                  >
-                    {props.modalTitle}
-                  </Modal.Title>
-                </Col>
-                <Col xs={12} md={1}>
-                  <p className="h6" onClick={() => props.onHide()}>
-                    <i class="bi bi-x-lg"></i>
-                  </p>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+          <div className="d-flex justify-content-between align-items-center modal-spacing">
+            <Modal.Title
+              id="contained-modal-title-vcenter"
+              className="modal-title"
+            >
+              {props.modalTitle}
+            </Modal.Title>
+            <div className="fs-6" onClick={() => props.onHide()}>
+              <i class="bi bi-x-lg"></i>
+            </div>
+          </div>
         </Container>
       </Modal.Header>
       <Modal.Body>
         <Container>
           {props.modalData.map((item, index) => (
-            <Row className="mt-3 d-flex align-items-baseline">
-              <Col xs={12} md={1}></Col>
-
-              <Col xs={12} md={3}>
-                <p className="modal-body-text">{item.title}</p>
-              </Col>
-              <Col xs={6} md={8}>
-                {renderDynamicContent(item)}
-              </Col>
-            </Row>
+            <div className="modal-spacing" key={index}>
+              <Row className="mt-3 d-flex align-items-baseline">
+                <Col xs={12} md={3}>
+                  <p className="modal-body-text">{item.title}</p>
+                </Col>
+                <Col xs={6} md={9}>
+                  {renderDynamicContent(item)}
+                </Col>
+              </Row>
+            </div>
           ))}
 
           {}
