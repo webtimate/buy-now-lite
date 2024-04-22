@@ -23,6 +23,7 @@ function ProductSummary() {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
+  const [text, setText] = useState("");
   const handleModal = (args) => {
     if (args.id === 1) {
       setModalShow(true);
@@ -200,6 +201,7 @@ function ProductSummary() {
         onHide={() => setModalShow(false)}
         modalData={productSummaryData}
         screen={PRODUCT_SUMMARY_SCREEN}
+        setText={setText}
       />
     </div>
   );

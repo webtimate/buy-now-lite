@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-const OutlineButton = ({ text, iconName }) => {
+const OutlineButton = ({ text, iconName, type }) => {
   return (
     <div className="outline-btn-wrapper">
       <Button variant="primary" className="d-flex align-items-center">

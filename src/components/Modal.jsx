@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
@@ -18,13 +19,28 @@ import InputWithDropdown from "./InputWithDropdown";
 import ButtonWithIcon from "./ButtonWithIcon";
 
 const CustomModal = (props) => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [inputWithMenuText, setInputWithMenuText] = useState("");
+  const fileInputRef = useRef(null);
+
+  const handleClick = () => {
+    fileInputRef.current.click();
+  };
+
   const renderDynamicContent = (item) => {
     if (props.screen === RETAILER_SUMMARY_SCREEN) {
       switch (item.type) {
         case FILE_UPLOAD:
           return (
             <div className="d-flex align-items-center ">
-              <OutlineButton text={"Choose file"} />
+              <div className="file-upload-button">
+                <button onClick={handleClick}>Choose File</button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  style={{ display: "none" }}
+                />
+              </div>
               <div className="modal-upload-file-title">
                 Upload file from system
               </div>
@@ -42,7 +58,13 @@ const CustomModal = (props) => {
           );
 
         default:
-          return <TextInput text={item.link} />;
+          return (
+            <TextInput
+              placeholder={item.link}
+              text={props.text}
+              setText={props.setText}
+            />
+          );
       }
     } else if (props.screen === PRODUCT_SUMMARY_SCREEN) {
       switch (item.type) {
@@ -50,9 +72,9 @@ const CustomModal = (props) => {
           return (
             <div className="custom-dropdown  d-flex">
               <InputWithDropdown
-                text={item.link}
-                placeholderText={""}
-                setTextValue={() => {}}
+                text={inputWithMenuText}
+                placeholderText={item.link}
+                setTextValue={(text) => setInputWithMenuText(text)}
               />
               <ButtonWithIcon
                 text={"Add"}
@@ -65,9 +87,9 @@ const CustomModal = (props) => {
           return (
             <div className="custom-dropdown  d-flex">
               <InputWithDropdown
-                text={item.link}
-                placeholderText={""}
-                setTextValue={() => {}}
+                text={inputWithMenuText}
+                placeholderText={item.link}
+                setTextValue={(text) => setInputWithMenuText(text)}
               />
             </div>
           );
@@ -83,7 +105,13 @@ const CustomModal = (props) => {
           );
 
         default:
-          return <TextInput text={item.link} />;
+          return (
+            <TextInput
+              placeholder={item.link}
+              text={props.text}
+              setText={props.setText}
+            />
+          );
       }
     } else {
       switch (item.type) {
@@ -95,7 +123,13 @@ const CustomModal = (props) => {
           );
 
         default:
-          return <TextInput text={item.link} />;
+          return (
+            <TextInput
+              placeholder={item.link}
+              text={props.text}
+              setText={props.setText}
+            />
+          );
       }
     }
   };
@@ -128,19 +162,37 @@ const CustomModal = (props) => {
       centered
       className="modal-container"
     >
-      <Modal.Header className="d-flex justify-content-between modal-header-container">
-        <Modal.Title id="contained-modal-title-vcenter" className="modal-title">
-          {props.modalTitle}
-        </Modal.Title>
-        <p className="h6" onClick={() => props.onHide()}>
-          <i class="bi bi-x-lg"></i>
-        </p>
+      <Modal.Header className="modal-header-container">
+        <Container>
+          <Row className="d-flex align-items-baseline">
+            <Col xs={12} md={1}></Col>
+            <Col xs={12} md={11}>
+              <Row className="d-flex align-items-baseline">
+                <Col xs={12} md={10}>
+                  <Modal.Title
+                    id="contained-modal-title-vcenter"
+                    className="modal-title "
+                  >
+                    {props.modalTitle}
+                  </Modal.Title>
+                </Col>
+                <Col xs={12} md={1}>
+                  <p className="h6" onClick={() => props.onHide()}>
+                    <i class="bi bi-x-lg"></i>
+                  </p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
       </Modal.Header>
       <Modal.Body>
         <Container>
           {props.modalData.map((item, index) => (
             <Row className="mt-3 d-flex align-items-baseline">
-              <Col xs={12} md={4}>
+              <Col xs={12} md={1}></Col>
+
+              <Col xs={12} md={3}>
                 <p className="modal-body-text">{item.title}</p>
               </Col>
               <Col xs={6} md={8}>
