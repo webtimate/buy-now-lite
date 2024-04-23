@@ -23,25 +23,29 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto ml-3">
-            <NavLink className="custom-nav-link nav-link" activeClassName="active" to={"/"}>
+            <NavLink
+              className="custom-nav-link nav-link nav-link-highlighter"
+              activeClassName="active"
+              to={"/"}
+            >
               Dashboard
             </NavLink>
             <NavLink
-              className="nav-link"
+              className="nav-link nav-link-highlighter"
               activeClassName="active"
               to={"/broken-links"}
             >
               Broken Links
             </NavLink>
             <NavLink
-              className="nav-link"
+              className="nav-link nav-link-highlighter"
               activeClassName="active"
               to={"/retailer-summary"}
             >
               Retailer Summary
             </NavLink>
             <NavLink
-              className="nav-link"
+              className="nav-link nav-link-highlighter"
               activeClassName="active"
               to={"/product-summary"}
             >
@@ -51,7 +55,7 @@ const Header = () => {
               <NavDropdown
                 title="Admin"
                 id="basic-nav-dropdown"
-                className="navbar-chevron-down "
+                className="navbar-chevron-down  nav-link-highlighter"
               >
                 <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
