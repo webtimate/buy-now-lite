@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import CustomModal from "./Modal";
 import { PRODUCT_SUMMARY_SCREEN, productSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
+import DeleteModal from "./DeleteModal";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
@@ -24,6 +25,7 @@ function ProductSummary() {
   const [modalShow, setModalShow] = React.useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
+  const [confirmModalShow, setConfirmModalShow] = useState(false);
   const handleModal = (args) => {
     if (args.id === 1) {
       setModalShow(true);
@@ -136,7 +138,10 @@ function ProductSummary() {
                           onClick={() => setModalShow(true)}
                         ></i>
                       </div>
-                      <div className="pointer-cursor">
+                      <div
+                        className="pointer-cursor"
+                        onClick={() => setConfirmModalShow(true)}
+                      >
                         <i class="bi bi-trash3"></i>
                       </div>
                     </td>
@@ -202,6 +207,11 @@ function ProductSummary() {
         modalData={productSummaryData}
         screen={PRODUCT_SUMMARY_SCREEN}
         setText={setText}
+      />
+      <DeleteModal
+        modalTitle="DELETE CONFIRMATION"
+        show={confirmModalShow}
+        onHide={() => setConfirmModalShow(false)}
       />
     </div>
   );

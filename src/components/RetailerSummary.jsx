@@ -6,12 +6,31 @@ import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import OutlineButton from "./OutlineButton";
 import CustomModal from "./Modal";
-import { RETAILER_SUMMARY_SCREEN, retailSummaryData } from "../constant";
+import {
+  DROPDOWN,
+  GENERIC,
+  GLOBAL_RETAILER_MANAGEMENT,
+  RETAILER_SUMMARY_SCREEN,
+  retailSummaryData,
+} from "../constant";
 import withLayout from "../pages/Layout";
+import InputWithDropdown from "./InputWithDropdown";
+import { useLocation } from "react-router-dom";
+import DeleteModal from "./DeleteModal";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
   { id: 2, text: "Excel", iconText: "bi-upload" },
+];
+const globalManagementButtons = [
+  {
+    id: 1,
+    text: "Unblocked Retailer list",
+    iconText: "bi-plus-lg",
+    type: DROPDOWN,
+    link: "Unblocked Retailer list",
+  },
+  { id: 2, text: "Excel", iconText: "bi-upload", type: GENERIC },
 ];
 const tableData = [
   {
@@ -52,10 +71,15 @@ const tableData = [
   },
 ];
 
-function RetailerSummary() {
+function RetailerSummary(props) {
+  const location = useLocation();
+
+  console.log("props", location?.state?.navigatedFrom);
   const [modalShow, setModalShow] = useState(false);
+  const [confirmModalShow, setConfirmModalShow] = useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
+  const [inputWithMenuText, setInputWithMenuText] = useState("");
 
   const handleModal = (args) => {
     if (args.id === 1) {
@@ -68,21 +92,55 @@ function RetailerSummary() {
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}
-          <p className="table-title ">Retailer Summary</p>
+          <p className="table-title ">
+            {location?.state?.navigatedFrom === GLOBAL_RETAILER_MANAGEMENT
+              ? "Global Retailer Management"
+              : "Retailer Summary"}
+          </p>
           <div className="d-flex ">
             <SearchInputWithIcon />
-            {buttons.map((item) => (
-              <ButtonWithIcon
-                text={item.text}
-                iconName={item.iconText}
-                key={item.id}
-                onClick={() => handleModal(item)}
-              />
-            ))}
-            <OutlineButton
-              text={"Download as Excel"}
-              iconName={"bi-download"}
-            />
+            {location?.state?.navigatedFrom === GLOBAL_RETAILER_MANAGEMENT ? (
+              <>
+                {globalManagementButtons.map((item) => (
+                  <>
+                    {item.type === DROPDOWN ? (
+                      <div
+                        className="custom-dropdown "
+                        style={{ marginLeft: 5 }}
+                      >
+                        <InputWithDropdown
+                          text={inputWithMenuText}
+                          placeholderText={item.link}
+                          setTextValue={(text) => setInputWithMenuText(text)}
+                        />
+                      </div>
+                    ) : (
+                      <ButtonWithIcon
+                        text={item.text}
+                        iconName={item.iconText}
+                        key={item.id}
+                        onClick={() => handleModal(item)}
+                      />
+                    )}
+                  </>
+                ))}
+              </>
+            ) : (
+              <>
+                {buttons.map((item) => (
+                  <ButtonWithIcon
+                    text={item.text}
+                    iconName={item.iconText}
+                    key={item.id}
+                    onClick={() => handleModal(item)}
+                  />
+                ))}
+                <OutlineButton
+                  text={"Download as Excel"}
+                  iconName={"bi-download"}
+                />
+              </>
+            )}
           </div>
         </div>
         {/* profile summary bottom table section  */}
@@ -98,6 +156,7 @@ function RetailerSummary() {
                 />
               </th>
               <th className="table-head-spacing">Select all</th>
+
               <th>Status</th>
               <th onClick={() => setIsChevronDown(!isChevronDown)}>
                 <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
@@ -132,7 +191,10 @@ function RetailerSummary() {
                       onClick={() => setModalShow(true)}
                     ></i>
                   </div>
-                  <div className="pointer-cursor">
+                  <div
+                    className="pointer-cursor"
+                    onClick={() => setConfirmModalShow(true)}
+                  >
                     <i class="bi bi-trash3"></i>
                   </div>
                 </td>
@@ -180,6 +242,11 @@ function RetailerSummary() {
         screen={RETAILER_SUMMARY_SCREEN}
         text={text}
         setText={setText}
+      />
+      <DeleteModal
+        modalTitle="DELETE CONFIRMATION"
+        show={confirmModalShow}
+        onHide={() => setConfirmModalShow(false)}
       />
     </div>
   );
