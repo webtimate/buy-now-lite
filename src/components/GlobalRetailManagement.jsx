@@ -71,7 +71,7 @@ const tableData = [
   },
 ];
 
-function RetailerSummary(props) {
+function GlobalRetailManagement(props) {
   const location = useLocation();
 
   console.log("props", location?.state?.navigatedFrom);
@@ -92,23 +92,31 @@ function RetailerSummary(props) {
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}
-          <p className="table-title ">Retailer Summary</p>
+          <p className="table-title ">Global Retailer Management</p>
           <div className="d-flex ">
             <SearchInputWithIcon />
 
             <>
-              {buttons.map((item) => (
-                <ButtonWithIcon
-                  text={item.text}
-                  iconName={item.iconText}
-                  key={item.id}
-                  onClick={() => handleModal(item)}
-                />
+              {globalManagementButtons.map((item) => (
+                <>
+                  {item.type === DROPDOWN ? (
+                    <div className="custom-dropdown " style={{ marginLeft: 5 }}>
+                      <InputWithDropdown
+                        text={inputWithMenuText}
+                        placeholderText={item.link}
+                        setTextValue={(text) => setInputWithMenuText(text)}
+                      />
+                    </div>
+                  ) : (
+                    <ButtonWithIcon
+                      text={item.text}
+                      iconName={item.iconText}
+                      key={item.id}
+                      onClick={() => handleModal(item)}
+                    />
+                  )}
+                </>
               ))}
-              <OutlineButton
-                text={"Download as Excel"}
-                iconName={"bi-download"}
-              />
             </>
           </div>
         </div>
@@ -124,22 +132,19 @@ function RetailerSummary(props) {
                   className="initial-spacing-table"
                 />
               </th>
-              <th className="table-head-spacing">Select all</th>
-
-              <th>Status</th>
+              <th>Select all</th>
               <th onClick={() => setIsChevronDown(!isChevronDown)}>
                 <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
                   Retailer Name
                 </span>
               </th>
-              <th>Url</th>
+              <th>Retailer Url</th>
+              <th>Site</th>
               <th onClick={() => setIsChevronDown(!isChevronDown)}>
                 <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
                   logo
                 </span>
               </th>
-              <th>Created date</th>
-              <th>Last updated date</th>
             </tr>
           </thead>
           <tbody>
@@ -168,18 +173,10 @@ function RetailerSummary(props) {
                   </div>
                 </td>
                 <td>
-                  <div className="d-flex justify-content-center">
-                    <div
-                      className={
-                        item.isActive ? "active-circle" : "inActive-circle"
-                      }
-                    ></div>
-                  </div>
-                </td>
-                <td>
                   <b>Amazon</b>{" "}
                 </td>
                 <td>https://www.amazon.b.co.in/en-in</td>
+                <td></td>
                 <td className="text-center">
                   <div className="d-flex align-items-center">
                     <img
@@ -191,12 +188,6 @@ function RetailerSummary(props) {
                     />
                   </div>
                 </td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center">
-                    {item.createdDate}
-                  </div>
-                </td>
-                <td className="text-center">{item.lastUpdateDate}</td>
               </tr>
             ))}
           </tbody>
@@ -221,4 +212,4 @@ function RetailerSummary(props) {
   );
 }
 
-export default withLayout(RetailerSummary);
+export default withLayout(GlobalRetailManagement);

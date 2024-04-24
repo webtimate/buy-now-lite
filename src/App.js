@@ -4,13 +4,15 @@ import ProductSummary from "./components/ProductSummary";
 import RetailerSummary from "./components/RetailerSummary";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
+import GlobalRetailManagement from "./components/GlobalRetailManagement";
+import WebsiteManagement from "./components/WebsiteManagement";
 
 function App(props) {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Tables />} />
+          <Route path="/" element={<GlobalRetailManagement />} />
           <Route path="/buy-now-lite" element={<Tables />} />
           <Route path="/broken-links" element={<Tables />} />
           <Route
@@ -18,6 +20,7 @@ function App(props) {
             element={<RetailerSummary {...props} />}
           />
           <Route path="/product-summary" element={<ProductSummary />} />
+          <Route path="/website-management" element={<WebsiteManagement />} />
         </Routes>
       </BrowserRouter>
     </>

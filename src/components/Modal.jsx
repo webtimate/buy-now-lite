@@ -14,14 +14,11 @@ import {
   PRODUCT_SUMMARY_SCREEN,
   RETAILER_SUMMARY_SCREEN,
 } from "../constant";
-import OutlineButton from "./OutlineButton";
 import Form from "react-bootstrap/Form";
 import InputWithDropdown from "./InputWithDropdown";
 import ButtonWithIcon from "./ButtonWithIcon";
-import Input from "./Input";
 
 const CustomModal = (props) => {
-  const [selectedFile, setSelectedFile] = useState(null);
   const [inputWithMenuText, setInputWithMenuText] = useState("");
   const fileInputRef = useRef(null);
 
@@ -205,10 +202,20 @@ const CustomModal = (props) => {
             props.modalData.map((item, index) => (
               <div className="modal-spacing" key={index}>
                 <Row className="mt-3 d-flex align-items-baseline">
-                  <Col xs={12} md={3}>
+                  <Col
+                    xs={2}
+                    md={
+                      props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN ? 1 : 3
+                    }
+                  >
                     <p className="modal-body-text">{item.title}</p>
                   </Col>
-                  <Col xs={6} md={9}>
+                  <Col
+                    xs={10}
+                    md={
+                      props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN ? 11 : 9
+                    }
+                  >
                     {renderDynamicContent(item)}
                   </Col>
                 </Row>

@@ -78,22 +78,22 @@ const Header = () => {
                 >
                   <NavDropdown.Item
                     href="#action/3.1"
-                    className="mt-1"
+                    className="mt-2"
                     onClick={() => setModalShow(true)}
                   >
                     External User Management
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="#action/3.2"
-                    className="mt-1"
+                    className="mt-2"
                     onClick={() => setUserManageModalShow(true)}
                   >
                     User Management
                   </NavDropdown.Item>
-                  <NavDropdown.Item className="mt-1" onClick={handleClick}>
+                  <NavDropdown.Item className="mt-2" onClick={handleClick}>
                     Global Retailer Management
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" className="mt-1">
+                  <NavDropdown.Item href="#action/3.2" className="mt-2">
                     Website Management
                   </NavDropdown.Item>
                 </NavDropdown>
