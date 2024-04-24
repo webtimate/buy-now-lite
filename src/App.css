@@ -1,39 +1,56 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-/* navbar css  */
+
+/* navbar  or header css  */
 .navbar {
   height: 80px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
   background-color: #fff;
 }
 
+/* global css  */
+p h6 {
+  padding: 0px !important;
+}
+
 nav > link {
   font-size: 16px !important;
   color: rgba(25, 29, 63, 1) !important;
 }
+
 .nav-link.active {
   font-size: 16px;
   font-weight: 700;
+  display: flex;
 }
+
 .navbar .nav-link {
   position: relative;
   color: #191d3f;
+  display: flex;
+  align-items: center;
 }
+
 .chevron-down,
 .navbar-chevron-down,
 .chevron-up {
   position: relative;
-  padding-right: 20px; /* Adjust the padding as needed */
+  padding-right: 20px;
+  /* Adjust the padding as needed */
   cursor: pointer;
 }
+
 .chevron-up::after {
   content: "";
   position: absolute;
   top: 58%;
   right: 0;
   transform: translateY(-50%) rotate(180deg);
-  width: 16px; /* Adjust the width as needed */
-  height: 8px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  width: 16px;
+  /* Adjust the width as needed */
+  height: 8px;
+  /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png");
+  /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -48,8 +65,10 @@ nav > link {
   transform: translateX(-50%);
   width: 100%;
 }
+
 .navbar-chevron-down {
-  padding-right: 10px; /* Adjust the padding as needed */
+  padding-right: 10px;
+  /* Adjust the padding as needed */
   cursor: pointer;
 }
 
@@ -59,24 +78,32 @@ nav > link {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  width: 12px;
+  /* Adjust the width as needed */
+  height: 6px;
+  /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png");
+  /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .navbar-pills-chevron-down {
   cursor: pointer;
 }
+
 .navbar-pills-chevron-down::after {
   content: "";
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  width: 12px; /* Adjust the width as needed */
-  height: 6px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  width: 12px;
+  /* Adjust the width as needed */
+  height: 6px;
+  /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png");
+  /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -147,6 +174,7 @@ tbody tr td:last-child {
 .bi-pencil-fill {
   color: #6b6b6b;
 }
+
 tbody > tr:nth-child(odd) > td,
 tbody > tr:nth-child(odd) > th {
   background-color: #ffffff;
@@ -168,15 +196,18 @@ tbody > tr:nth-child(even) > th {
   background-color: #191d3f;
   height: 40px;
   border-radius: 40px;
-  width: 120px;
+  min-width: 120px;
+  max-width: fit-content;
   border: none;
   color: #fff;
 }
+
 .btn-container .submit-btn:hover {
   background-color: #191d3f;
   height: 40px;
   border-radius: 40px;
-  width: 120px;
+  min-width: 120px;
+  max-width: fit-content;
   border: none;
 }
 
@@ -197,6 +228,7 @@ tbody > tr:nth-child(even) > th {
   color: #004fc6;
   margin-left: 22px;
 }
+
 .modal-title {
   font-size: 20px;
   font-weight: 700;
@@ -204,20 +236,24 @@ tbody > tr:nth-child(even) > th {
   color: #191d3f;
   font-weight: bold;
 }
+
 .bi .bi-x {
   height: 10px;
   width: 10px;
   color: #6b6b6b;
 }
+
 .modal-header-container {
   background-color: rgba(239, 239, 239, 1);
 }
+
 .modal-body-text {
   font-size: 16px;
   font-weight: 600;
   line-height: 19.2px;
   color: #000000;
 }
+
 .modal-body-url {
   font-size: 16px;
   font-weight: 400;
@@ -231,15 +267,34 @@ tbody > tr:nth-child(even) > th {
   top: 58%;
   right: 0;
   transform: translateY(-50%);
-  width: 16px; /* Adjust the width as needed */
-  height: 8px; /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png"); /* Replace with your SVG file path */
+  width: 16px;
+  /* Adjust the width as needed */
+  height: 8px;
+  /* Adjust the height as needed */
+  background-image: url("./assets//images/downChevron.png");
+  /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .reset-default-chevron .dropdown-toggle::after {
   display: none !important;
 }
+.navbar-chevron-down .dropdown-item:hover {
+  background-color: transparent;
+}
+
+.reset-default-chevron .dropdown-menu.show {
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  border: none;
+  z-index: 999;
+  margin-top: 8px;
+  transform: translateX(-30%);
+}
+
 /* footer css  */
 .custom-footer {
   background-color: #009fe3;
@@ -248,11 +303,13 @@ tbody > tr:nth-child(even) > th {
   align-items: center;
   width: 100%;
 }
+
 /* navbar text input css  */
 .custom-input {
   width: 181px;
   margin-left: 30px;
 }
+
 .custom-input
   .input-group:not(.has-validation)
   > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
@@ -265,6 +322,7 @@ tbody > tr:nth-child(even) > th {
   font-size: 14px;
   height: 30px;
 }
+
 /* input toggle drop menu  */
 .custom-input
   .input-group
@@ -277,6 +335,7 @@ tbody > tr:nth-child(even) > th {
   border: none;
   height: 30px;
 }
+
 .custom-input .form-control:focus {
   box-shadow: none;
 }
@@ -297,9 +356,11 @@ tbody > tr:nth-child(even) > th {
   border: none;
   padding: 12px 12px 12px 25px;
 }
+
 .custom-text-input .form-control:focus {
   box-shadow: none;
 }
+
 .custom-text-input input {
   font-size: 16px;
   font-weight: 400;
@@ -323,14 +384,17 @@ button:not(:disabled) {
   height: 40px;
   font-weight: 400;
 }
+
 .icon-style {
   margin-right: 7px;
   font-size: 20px;
 }
+
 /* search bar input with icon css */
 .search-input-wrapper {
   width: 300px;
 }
+
 .search-input-wrapper .input-group {
   height: 40px;
 }
@@ -345,6 +409,7 @@ button:not(:disabled) {
   border-bottom-right-radius: 20px;
   border: none;
 }
+
 .search-input-wrapper
   .input-group:not(.has-validation)
   > .dropdown-toggle:nth-last-child(n + 3),
@@ -367,6 +432,7 @@ button:not(:disabled) {
 .search-input-wrapper .form-control:focus {
   box-shadow: none;
 }
+
 .search-input-wrapper .btn-check:checked + .btn,
 .btn.active,
 .btn.show,
@@ -376,14 +442,19 @@ button:not(:disabled) {
   color: #191d3f !important;
   border-color: transparent !important;
 }
+
 .horizontal-scroll-container {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* Disable vertical scrolling */
-  white-space: nowrap; /* Prevent table rows from wrapping */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  overflow-y: hidden;
+  /* Disable vertical scrolling */
+  white-space: nowrap;
+  /* Prevent table rows from wrapping */
 }
 
 .horizontal-scroll-container::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar for WebKit browsers */
+  display: none;
+  /* Hide the scrollbar for WebKit browsers */
 }
 
 .active-circle {
@@ -392,12 +463,14 @@ button:not(:disabled) {
   border-radius: 50%;
   background-color: #13c803;
 }
+
 .inActive-circle {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #c5c5c5;
 }
+
 .image-spacing {
   margin-left: 10px;
 }
@@ -418,9 +491,11 @@ button:not(:disabled) {
   height: 40px;
   font-weight: 400;
 }
+
 .custom-table .table-head-spacing {
   padding-left: 0px !important;
 }
+
 .modal-upload-file-title {
   text-decoration: underline;
   font-size: 16px;
@@ -428,11 +503,13 @@ button:not(:disabled) {
   color: #000;
   line-height: 19.2px;
 }
+
 /* product summary section css  */
 .custom-dropdown .btn {
   box-shadow: none;
   color: transparent;
 }
+
 .custom-dropdown
   .input-group
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
@@ -445,14 +522,17 @@ button:not(:disabled) {
   display: flex;
   align-items: center;
 }
+
 .custom-dropdown .form-control:focus {
   box-shadow: none;
 }
+
 /* to  make dropdown menu invisible */
 .custom-dropdown .btn {
   box-shadow: none;
   color: transparent;
 }
+
 .custom-dropdown .dropdown-toggle::after {
   display: none;
   color: transparent;
@@ -461,28 +541,33 @@ button:not(:disabled) {
 .initial-spacing-table {
   margin-left: 15px;
 }
+
 .pointer-cursor {
   cursor: pointer;
 }
+
 .main-container {
   width: 100%;
   min-height: 100vh;
 }
 
 .file-upload-button {
-  display: flex; /* Allow button and input to align horizontally */
+  display: flex;
+  /* Allow button and input to align horizontally */
   align-items: center;
   justify-content: center;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out; /* Add hover effect (optional) */
+  transition: background-color 0.2s ease-in-out;
+  /* Add hover effect (optional) */
 }
 
 /* dashboard css  */
 .wrapper {
   background-color: #f2f6f8;
 }
+
 .count-card {
   display: flex;
   align-items: center;
@@ -492,12 +577,117 @@ button:not(:disabled) {
   border: 2px rgb(43, 87, 243, 1);
   margin: 0px 5px;
 }
+
 .count-card > div {
- /* padding-left: 10px; */
+  padding-left: 10px;
 }
+
 /* product insight title  */
 .product-insight-title {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
 }
+
+.nav-link-highlighter {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+/* admin section css  */
+/* user management modal css  */
+.modal-text-area-container {
+  border: 1px solid #c5c5c5;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.chip-container {
+  display: flex;
+  background-color: #efefef;
+  padding: 6px 15px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: 5px;
+  gap: 10px;
+}
+
+.action-btn-container button:not(:disabled) {
+  background-color: #efefef;
+  border: none;
+  padding: 5px 20px;
+  height: 34px;
+  font-size: 14px;
+}
+
+.action-btn-container .btn:hover {
+  color: #191d3f;
+}
+
+/* confirm modal css  */
+.confirm-modal-title {
+  font-size: 20px;
+  color: #191d3f;
+  font-weight: 700;
+}
+
+.confirm-modal-subtitle {
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+}
+
+.warning-container {
+  background-color: #ffe7e7;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.notification-count {
+  position: absolute;
+  color: #fff;
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  background-color: #eb1e25;
+  transform: translateY(60%) translateX(-100%);
+  font-size: 7px;
+  text-align: center;
+}
+
+.table-custom-btn {
+  display: flex;
+  background-color: #efefef;
+  padding: 6px 15px;
+  border-radius: 20px;
+  min-width: 140px;
+  max-width: fit-content;
+  justify-content: center;
+}
+/* chip section css inside modal  */
+.modal-text-area-container .styles_shadow-primary__2LDux {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+}
+.modal-text-area-container .border {
+  border: none !important;
+}
+.modal-text-area-container .styles_chip-input__3aumB .styles_chip__i-PT7 {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  padding: 6px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: 5px;
+  gap: 10px;
+  border: none;
+  height: 34px;
+}
+.modal-text-area-container .styles_chip-input__3aumB .styles_chip__i-PT7 svg {
+  margin-top: 0px;
+}
+/* chip section css inside modal  */

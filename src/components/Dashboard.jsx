@@ -1,33 +1,51 @@
 import React from "react";
 import withLayout from "../pages/Layout";
-import ButtonWithIcon from "./ButtonWithIcon";
-import { Container } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import CountCard from "./CountCard";
+import OutlineButton from "./OutlineButton";
+import ProductInsight from "./ProductInsight";
+import Row from "react-bootstrap/Row";
 
 const miniCardsData = [
-  { id: 1, url: "", title: "Total Websites", count: 24 },
-  { id: 2, url: "", title: "Total Products", count: 144 },
-  { id: 3, url: "", title: "Number of broken links", count: 412 },
+  {
+    id: 1,
+    url: require("../assets/images/tw.png"),
+    title: "Total Websites",
+    count: 24,
+  },
+  {
+    id: 2,
+    url: require("../assets/images/tp.png"),
+    title: "Total Products",
+    count: 144,
+  },
+  {
+    id: 3,
+    url: require("../assets/images/nbl.png"),
+    title: "Number of broken links",
+    count: 412,
+  },
 ];
 
 function Dashboard() {
   return (
-    <div className="main-container">
-      <Container className="mt-4 mb-4">
+    <div className="main-container wrapper">
+      <Container className="pt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           <p className="table-title ">Retailer Summary</p>
-          <ButtonWithIcon
-            text={"Download as Excel"}
-            iconName={"bi-download"}
-            onClick={() => {}}
-          />
+
+          <OutlineButton text={"Download as Excel"} iconName={"bi-download"} />
         </div>
         {/* card section  */}
-        <div className="d-flex  align-items-center justify-content-between mt-3">
+        <Row className="mt-3 d-flex">
           {miniCardsData.map((item, index) => (
-            <CountCard key={item.id} item={item} />
+            <Col key={index} xs={12} sm={4} className="bg-white count-card">
+              <CountCard item={item} />
+            </Col>
           ))}
-        </div>
+        </Row>
+        {/* product insight  */}
+        <ProductInsight />
       </Container>
     </div>
   );

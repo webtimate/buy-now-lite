@@ -9,17 +9,16 @@ import {
   CHECKBOX,
   DROPDOWN,
   DROPDOWN_WITH_BTN,
+  EXTERNAL_USER_MANAGEMENT_SCREEN,
   FILE_UPLOAD,
   PRODUCT_SUMMARY_SCREEN,
   RETAILER_SUMMARY_SCREEN,
 } from "../constant";
-import OutlineButton from "./OutlineButton";
 import Form from "react-bootstrap/Form";
 import InputWithDropdown from "./InputWithDropdown";
 import ButtonWithIcon from "./ButtonWithIcon";
 
 const CustomModal = (props) => {
-  const [selectedFile, setSelectedFile] = useState(null);
   const [inputWithMenuText, setInputWithMenuText] = useState("");
   const fileInputRef = useRef(null);
 
@@ -113,6 +112,25 @@ const CustomModal = (props) => {
             />
           );
       }
+    } else if (props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN) {
+      return (
+        <div className="admin-modal-container d-flex align-item-center mb-4 gap-2 ">
+          <Col xs={6} md={9}>
+            <TextInput
+              placeholder={item.link}
+              text={props.text}
+              setText={props.setText}
+            />
+          </Col>
+          <Col xs={6} md={3}>
+            <div className="btn-container ">
+              <Button className="submit-btn ">
+                {renderDynamicBtnTitle().submitBtn}
+              </Button>
+            </div>
+          </Col>
+        </div>
+      );
     } else {
       switch (item.type) {
         case "INFO":
@@ -171,7 +189,7 @@ const CustomModal = (props) => {
             >
               {props.modalTitle}
             </Modal.Title>
-            <div className="fs-6" onClick={() => props.onHide()}>
+            <div className="fs-6 pointer-cursor" onClick={() => props.onHide()}>
               <i class="bi bi-x-lg"></i>
             </div>
           </div>
@@ -179,32 +197,47 @@ const CustomModal = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Container>
-          {props.modalData.map((item, index) => (
-            <div className="modal-spacing" key={index}>
-              <Row className="mt-3 d-flex align-items-baseline">
-                <Col xs={12} md={3}>
-                  <p className="modal-body-text">{item.title}</p>
-                </Col>
-                <Col xs={6} md={9}>
-                  {renderDynamicContent(item)}
-                </Col>
-              </Row>
+          {props.modalData &&
+            props.modalData.length > 0 &&
+            props.modalData.map((item, index) => (
+              <div className="modal-spacing" key={index}>
+                <Row className="mt-3 d-flex align-items-baseline">
+                  <Col
+                    xs={2}
+                    md={
+                      props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN ? 1 : 3
+                    }
+                  >
+                    <p className="modal-body-text">{item.title}</p>
+                  </Col>
+                  <Col
+                    xs={10}
+                    md={
+                      props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN ? 11 : 9
+                    }
+                  >
+                    {renderDynamicContent(item)}
+                  </Col>
+                </Row>
+              </div>
+            ))}
+          {/* submit button layout is diff for admin cases so hiding buttons */}
+          {props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN ? (
+            ""
+          ) : (
+            <div className="d-flex align-item-center justify-content-center btn-container mt-3 mb-4">
+              <Button className="submit-btn">
+                {renderDynamicBtnTitle().submitBtn}
+              </Button>
+              <Button
+                variant="Link"
+                className="close-btn"
+                onClick={() => props.onHide()}
+              >
+                {renderDynamicBtnTitle().closeBtn}
+              </Button>
             </div>
-          ))}
-
-          {}
-          <div className="d-flex align-item-center justify-content-center btn-container mt-3 mb-4">
-            <Button className="submit-btn">
-              {renderDynamicBtnTitle().submitBtn}
-            </Button>
-            <Button
-              variant="Link"
-              className="close-btn"
-              onClick={() => props.onHide()}
-            >
-              {renderDynamicBtnTitle().closeBtn}
-            </Button>
-          </div>
+          )}
         </Container>
       </Modal.Body>
     </Modal>

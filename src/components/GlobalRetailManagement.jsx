@@ -4,7 +4,6 @@ import { Container } from "react-bootstrap";
 import SearchInputWithIcon from "./SearchInputWithIcon";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
-import OutlineButton from "./OutlineButton";
 import CustomModal from "./Modal";
 import {
   DROPDOWN,
@@ -71,7 +70,7 @@ const tableData = [
   },
 ];
 
-function RetailerSummary(props) {
+function GlobalRetailManagement(props) {
   const location = useLocation();
 
   console.log("props", location?.state?.navigatedFrom);
@@ -92,23 +91,31 @@ function RetailerSummary(props) {
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}
-          <p className="table-title ">Retailer Summary</p>
+          <p className="table-title ">Global Retailer Management</p>
           <div className="d-flex ">
             <SearchInputWithIcon />
 
             <>
-              {buttons.map((item) => (
-                <ButtonWithIcon
-                  text={item.text}
-                  iconName={item.iconText}
-                  key={item.id}
-                  onClick={() => handleModal(item)}
-                />
+              {globalManagementButtons.map((item) => (
+                <>
+                  {item.type === DROPDOWN ? (
+                    <div className="custom-dropdown " style={{ marginLeft: 5 }}>
+                      <InputWithDropdown
+                        text={inputWithMenuText}
+                        placeholderText={item.link}
+                        setTextValue={(text) => setInputWithMenuText(text)}
+                      />
+                    </div>
+                  ) : (
+                    <ButtonWithIcon
+                      text={item.text}
+                      iconName={item.iconText}
+                      key={item.id}
+                      onClick={() => handleModal(item)}
+                    />
+                  )}
+                </>
               ))}
-              <OutlineButton
-                text={"Download as Excel"}
-                iconName={"bi-download"}
-              />
             </>
           </div>
         </div>
@@ -121,39 +128,32 @@ function RetailerSummary(props) {
                   type="checkbox"
                   id={`default-checkbox`}
                   label={""}
-                  className="initial-spacing-table"
+                  className={
+                    "initial-spacing-table d-flex  justify-content-center"
+                  }
                 />
               </th>
-              <th className="table-head-spacing">Select all</th>
-
-              <th>Status</th>
-              <th onClick={() => setIsChevronDown(!isChevronDown)}>
-                <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
-                  Retailer Name
-                </span>
-              </th>
-              <th>Url</th>
-              <th onClick={() => setIsChevronDown(!isChevronDown)}>
-                <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
-                  logo
-                </span>
-              </th>
-              <th>Created date</th>
-              <th>Last updated date</th>
+              <th>Select all</th>
+              <th>Retailer Name</th>
+              <th>Retailer Url</th>
+              <th>Site</th>
+              <th>logo</th>
             </tr>
           </thead>
           <tbody>
             {tableData.map((item, index) => (
               <tr className="custom-tr" key={item.id}>
-                <td className="text-center ">
+                <td className="">
                   <Form.Check // prettier-ignore
                     type="checkbox"
                     id={`default-checkbox`}
                     label={""}
-                    className={"initial-spacing-table"}
+                    className={
+                      "initial-spacing-table d-flex  justify-content-center"
+                    }
                   />
                 </td>
-                <td className="d-flex justify-content-around table-head-spacing">
+                <td className="d-flex   gap-4 ">
                   <div className="pointer-cursor">
                     <i
                       class="bi bi-pencil-fill"
@@ -168,18 +168,10 @@ function RetailerSummary(props) {
                   </div>
                 </td>
                 <td>
-                  <div className="d-flex justify-content-center">
-                    <div
-                      className={
-                        item.isActive ? "active-circle" : "inActive-circle"
-                      }
-                    ></div>
-                  </div>
-                </td>
-                <td>
                   <b>Amazon</b>{" "}
                 </td>
-                <td>https://www.amazon.b.co.in/en-in</td>
+                <td>{item.url}</td>
+                <td>{item.id === 1 && item.url} </td>
                 <td className="text-center">
                   <div className="d-flex align-items-center">
                     <img
@@ -191,12 +183,6 @@ function RetailerSummary(props) {
                     />
                   </div>
                 </td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center">
-                    {item.createdDate}
-                  </div>
-                </td>
-                <td className="text-center">{item.lastUpdateDate}</td>
               </tr>
             ))}
           </tbody>
@@ -221,4 +207,4 @@ function RetailerSummary(props) {
   );
 }
 
-export default withLayout(RetailerSummary);
+export default withLayout(GlobalRetailManagement);
