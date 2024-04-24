@@ -7,8 +7,6 @@ export const CHIPS = "CHIPS";
 export const GLOBAL_RETAILER_MANAGEMENT = "GLOBAL_RETAILER_MANAGEMENT";
 export const GENERIC = "GENERIC";
 
-
-
 // screen constants
 export const TABLE_SCREEN = "TABLE_SCREEN";
 export const RETAILER_SUMMARY_SCREEN = "RETAILER_SUMMARY_SCREEN";
@@ -38,7 +36,7 @@ export const userManagementData = [
     title: "Users",
     link: "Enter Email id",
     type: CHIPS,
-    chips: ["alex.xavior@mindtree.com", "pratik.jha3@mindtree.com"],
+    chips: ["alex.xavior@mindtree.com"],
     manageButtons: false,
   },
 ];

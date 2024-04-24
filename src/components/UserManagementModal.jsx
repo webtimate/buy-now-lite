@@ -22,11 +22,23 @@ import ButtonWithIcon from "./ButtonWithIcon";
 import Input from "./Input";
 import Chips from "./Chips";
 import ActionButton from "./ActionButton";
+import ReactChipInput from "react-chip-input";
 
 const UserManagementModal = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [inputWithMenuText, setInputWithMenuText] = useState("");
   const fileInputRef = useRef(null);
+  const [chips, setChips] = useState([]);
+
+  const addChip = (value) => {
+    setChips([...chips, value]); // Add new chip using spread operator
+  };
+
+  const removeChip = (index) => {
+    const updatedChips = [...chips]; // Create a copy using spread operator
+    updatedChips.splice(index, 1); // Remove chip at the specified index
+    setChips(updatedChips);
+  };
 
   const handleClick = () => {
     fileInputRef.current.click();
@@ -54,10 +66,11 @@ const UserManagementModal = (props) => {
                     key={chip.id}
                     className={item.chips.length > 1 && "mb-3"}
                   >
-                    <Chips
-                      title={chip}
-                      iconName={`bi-x-lg`}
-                      chipAction={() => {}}
+                    <ReactChipInput
+                      classes="class1 class2"
+                      chips={chips}
+                      onSubmit={addChip}
+                      onRemove={removeChip}
                     />
                   </div>
                 ))}

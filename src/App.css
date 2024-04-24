@@ -12,7 +12,7 @@ p h6 {
   padding: 0px !important;
 }
 
-nav>link {
+nav > link {
   font-size: 16px !important;
   color: rgba(25, 29, 63, 1) !important;
 }
@@ -175,13 +175,13 @@ tbody tr td:last-child {
   color: #6b6b6b;
 }
 
-tbody>tr:nth-child(odd)>td,
-tbody>tr:nth-child(odd)>th {
+tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
   background-color: #ffffff;
 }
 
-tbody>tr:nth-child(even)>td,
-tbody>tr:nth-child(even)>th {
+tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
   background-color: #f9f9f9;
 }
 
@@ -280,6 +280,9 @@ tbody>tr:nth-child(even)>th {
 .reset-default-chevron .dropdown-toggle::after {
   display: none !important;
 }
+.navbar-chevron-down .dropdown-item:hover {
+  background-color: transparent;
+}
 
 .reset-default-chevron .dropdown-menu.show {
   background-color: #fff;
@@ -307,7 +310,11 @@ tbody>tr:nth-child(even)>th {
   margin-left: 30px;
 }
 
-.custom-input .input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.custom-input
+  .input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #efefef;
@@ -317,7 +324,11 @@ tbody>tr:nth-child(even)>th {
 }
 
 /* input toggle drop menu  */
-.custom-input .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.custom-input
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #efefef;
@@ -339,7 +350,7 @@ tbody>tr:nth-child(even)>th {
   color: transparent;
 }
 
-.custom-text-input .input-group>.form-control {
+.custom-text-input .input-group > .form-control {
   border-radius: 20px;
   background-color: #f9f9f9;
   border: none;
@@ -388,17 +399,30 @@ button:not(:disabled) {
   height: 40px;
 }
 
-.search-input-wrapper .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.search-input-wrapper
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   background-color: #efefef;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: none;
 }
 
-.search-input-wrapper .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n + 3),
-.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
-.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,
-.input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.search-input-wrapper
+  .input-group:not(.has-validation)
+  > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-control,
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-select,
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
   background-color: #efefef;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -409,11 +433,11 @@ button:not(:disabled) {
   box-shadow: none;
 }
 
-.search-input-wrapper .btn-check:checked+.btn,
+.search-input-wrapper .btn-check:checked + .btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
-:not(.btn-check)+.btn:active {
+:not(.btn-check) + .btn:active {
   background-color: #efefef !important;
   color: #191d3f !important;
   border-color: transparent !important;
@@ -486,7 +510,11 @@ button:not(:disabled) {
   color: transparent;
 }
 
-.custom-dropdown .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.custom-dropdown
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #efefef;
@@ -550,7 +578,7 @@ button:not(:disabled) {
   margin: 0px 5px;
 }
 
-.count-card>div {
+.count-card > div {
   padding-left: 10px;
 }
 
@@ -637,3 +665,29 @@ button:not(:disabled) {
   max-width: fit-content;
   justify-content: center;
 }
+/* chip section css inside modal  */
+.modal-text-area-container .styles_shadow-primary__2LDux {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+}
+.modal-text-area-container .border {
+  border: none !important;
+}
+.modal-text-area-container .styles_chip-input__3aumB .styles_chip__i-PT7 {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  padding: 6px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: 5px;
+  gap: 10px;
+  border: none;
+  height: 34px;
+}
+.modal-text-area-container .styles_chip-input__3aumB .styles_chip__i-PT7 svg {
+  margin-top: 0px;
+}
+/* chip section css inside modal  */

@@ -21,11 +21,6 @@ const Header = () => {
   const [text, setText] = useState("");
   const [notificationCount, setNotificationCount] = useState(1);
 
-  const handleClick = () => {
-    navigate("/retailer-summary", {
-      state: { navigatedFrom: GLOBAL_RETAILER_MANAGEMENT },
-    });
-  };
   return (
     <>
       <Navbar bg="#FFFFFF" expand="lg" className="navbar" sticky="top">
@@ -77,23 +72,27 @@ const Header = () => {
                   className="navbar-chevron-down  nav-link-highlighter"
                 >
                   <NavDropdown.Item
-                    href="#action/3.1"
                     className="mt-2"
                     onClick={() => setModalShow(true)}
                   >
                     External User Management
                   </NavDropdown.Item>
                   <NavDropdown.Item
-                    href="#action/3.2"
                     className="mt-2"
                     onClick={() => setUserManageModalShow(true)}
                   >
                     User Management
                   </NavDropdown.Item>
-                  <NavDropdown.Item className="mt-2" onClick={handleClick}>
+                  <NavDropdown.Item
+                    className="mt-2"
+                    onClick={() => navigate("/global-retailer-management")}
+                  >
                     Global Retailer Management
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" className="mt-2">
+                  <NavDropdown.Item
+                    className="mt-2"
+                    onClick={() => navigate("/website-management")}
+                  >
                     Website Management
                   </NavDropdown.Item>
                 </NavDropdown>

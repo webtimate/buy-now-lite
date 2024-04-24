@@ -171,7 +171,9 @@ function WebsiteManagement(props) {
                             }}
                           />
                         </div>
-                        <div>Activated</div>
+                        <div>
+                          {item.isActivated ? "Activated" : "DeActivated"}
+                        </div>
                       </div>
                     </div>
                   </div>

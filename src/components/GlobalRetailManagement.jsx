@@ -4,7 +4,6 @@ import { Container } from "react-bootstrap";
 import SearchInputWithIcon from "./SearchInputWithIcon";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
-import OutlineButton from "./OutlineButton";
 import CustomModal from "./Modal";
 import {
   DROPDOWN,
@@ -129,7 +128,9 @@ function GlobalRetailManagement(props) {
                   type="checkbox"
                   id={`default-checkbox`}
                   label={""}
-                  className="initial-spacing-table"
+                  className={
+                    "initial-spacing-table d-flex  justify-content-center"
+                  }
                 />
               </th>
               <th>Select all</th>
@@ -150,15 +151,17 @@ function GlobalRetailManagement(props) {
           <tbody>
             {tableData.map((item, index) => (
               <tr className="custom-tr" key={item.id}>
-                <td className="text-center ">
+                <td className="">
                   <Form.Check // prettier-ignore
                     type="checkbox"
                     id={`default-checkbox`}
                     label={""}
-                    className={"initial-spacing-table"}
+                    className={
+                      "initial-spacing-table d-flex  justify-content-center"
+                    }
                   />
                 </td>
-                <td className="d-flex justify-content-around table-head-spacing">
+                <td className="d-flex   gap-4 ">
                   <div className="pointer-cursor">
                     <i
                       class="bi bi-pencil-fill"
@@ -176,7 +179,7 @@ function GlobalRetailManagement(props) {
                   <b>Amazon</b>{" "}
                 </td>
                 <td>https://www.amazon.b.co.in/en-in</td>
-                <td></td>
+                <td>{`      `} </td>
                 <td className="text-center">
                   <div className="d-flex align-items-center">
                     <img
