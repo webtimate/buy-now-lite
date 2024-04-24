@@ -104,7 +104,7 @@ const Header = () => {
                 setTextValue={setNavAutoFillText}
               />
               <Nav.Link>
-                <div className="d-flex align-items-center image-spacing">
+                <div className="d-flex align-items-center notification-icon-spacing">
                   <span style={{ fontSize: 23, position: "relative" }}>
                     <i class="bi bi-bell" />
                     {notificationCount > 0 && (

@@ -128,7 +128,7 @@ function WebsiteManagement(props) {
               <th className="text-center ">
                 <div className={"initial-spacing-table"}>Edit</div>
               </th>
-              <th>Brand</th>
+              <th className={"text-center"}>Brand</th>
               <th>Retailer Url</th>
               <th>Locale</th>
               <th>Passkey</th>
@@ -146,7 +146,7 @@ function WebsiteManagement(props) {
                     ></i>
                   </div>
                 </td>
-                <td className="">
+                <td className="text-center">
                   <div>
                     <b>{item.brand}</b>
                   </div>

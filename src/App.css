@@ -691,3 +691,6 @@ button:not(:disabled) {
   margin-top: 0px;
 }
 /* chip section css inside modal  */
+.notification-icon-spacing{
+  margin-left: 25px;
+}
