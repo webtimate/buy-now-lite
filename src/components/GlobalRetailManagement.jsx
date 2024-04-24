@@ -134,18 +134,10 @@ function GlobalRetailManagement(props) {
                 />
               </th>
               <th>Select all</th>
-              <th onClick={() => setIsChevronDown(!isChevronDown)}>
-                <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
-                  Retailer Name
-                </span>
-              </th>
+              <th>Retailer Name</th>
               <th>Retailer Url</th>
               <th>Site</th>
-              <th onClick={() => setIsChevronDown(!isChevronDown)}>
-                <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
-                  logo
-                </span>
-              </th>
+              <th>logo</th>
             </tr>
           </thead>
           <tbody>
@@ -178,8 +170,8 @@ function GlobalRetailManagement(props) {
                 <td>
                   <b>Amazon</b>{" "}
                 </td>
-                <td>https://www.amazon.b.co.in/en-in</td>
-                <td>{`      `} </td>
+                <td>{item.url}</td>
+                <td>{item.id === 1 && item.url} </td>
                 <td className="text-center">
                   <div className="d-flex align-items-center">
                     <img

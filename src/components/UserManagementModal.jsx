@@ -145,10 +145,10 @@ const UserManagementModal = (props) => {
             props.modalData.map((item, index) => (
               <div className="modal-spacing" key={index}>
                 <Row className="mt-3 d-flex align-items-baseline">
-                  <Col xs={12} md={3}>
+                  <Col xs={12} md={2}>
                     <p className="modal-body-text">{item.title}</p>
                   </Col>
-                  <Col xs={6} md={9}>
+                  <Col xs={6} md={10}>
                     {renderDynamicContent(item)}
                   </Col>
                 </Row>

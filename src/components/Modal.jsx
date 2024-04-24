@@ -114,7 +114,7 @@ const CustomModal = (props) => {
       }
     } else if (props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN) {
       return (
-        <div className="admin-modal-container d-flex align-item-center mb-4  ">
+        <div className="admin-modal-container d-flex align-item-center mb-4 gap-2 ">
           <Col xs={6} md={9}>
             <TextInput
               placeholder={item.link}
@@ -124,7 +124,7 @@ const CustomModal = (props) => {
           </Col>
           <Col xs={6} md={3}>
             <div className="btn-container ">
-              <Button className="submit-btn">
+              <Button className="submit-btn ">
                 {renderDynamicBtnTitle().submitBtn}
               </Button>
             </div>

@@ -36,7 +36,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="m-auto ml-3">
+            <Nav className="m-auto ">
               <NavLink
                 className="custom-nav-link nav-link nav-link-highlighter"
                 activeClassName="active"
@@ -104,7 +104,7 @@ const Header = () => {
                 setTextValue={setNavAutoFillText}
               />
               <Nav.Link>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center image-spacing">
                   <span style={{ fontSize: 23, position: "relative" }}>
                     <i class="bi bi-bell" />
                     {notificationCount > 0 && (

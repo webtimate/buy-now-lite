@@ -132,7 +132,7 @@ function WebsiteManagement(props) {
               <th>Retailer Url</th>
               <th>Locale</th>
               <th>Passkey</th>
-              <th>Actions</th>
+              <th className="text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -154,8 +154,8 @@ function WebsiteManagement(props) {
                 <td>{item.url}</td>
                 <td>{item.locale}</td>
                 <td>{item.passkey}</td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center gap-3">
+                <td>
+                  <div className="d-flex align-items-center justify-content-center gap-3">
                     <div className="table-custom-btn ">
                       <div>Generate</div>
                     </div>
