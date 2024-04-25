@@ -11,12 +11,14 @@ import {
   DROPDOWN_WITH_BTN,
   EXTERNAL_USER_MANAGEMENT_SCREEN,
   FILE_UPLOAD,
+  options,
   PRODUCT_SUMMARY_SCREEN,
   RETAILER_SUMMARY_SCREEN,
 } from "../constant";
 import Form from "react-bootstrap/Form";
 import InputWithDropdown from "./InputWithDropdown";
 import ButtonWithIcon from "./ButtonWithIcon";
+import SearchInput from "./SearchInput";
 
 const CustomModal = (props) => {
   const [inputWithMenuText, setInputWithMenuText] = useState("");
@@ -69,12 +71,16 @@ const CustomModal = (props) => {
       switch (item.type) {
         case DROPDOWN_WITH_BTN:
           return (
-            <div className="custom-dropdown  d-flex">
-              <InputWithDropdown
+            <div className="custom-dropdown  d-flex ">
+              <div className="search-input w-100">
+                <SearchInput options={options} placeholder={item.link} />
+              </div>
+
+              {/* <InputWithDropdown
                 text={inputWithMenuText}
                 placeholderText={item.link}
                 setTextValue={(text) => setInputWithMenuText(text)}
-              />
+              /> */}
               <ButtonWithIcon
                 text={"Add"}
                 iconName={"bi-plus-lg"}
@@ -84,11 +90,11 @@ const CustomModal = (props) => {
           );
         case DROPDOWN:
           return (
-            <div className="custom-dropdown  d-flex">
-              <InputWithDropdown
-                text={inputWithMenuText}
-                placeholderText={item.link}
-                setTextValue={(text) => setInputWithMenuText(text)}
+            <div className="search-input">
+              <SearchInput
+                options={options}
+                placeholder={item.link}
+                // width={512}
               />
             </div>
           );

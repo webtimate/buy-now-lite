@@ -8,7 +8,7 @@ import CustomModal from "./Modal";
 import {
   DROPDOWN,
   GENERIC,
-  GLOBAL_RETAILER_MANAGEMENT,
+  options,
   RETAILER_SUMMARY_SCREEN,
   retailSummaryData,
 } from "../constant";
@@ -16,11 +16,8 @@ import withLayout from "../pages/Layout";
 import InputWithDropdown from "./InputWithDropdown";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
+import SearchInput from "./SearchInput";
 
-const buttons = [
-  { id: 1, text: "Add", iconText: "bi-plus-lg" },
-  { id: 2, text: "Excel", iconText: "bi-upload" },
-];
 const globalManagementButtons = [
   {
     id: 1,
@@ -99,12 +96,8 @@ function GlobalRetailManagement(props) {
               {globalManagementButtons.map((item) => (
                 <>
                   {item.type === DROPDOWN ? (
-                    <div className="custom-dropdown " style={{ marginLeft: 5 }}>
-                      <InputWithDropdown
-                        text={inputWithMenuText}
-                        placeholderText={item.link}
-                        setTextValue={(text) => setInputWithMenuText(text)}
-                      />
+                    <div className="search-input" style={{ marginLeft: 5 }}>
+                      <SearchInput options={options} placeholder={item.link} />
                     </div>
                   ) : (
                     <ButtonWithIcon

@@ -7,11 +7,13 @@ import { NavLink } from "react-router-dom";
 import CustomModal from "./Modal";
 import {
   EXTERNAL_USER_MANAGEMENT_SCREEN,
-  GLOBAL_RETAILER_MANAGEMENT,
   externalUserManagementData,
+  options,
   userManagementData,
 } from "../constant";
 import UserManagementModal from "./UserManagementModal";
+import SearchInput from "./SearchInput";
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,120 +27,142 @@ const Header = () => {
     <>
       <Navbar bg="#FFFFFF" expand="lg" className="navbar" sticky="top">
         <Container>
-          <Navbar.Brand onClick={() => navigate("/")}>
-            <img
-              src={require("../assets/images/logo.png")}
-              width="131"
-              height="40"
-              className="d-inline-block align-top"
-              alt="brand logo"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="m-auto ">
-              <NavLink
-                className="custom-nav-link nav-link nav-link-highlighter"
-                activeClassName="active"
-                to={"/"}
-              >
-                Dashboard
-              </NavLink>
-              <NavLink
-                className="nav-link nav-link-highlighter"
-                activeClassName="active"
-                to={"/broken-links"}
-              >
-                Broken Links
-              </NavLink>
-              <NavLink
-                className="nav-link nav-link-highlighter"
-                activeClassName="active"
-                to={"/retailer-summary"}
-              >
-                Retailer Summary
-              </NavLink>
-              <NavLink
-                className="nav-link nav-link-highlighter"
-                activeClassName="active"
-                to={"/product-summary"}
-              >
-                Product Summary
-              </NavLink>
-              <div className="reset-default-chevron">
-                <NavDropdown
-                  title="Admin"
-                  id="basic-nav-dropdown"
-                  className="navbar-chevron-down  nav-link-highlighter"
-                >
-                  <NavDropdown.Item
-                    className="mt-2"
-                    onClick={() => setModalShow(true)}
-                  >
-                    External User Management
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    className="mt-2"
-                    onClick={() => setUserManageModalShow(true)}
-                  >
-                    User Management
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    className="mt-2"
-                    onClick={() => navigate("/global-retailer-management")}
-                  >
-                    Global Retailer Management
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    className="mt-2"
-                    onClick={() => navigate("/website-management")}
-                  >
-                    Website Management
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </div>
+          <div className="navbar-wrapper">
+            <div>
+              <Navbar.Brand onClick={() => navigate("/")}>
+                <img
+                  src={require("../assets/images/logo.png")}
+                  width="131"
+                  height="40"
+                  alt="brand logo"
+                />
+              </Navbar.Brand>
+            </div>
 
-              <Input
-                text={navAutoFillText}
-                placeholderText={"Pampers Arial Gill..."}
-                setTextValue={setNavAutoFillText}
-              />
-              <Nav.Link>
-                <div className="d-flex align-items-center">
-                  <span style={{ fontSize: 23, position: "relative" }}>
-                    <i class="bi bi-bell" />
-                    {notificationCount > 0 && (
-                      <span className="notification-count">
-                        {notificationCount}
+            <div>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav>
+                  <NavLink
+                    className="custom-nav-link nav-link nav-link-highlighter"
+                    activeClassName="active"
+                    to={"/"}
+                  >
+                    Dashboard
+                  </NavLink>
+                  <NavLink
+                    className="nav-link nav-link-highlighter"
+                    activeClassName="active"
+                    to={"/broken-links"}
+                  >
+                    Broken Links
+                  </NavLink>
+                  <NavLink
+                    className="nav-link nav-link-highlighter"
+                    activeClassName="active"
+                    to={"/retailer-summary"}
+                  >
+                    Retailer Summary
+                  </NavLink>
+                  <NavLink
+                    className="nav-link nav-link-highlighter"
+                    activeClassName="active"
+                    to={"/product-summary"}
+                  >
+                    Product Summary
+                  </NavLink>
+                  <div className="reset-default-chevron">
+                    <NavDropdown
+                      title="Admin"
+                      id="basic-nav-dropdown"
+                      className="navbar-chevron-down  nav-link-highlighter"
+                    >
+                      <NavDropdown.Item
+                        className="mt-2"
+                        onClick={() => setModalShow(true)}
+                      >
+                        External User Management
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        className="mt-2"
+                        onClick={() => setUserManageModalShow(true)}
+                      >
+                        User Management
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        className="mt-2"
+                        onClick={() => navigate("/global-retailer-management")}
+                      >
+                        Global Retailer Management
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        className="mt-2"
+                        onClick={() => navigate("/website-management")}
+                      >
+                        Website Management
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </div>
+                  <div className="d-flex align-items-center custom-search-input">
+                    <SearchInput
+                      options={options}
+                      placeholder={"Pampers Arial Gill"}
+                      width={181}
+                    />
+                  </div>
+
+                  {/* <Input
+                    text={navAutoFillText}
+                    placeholderText={"Pampers Arial Gill..."}
+                    setTextValue={setNavAutoFillText}
+                  /> */}
+                  <Nav.Link className="gap-2">
+                    <div className="d-flex align-items-center">
+                      <span style={{ fontSize: 23, position: "relative" }}>
+                        <i class="bi bi-bell" />
+                        {notificationCount > 0 && (
+                          <span className="notification-count">
+                            {notificationCount}
+                          </span>
+                        )}
                       </span>
-                    )}
-                  </span>
 
-                  {/* <Badge bg="danger">{1}</Badge> */}
-                </div>
-              </Nav.Link>
-            </Nav>
-            <NavDropdown
-              title={
-                <>
-                  <img
-                    src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
-                    width="30"
-                    height="30"
-                    alt="brand logo"
-                  />
-                  <Navbar.Text className="p-2">Hello Jha</Navbar.Text>
-                </>
-              }
-              id="basic-nav-dropdown"
-              className="navbar-chevron-down reset-default-chevron"
-            >
-              <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-            </NavDropdown>
-          </Navbar.Collapse>
+                      {/* <Badge bg="danger">{1}</Badge> */}
+                    </div>
+                  </Nav.Link>
+                  <div className="reset-default-chevron d-flex align-items-center">
+                    <NavDropdown
+                      title={
+                        <>
+                          <img
+                            src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                            width="30"
+                            height="30"
+                            alt="brand logo"
+                          />
+                          <Navbar.Text className="p-2">Hello Jha</Navbar.Text>
+                        </>
+                      }
+                      disabled
+                      id="basic-nav-dropdown"
+                      className="navbar-chevron-down reset-default-chevron"
+                    >
+                      <NavDropdown.Item href="#action/3.1">
+                        Profile
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.2">
+                        Settings
+                      </NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action/3.4">
+                        Logout
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </div>
+                </Nav>
+              </Navbar.Collapse>
+            </div>
+          </div>
         </Container>
       </Navbar>
       <CustomModal

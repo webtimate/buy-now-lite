@@ -6,31 +6,14 @@ import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import OutlineButton from "./OutlineButton";
 import CustomModal from "./Modal";
-import {
-  DROPDOWN,
-  GENERIC,
-  GLOBAL_RETAILER_MANAGEMENT,
-  RETAILER_SUMMARY_SCREEN,
-  retailSummaryData,
-} from "../constant";
+import { RETAILER_SUMMARY_SCREEN, retailSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
-import InputWithDropdown from "./InputWithDropdown";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
   { id: 2, text: "Excel", iconText: "bi-upload" },
-];
-const globalManagementButtons = [
-  {
-    id: 1,
-    text: "Unblocked Retailer list",
-    iconText: "bi-plus-lg",
-    type: DROPDOWN,
-    link: "Unblocked Retailer list",
-  },
-  { id: 2, text: "Excel", iconText: "bi-upload", type: GENERIC },
 ];
 const tableData = [
   {

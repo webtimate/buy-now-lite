@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import CustomModal from "./Modal";
 import { tableData, TEXT_INPUT } from "../constant";
-import Layout from "../pages/Layout";
 import withLayout from "../pages/Layout";
 
 const brokenLinkData = [

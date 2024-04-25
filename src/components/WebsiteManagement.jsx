@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import ButtonWithIcon from "./ButtonWithIcon";
 import { Container } from "react-bootstrap";
-import SearchInputWithIcon from "./SearchInputWithIcon";
 import Table from "react-bootstrap/Table";
-import Form from "react-bootstrap/Form";
-import OutlineButton from "./OutlineButton";
 import CustomModal from "./Modal";
 import {
   DROPDOWN,
   GENERIC,
-  GLOBAL_RETAILER_MANAGEMENT,
   RETAILER_SUMMARY_SCREEN,
   retailSummaryData,
 } from "../constant";
@@ -18,10 +14,6 @@ import InputWithDropdown from "./InputWithDropdown";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
 
-const buttons = [
-  { id: 1, text: "Add", iconText: "bi-plus-lg" },
-  { id: 2, text: "Excel", iconText: "bi-upload" },
-];
 const globalManagementButtons = [
   {
     id: 1,
@@ -74,11 +66,8 @@ const tableData = [
 
 function WebsiteManagement(props) {
   const location = useLocation();
-
-  console.log("props", location?.state?.navigatedFrom);
   const [modalShow, setModalShow] = useState(false);
   const [confirmModalShow, setConfirmModalShow] = useState(false);
-  const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
   const [inputWithMenuText, setInputWithMenuText] = useState("");
 

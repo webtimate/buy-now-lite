@@ -1,27 +1,6 @@
-import { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import TextInput from "./TextInput";
 import Container from "react-bootstrap/Container";
-import {
-  CHECKBOX,
-  CHIPS,
-  DROPDOWN,
-  DROPDOWN_WITH_BTN,
-  EXTERNAL_USER_MANAGEMENT_SCREEN,
-  FILE_UPLOAD,
-  PRODUCT_SUMMARY_SCREEN,
-  RETAILER_SUMMARY_SCREEN,
-} from "../constant";
-import OutlineButton from "./OutlineButton";
-import Form from "react-bootstrap/Form";
-import InputWithDropdown from "./InputWithDropdown";
-import ButtonWithIcon from "./ButtonWithIcon";
-import Input from "./Input";
-import Chips from "./Chips";
-import ActionButton from "./ActionButton";
 
 const DeleteModal = (props) => {
   return (
