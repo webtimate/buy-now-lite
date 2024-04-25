@@ -14,6 +14,29 @@ export const PRODUCT_SUMMARY_SCREEN = "PRODUCT_SUMMARY_SCREEN";
 export const EXTERNAL_USER_MANAGEMENT_SCREEN =
   "EXTERNAL_USER_MANAGEMENT_SCREEN";
 
+export const options = [
+  {
+    id: 1,
+    name: "apple",
+  },
+  {
+    id: 2,
+    name: "banana",
+  },
+  {
+    id: 3,
+    name: "carrot",
+  },
+  {
+    id: 4,
+    name: "grapes",
+  },
+  {
+    id: 5,
+    name: "fig",
+  },
+];
+
 export const userManagementData = [
   {
     id: 1,
