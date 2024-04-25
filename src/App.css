@@ -757,14 +757,16 @@ tbody>tr:nth-child(odd)>th {
   align-items: center;
 }
 
-.custom-search-input .css-oedf4s-DropDown {
-  background-color: #fff;
+.custom-search-input .react-dropdown-select-dropdown {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
-  z-index: 999;
-  margin-top: 8px;
-  padding: 5px 10px;
+  text-transform: capitalize;
+}
+
+.custom-search-input .css-1aarvou-DropdownHandleComponent {
+  padding-left: 2px;
+  margin-top: -7px;
 }
 
 /* placeholder style  */
@@ -773,6 +775,7 @@ tbody>tr:nth-child(odd)>th {
   font-size: 14px;
   width: 181px !important;
   overflow: hidden;
+  text-transform: capitalize;
 }
 
 .custom-search-input .css-wmy1p7-ReactDropdownSelect:focus-within {
@@ -791,6 +794,9 @@ tbody>tr:nth-child(odd)>th {
 .custom-search-input .css-c91z-NoDataComponent {
   color: #000;
   padding: 0px;
+  text-align: left;
+  padding: 10px;
+  font-size: 15px;
 }
 
 .custom-search-input .css-1yc4zyy-DropdownHandleComponent {
@@ -810,11 +816,11 @@ tbody>tr:nth-child(odd)>th {
 
 /* search input css  */
 
-
 .search-input .css-jznujr-ContentComponent {
   padding-left: 10px;
   width: 100% !important;
   overflow: hidden;
+  text-transform: capitalize;
 }
 
 /* when type into input border is focused  */
@@ -826,7 +832,6 @@ tbody>tr:nth-child(odd)>th {
 .search-input .css-z2hyoe-ItemComponent.react-dropdown-select-item-selected {
   background-color: #efefef;
   color: #000;
-
 }
 
 /* dropdown menu list hover  */
@@ -844,7 +849,28 @@ tbody>tr:nth-child(odd)>th {
   padding-left: 2px;
   margin-top: 5px;
 }
-.search-input .css-1aarvou-DropdownHandleComponent{
+
+.search-input .css-1aarvou-DropdownHandleComponent {
   margin-bottom: 5px;
   padding-right: 2px;
+}
+
+.search-input .css-1i6ktu8-DropDown {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  text-transform: capitalize;
+}
+
+
+.search-input .react-dropdown-select-dropdown {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  text-transform: capitalize;
+
+}
+
+.search-input .css-1fhff70-InputComponent {
+  font-size: 16px;
 }

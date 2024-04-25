@@ -18,6 +18,7 @@ const SearchInput = ({ options, placeholder, width }) => {
       values={selectedValues}
       onChange={handleChange}
       style={{ width: width }}
+      className='drop-menu'
     />
   );
 };
