@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-dropdown-select"; // Assuming 'react-dropdown-select'
 
-const SearchInput = ({ options, placeholder, width }) => {
+const SearchInput = ({ options, placeholder }) => {
   const [selectedValues, setSelectedValues] = useState([]); // State for selected options
 
   const handleChange = (values) => {
@@ -17,8 +17,7 @@ const SearchInput = ({ options, placeholder, width }) => {
       options={options}
       values={selectedValues}
       onChange={handleChange}
-      style={{ width: width }}
-      className='drop-menu'
+      className="custom-auto-search"
     />
   );
 };
