@@ -19,7 +19,39 @@ p h6 {
   padding: 0px !important;
 }
 
-nav>link {
+.notification-container .btn.show {
+  background-color: transparent !important;
+}
+
+.notification-container .btn:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+.notification-container button:not(:disabled) {
+  border: none;
+}
+
+.notification-container .dropdown-toggle::after {
+  content: none;
+}
+
+.notification-container .dropdown-menu.show {
+  padding: 20px !important;
+  transform: translateX(30%) !important;
+  border-radius: 10px !important;
+  margin-top: 26px !important;
+  border: none;
+}
+
+.user-drop-menu .dropdown-menu.show {
+  padding: 5px !important;
+  transform: translateX(10%) !important;
+  border-radius: 10px !important;
+  margin-top: 20px !important;
+}
+
+nav > link {
   font-size: 16px !important;
   color: rgba(25, 29, 63, 1) !important;
 }
@@ -182,13 +214,13 @@ tbody tr td:last-child {
   color: #6b6b6b;
 }
 
-tbody>tr:nth-child(odd)>td,
-tbody>tr:nth-child(odd)>th {
+tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
   background-color: #ffffff;
 }
 
-tbody>tr:nth-child(even)>td,
-tbody>tr:nth-child(even)>th {
+tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
   background-color: #f9f9f9;
 }
 
@@ -318,7 +350,11 @@ tbody>tr:nth-child(even)>th {
   margin-left: 30px;
 }
 
-.custom-input .input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.custom-input
+  .input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #efefef;
@@ -328,7 +364,11 @@ tbody>tr:nth-child(even)>th {
 }
 
 /* input toggle drop menu  */
-.custom-input .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.custom-input
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #efefef;
@@ -350,7 +390,7 @@ tbody>tr:nth-child(even)>th {
   color: transparent;
 }
 
-.custom-text-input .input-group>.form-control {
+.custom-text-input .input-group > .form-control {
   border-radius: 20px;
   background-color: #f9f9f9;
   border: none;
@@ -399,17 +439,30 @@ button:not(:disabled) {
   height: 40px;
 }
 
-.search-input-wrapper .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.search-input-wrapper
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   background-color: #efefef;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: none;
 }
 
-.search-input-wrapper .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n + 3),
-.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
-.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,
-.input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+.search-input-wrapper
+  .input-group:not(.has-validation)
+  > .dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-control,
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > .form-select,
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+    .form-floating
+  ) {
   background-color: #efefef;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -420,11 +473,11 @@ button:not(:disabled) {
   box-shadow: none;
 }
 
-.search-input-wrapper .btn-check:checked+.btn,
+.search-input-wrapper .btn-check:checked + .btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
-:not(.btn-check)+.btn:active {
+:not(.btn-check) + .btn:active {
   background-color: #efefef !important;
   color: #191d3f !important;
   border-color: transparent !important;
@@ -497,7 +550,11 @@ button:not(:disabled) {
   color: transparent;
 }
 
-.custom-dropdown .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+.custom-dropdown
+  .input-group
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+    .valid-feedback
+  ):not(.invalid-tooltip):not(.invalid-feedback) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #efefef;
@@ -570,19 +627,26 @@ button:not(:disabled) {
   font-weight: 700;
 }
 
-.count-card>div {
+.count-card > div {
   padding-left: 10px;
 }
 
 /* product insight title  */
+.insight-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
 .table-head-title {
   font-size: 20px;
-  color: #000;
+  color: #191d3f;
+  line-height: 24px;
 }
 
 .product-insight-container {
   border-radius: 20px;
-  padding-bottom: 20px;
+  padding: 10px 20px;
 }
 
 .product-insight-container thead th {
@@ -597,26 +661,14 @@ button:not(:disabled) {
   height: 2px;
 }
 
-.product-insight-container tbody>tr:nth-child(even)>td,
-tbody>tr:nth-child(even)>th {
+.product-insight-container tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
   background-color: #fff;
   border-bottom: 1px solid #efefef !important;
 }
 
-/* .product-insight-container tbody>tr:first-child(even)>td,
-tbody>tr:first-child(even)>th {
-  background-color: #fff;
-  border-bottom: 1px solid red !important;
-} */
-
-.product-insight-container tbody>tr:nth-child(even)>td,
-tbody>tr:nth-child(even)>th {
-  background-color: #fff;
-  border-bottom: 1px solid #efefef !important;
-}
-
-.product-insight-container tbody>tr:nth-child(odd)>td,
-tbody>tr:nth-child(odd)>th {
+.product-insight-container tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
   background-color: #fff;
   border-bottom: 1px solid #efefef !important;
 }
@@ -631,6 +683,26 @@ tbody>tr:nth-child(odd)>th {
 .insight-title-container {
   padding-left: 50px;
   padding-top: 20px;
+}
+
+/* retailer insight section css  */
+
+.retailer-insight-container thead th {
+  border-style: none !important;
+  background-color: white !important;
+  font-size: 16px !important;
+}
+
+.retailer-insight-container tbody > tr:nth-child(even) > td,
+tbody > tr:nth-child(even) > th {
+  background-color: #fff;
+  border-bottom: 1px solid #efefef !important;
+}
+
+.retailer-insight-container tbody > tr:nth-child(odd) > td,
+tbody > tr:nth-child(odd) > th {
+  background-color: #fff;
+  border-bottom: 1px solid #efefef !important;
 }
 
 .nav-link-highlighter {
@@ -805,7 +877,6 @@ tbody>tr:nth-child(odd)>th {
 
 /* global auto search input css  */
 
-
 .search-input .react-dropdown-select {
   border: none;
   border-radius: 20px;
@@ -817,7 +888,8 @@ tbody>tr:nth-child(odd)>th {
   min-width: 275px;
   font-size: 18px;
 }
-.search-input .react-dropdown-select-input{
+
+.search-input .react-dropdown-select-input {
   max-width: 300px;
   overflow: hidden;
 }
