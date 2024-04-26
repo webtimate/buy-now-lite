@@ -47,18 +47,20 @@ const ProductInsight = () => {
             {tableData.map((item, index) => (
               <tr className="custom-tr" key={item.id}>
                 <td className="text-center">
-                  <b>{item.title}dfd</b>
+                  <div className="insight-title">{item.title}</div>
                 </td>
                 <td>
-                  <b>{item.noOfProducts}</b>
+                  <div className="insight-title">{item.noOfProducts}</div>
                 </td>
                 <td>
-                  <b>{item.noOfProductLinks}</b>
+                  <div className="insight-title">{item.noOfProductLinks}</div>
                 </td>
                 <td>
                   <div className="d-flex align-items-center gap-3">
                     <div>
-                      <b>{item.noOfUniqueProductsLinks}</b>
+                      <div className="insight-title">
+                        {item.noOfUniqueProductsLinks}
+                      </div>
                     </div>
                     <div className="d-flex progress-bar">
                       <ProgressBar now={40} />

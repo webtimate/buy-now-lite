@@ -13,7 +13,10 @@ import {
 } from "../constant";
 import UserManagementModal from "./UserManagementModal";
 import SearchInput from "./SearchInput";
-
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -117,20 +120,34 @@ const Header = () => {
                     setTextValue={setNavAutoFillText}
                   /> */}
                   <Nav.Link className="gap-2">
-                    <div className="d-flex align-items-center">
-                      <span style={{ fontSize: 23, position: "relative" }}>
-                        <i class="bi bi-bell" />
-                        {notificationCount > 0 && (
-                          <span className="notification-count">
-                            {notificationCount}
+                    <div className="d-flex align-items-center notification-container">
+                      <DropdownButton
+                        variant="outline-secondary"
+                        title={
+                          <span style={{ fontSize: 23, position: "relative" }}>
+                            <i class="bi bi-bell" />
+                            {notificationCount > 0 && (
+                              <span
+                                className="notification-count"
+                                id="input-group-dropdown-2"
+                              >
+                                {notificationCount}
+                              </span>
+                            )}
                           </span>
-                        )}
-                      </span>
-
-                      {/* <Badge bg="danger">{1}</Badge> */}
+                        }
+                        id="input-group-dropdown-2"
+                        align="end"
+                      >
+                        {[1, 2, 3].map((item) => (
+                          <Dropdown.Item href="#" key={item} className="mt-1">
+                            Notification data {item}{" "}
+                          </Dropdown.Item>
+                        ))}
+                      </DropdownButton>
                     </div>
                   </Nav.Link>
-                  <div className="reset-default-chevron d-flex align-items-center">
+                  <div className="d-flex align-items-center user-drop-menu">
                     <NavDropdown
                       title={
                         <>
@@ -143,17 +160,9 @@ const Header = () => {
                           <Navbar.Text className="p-2">Hello Jha</Navbar.Text>
                         </>
                       }
-                      disabled
                       id="basic-nav-dropdown"
                       className="navbar-chevron-down reset-default-chevron"
                     >
-                      <NavDropdown.Item href="#action/3.1">
-                        Profile
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.2">
-                        Settings
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
                       <NavDropdown.Item href="#action/3.4">
                         Logout
                       </NavDropdown.Item>

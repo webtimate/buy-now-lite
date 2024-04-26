@@ -50,7 +50,10 @@ function Dashboard() {
         {/* product insight section */}
         {/* <ProductInsight /> */}
         {/* retailer insight section  */}
-        {/* <RetailerInsightTable /> */}
+        <div style={{ backgroundColor: "white", borderRadius: 20 }}>
+          <RetailerInsightTable />
+        </div>
+
         {/* broken links insight section */}
 
         {/* <BrokenLinkInsight /> */}

@@ -83,105 +83,124 @@ const RetailerInsightTable = () => {
     setIsDragging(false);
   };
   return (
-    <div className="mt-3 bg-white product-insight-container">
-      <div></div>
-      <p className="product-insight-title ">Retailer Insight</p>
-
+    <div className="m-3 bg-white retailer-insight-container">
       {/* product  table section  */}
+      <div
+        className="horizontal-scroll-container"
+        ref={containerRef}
+        style={{ overflowX: "auto", cursor: "grab" }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <div style={{ padding: 20 }}>
+          <div style={{ paddingLeft: 10, paddingTop: 10 }}>
+            <p className="product-insight-title">Retailer Insights</p>
+          </div>
+          <div className="retailer-insight-table">
+            <Table>
+              <thead>
+                <tr>
+                  <th className="px-4">
+                    <div className="d-flex justify-content-center">
+                      <OutlineButton
+                        text={"Websites"}
+                        iconName={"bi-plus-lg"}
+                      />
+                    </div>
+                  </th>
 
-      <div>
-        <div
-          className="horizontal-scroll-container"
-          ref={containerRef}
-          style={{ overflowX: "auto", cursor: "grab" }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-        >
-          <Table className="custom-table mt-4">
-            <thead>
-              <tr>
-                <th>
-                  <OutlineButton text={"Websites"} iconName={"bi-plus-lg"} />
-                </th>
-
-                <th>
-                  <div className="table-head-title">Number of retailers</div>
-                </th>
-                <th>
-                  <div className="table-head-title">Number of links (all)</div>
-                </th>
-                <th>
-                  <div className="table-head-title">
-                    Number of unique links (all)
-                  </div>
-                </th>
-                <th>
-                  <div className="table-head-title">
-                    Number of primary retailer links
-                  </div>
-                </th>
-                <th>
-                  <div className="table-head-title">
-                    Number of secondary retailer links
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {tableData.map((item, index) => (
-                <tr className="custom-tr" key={item.id}>
-                  <td>
-                    <b>{item.title}</b>
-                  </td>
-                  <td>
-                    <b>{item.noOfRetailers}</b>
-                  </td>
-                  <td>
-                    <div className="d-flex align-items-center gap-3">
-                      <div>
-                        <b>{item.noOfLinks}</b>
-                      </div>
-                      <div className="d-flex progress-bar">
-                        <ProgressBar now={40} />
-                      </div>
+                  <th className="px-4">
+                    <div className="table-head-title">Number of retailers</div>
+                  </th>
+                  <th className="px-4">
+                    <div className="table-head-title">
+                      Number of links (all)
                     </div>
-                  </td>
-                  <td>
-                    <div className="d-flex align-items-center gap-3">
-                      <div>
-                        <b>{item.noOfUniqueLinks}</b>
-                      </div>
-                      <div className="d-flex progress-bar">
-                        <ProgressBar now={40} />
-                      </div>
+                  </th>
+                  <th className="px-4">
+                    <div className="table-head-title">
+                      Number of unique links (all)
                     </div>
-                  </td>
-                  <td>
-                    <div className="d-flex align-items-center gap-3">
-                      <div>
-                        <b>{item.noOfPrimaryLinks}</b>
-                      </div>
-                      <div className="d-flex progress-bar">
-                        <ProgressBar now={40} />
-                      </div>
+                  </th>
+                  <th className="px-4">
+                    <div className="table-head-title">
+                      Number of primary retailer links
                     </div>
-                  </td>
-                  <td>
-                    <div className="d-flex align-items-center gap-3">
-                      <div>
-                        <b>{item.noOfSecondaryLinks}</b>
-                      </div>
-                      <div className="d-flex progress-bar">
-                        <ProgressBar now={40} />
-                      </div>
+                  </th>
+                  <th className="px-4">
+                    <div className="table-head-title">
+                      Number of secondary retailer links
                     </div>
-                  </td>
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {tableData.map((item, index) => (
+                  <tr
+                    className="retailer-insight-table-body px-4"
+                    key={item.id}
+                  >
+                    <td className="text-center  ">
+                      <div className="insight-title py-2">{item.title}</div>
+                    </td>
+                    <td className="px-4 ">
+                      <div className="insight-title py-2">
+                        {item.noOfRetailers}
+                      </div>
+                    </td>
+                    <td className="px-4  ">
+                      <div className="d-flex align-items-center gap-3 py-2">
+                        <div>
+                          <div className="insight-title">{item.noOfLinks}</div>
+                        </div>
+                        <div className="d-flex progress-bar">
+                          <ProgressBar now={item.noOfLinks}  w/>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-4">
+                      <div className="d-flex align-items-center gap-3 py-2">
+                        <div>
+                          <div className="insight-title">
+                            {item.noOfUniqueLinks}
+                          </div>
+                        </div>
+                        <div className="d-flex progress-bar">
+                          <ProgressBar now={40} />
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-4">
+                      <div className="d-flex align-items-center gap-3 py-2">
+                        <div>
+                          <div className="insight-title">
+                            {item.noOfPrimaryLinks}
+                          </div>
+                        </div>
+                        <div className="d-flex progress-bar">
+                          <ProgressBar now={item.noOfPrimaryLinks} />
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-4">
+                      <div className="d-flex align-items-center gap-3 py-2">
+                        <div>
+                          <div className="insight-title">
+                            {item.noOfSecondaryLinks}
+                          </div>
+                        </div>
+                        <div className="d-flex progress-bar">
+                          <ProgressBar now={item.noOfSecondaryLinks} />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
         </div>
       </div>
     </div>
