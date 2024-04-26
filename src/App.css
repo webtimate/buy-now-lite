@@ -22,6 +22,10 @@ p h6 {
 .notification-container .btn.show {
   background-color: transparent !important;
 }
+.notification-container button:not(:disabled){
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 .notification-container .btn:hover {
   background-color: transparent;
