@@ -43,22 +43,27 @@ function Dashboard() {
         <Row className="mt-3 d-flex">
           {miniCardsData.map((item, index) => (
             <Col key={index} xs={12} sm={4} md={4}>
-              <CountCard item={item} />
+              <CountCard item={item} index={index} />
             </Col>
           ))}
         </Row>
         {/* product insight section */}
-        {/* <ProductInsight /> */}
+        <div className="dashboard-content-container">
+          <ProductInsight />
+        </div>
         {/* retailer insight section  */}
-        <div style={{ backgroundColor: "white", borderRadius: 20 }}>
+        <div className="dashboard-content-container">
           <RetailerInsightTable />
         </div>
 
         {/* broken links insight section */}
-
-        {/* <BrokenLinkInsight /> */}
+        <div className="dashboard-content-container">
+          <BrokenLinkInsight />
+        </div>
         {/* no of clicks section */}
-        {/* <NumberOfClick /> */}
+        <div className="dashboard-content-container">
+          <NumberOfClick />
+        </div>
       </Container>
     </div>
   );

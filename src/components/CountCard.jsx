@@ -7,9 +7,8 @@ function CountCard(props) {
       <div>
         <img
           src={url}
-          width="34"
-          height="34"
-          className="d-inline-block align-top"
+          width={props.index === 1 ? 47 : "34"}
+          height={props.index === 1 ? 47 : "34"}
           alt="brand logo"
         />
       </div>
