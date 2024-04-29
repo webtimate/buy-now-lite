@@ -139,13 +139,13 @@ const RetailerInsightTable = () => {
               <tbody>
                 {tableData.map((item, index) => (
                   <tr
-                    className="retailer-insight-table-body px-4"
+                    className="retailer-insight-table-body px-4 first-child-border"
                     key={item.id}
                   >
                     <td className="text-center  ">
                       <div className="insight-title py-2">{item.title}</div>
                     </td>
-                    <td className="px-4 ">
+                    <td className="px-4">
                       <div className="insight-title py-2">
                         {item.noOfRetailers}
                       </div>
@@ -156,7 +156,7 @@ const RetailerInsightTable = () => {
                           <div className="insight-title">{item.noOfLinks}</div>
                         </div>
                         <div className="d-flex progress-bar">
-                          <ProgressBar now={item.noOfLinks}  w/>
+                          <ProgressBar now={item.noOfLinks} w />
                         </div>
                       </div>
                     </td>

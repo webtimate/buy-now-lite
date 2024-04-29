@@ -22,7 +22,8 @@ p h6 {
 .notification-container .btn.show {
   background-color: transparent !important;
 }
-.notification-container button:not(:disabled){
+
+.notification-container button:not(:disabled) {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -55,7 +56,7 @@ p h6 {
   margin-top: 20px !important;
 }
 
-nav > link {
+nav>link {
   font-size: 16px !important;
   color: rgba(25, 29, 63, 1) !important;
 }
@@ -218,13 +219,13 @@ tbody tr td:last-child {
   color: #6b6b6b;
 }
 
-tbody > tr:nth-child(odd) > td,
-tbody > tr:nth-child(odd) > th {
+tbody>tr:nth-child(odd)>td,
+tbody>tr:nth-child(odd)>th {
   background-color: #ffffff;
 }
 
-tbody > tr:nth-child(even) > td,
-tbody > tr:nth-child(even) > th {
+tbody>tr:nth-child(even)>td,
+tbody>tr:nth-child(even)>th {
   background-color: #f9f9f9;
 }
 
@@ -354,11 +355,7 @@ tbody > tr:nth-child(even) > th {
   margin-left: 30px;
 }
 
-.custom-input
-  .input-group:not(.has-validation)
-  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
-    .form-floating
-  ) {
+.custom-input .input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #efefef;
@@ -368,11 +365,7 @@ tbody > tr:nth-child(even) > th {
 }
 
 /* input toggle drop menu  */
-.custom-input
-  .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-    .valid-feedback
-  ):not(.invalid-tooltip):not(.invalid-feedback) {
+.custom-input .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #efefef;
@@ -394,7 +387,7 @@ tbody > tr:nth-child(even) > th {
   color: transparent;
 }
 
-.custom-text-input .input-group > .form-control {
+.custom-text-input .input-group>.form-control {
   border-radius: 20px;
   background-color: #f9f9f9;
   border: none;
@@ -443,30 +436,17 @@ button:not(:disabled) {
   height: 40px;
 }
 
-.search-input-wrapper
-  .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-    .valid-feedback
-  ):not(.invalid-tooltip):not(.invalid-feedback) {
+.search-input-wrapper .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   background-color: #efefef;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: none;
 }
 
-.search-input-wrapper
-  .input-group:not(.has-validation)
-  > .dropdown-toggle:nth-last-child(n + 3),
-.input-group:not(.has-validation)
-  > .form-floating:not(:last-child)
-  > .form-control,
-.input-group:not(.has-validation)
-  > .form-floating:not(:last-child)
-  > .form-select,
-.input-group:not(.has-validation)
-  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
-    .form-floating
-  ) {
+.search-input-wrapper .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n + 3),
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,
+.input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
   background-color: #efefef;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -477,11 +457,11 @@ button:not(:disabled) {
   box-shadow: none;
 }
 
-.search-input-wrapper .btn-check:checked + .btn,
+.search-input-wrapper .btn-check:checked+.btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
-:not(.btn-check) + .btn:active {
+:not(.btn-check)+.btn:active {
   background-color: #efefef !important;
   color: #191d3f !important;
   border-color: transparent !important;
@@ -554,11 +534,7 @@ button:not(:disabled) {
   color: transparent;
 }
 
-.custom-dropdown
-  .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-    .valid-feedback
-  ):not(.invalid-tooltip):not(.invalid-feedback) {
+.custom-dropdown .input-group> :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #efefef;
@@ -631,7 +607,7 @@ button:not(:disabled) {
   font-weight: 700;
 }
 
-.count-card > div {
+.count-card>div {
   padding-left: 10px;
 }
 
@@ -662,17 +638,18 @@ button:not(:disabled) {
 .progress-bar {
   background-color: #c5c5c5;
   width: 100px;
-  height: 2px;
+  height: 4px;
+
 }
 
-.product-insight-container tbody > tr:nth-child(even) > td,
-tbody > tr:nth-child(even) > th {
+.product-insight-container tbody>tr:nth-child(even)>td,
+tbody>tr:nth-child(even)>th {
   background-color: #fff;
   border-bottom: 1px solid #efefef !important;
 }
 
-.product-insight-container tbody > tr:nth-child(odd) > td,
-tbody > tr:nth-child(odd) > th {
+.product-insight-container tbody>tr:nth-child(odd)>td,
+tbody>tr:nth-child(odd)>th {
   background-color: #fff;
   border-bottom: 1px solid #efefef !important;
 }
@@ -697,14 +674,13 @@ tbody > tr:nth-child(odd) > th {
   font-size: 16px !important;
 }
 
-.retailer-insight-container tbody > tr:nth-child(even) > td,
-tbody > tr:nth-child(even) > th {
+.retailer-insight-container tbody>tr:nth-child(even)>td,
+tbody>tr:nth-child(even)>th {
   background-color: #fff;
   border-bottom: 1px solid #efefef !important;
 }
-
-.retailer-insight-container tbody > tr:nth-child(odd) > td,
-tbody > tr:nth-child(odd) > th {
+.retailer-insight-container tbody tr:nth-child(odd)>td,
+tbody>tr:nth-child(odd)>th {
   background-color: #fff;
   border-bottom: 1px solid #efefef !important;
 }
@@ -941,4 +917,12 @@ tbody > tr:nth-child(odd) > th {
 
 .search-input .react-dropdown-select:focus-visible {
   box-shadow: none !important;
+}
+
+
+.first-child-border>th:first-child,
+.first-child-border>td:first-child {
+  border-bottom: 1px solid #dee2e6 !important;
+  margin-bottom: 5px !important;
+
 }
