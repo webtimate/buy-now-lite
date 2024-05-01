@@ -103,6 +103,12 @@ const Header = () => {
                       >
                         Website Management
                       </NavDropdown.Item>
+                      <NavDropdown.Item
+                        className="mt-2"
+                        onClick={() => navigate("/not-found")}
+                      >
+                        Page Not Found
+                      </NavDropdown.Item>
                     </NavDropdown>
                   </div>
                   <div className="d-flex align-items-center custom-search-input">
@@ -112,12 +118,6 @@ const Header = () => {
                       width={181}
                     />
                   </div>
-
-                  {/* <Input
-                    text={navAutoFillText}
-                    placeholderText={"Pampers Arial Gill..."}
-                    setTextValue={setNavAutoFillText}
-                  /> */}
                   <Nav.Link className="gap-2">
                     <div className="d-flex align-items-center notification-container">
                       <DropdownButton

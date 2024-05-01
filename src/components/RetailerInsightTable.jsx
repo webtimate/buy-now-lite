@@ -9,6 +9,7 @@ import {
   EXTERNAL_USER_MANAGEMENT_SCREEN,
   externalUserManagementData,
 } from "../constant";
+import CheckboxDropdown from "./CheckboxDropdown";
 
 const tableData = [
   {
@@ -75,6 +76,7 @@ const dropdownData = [
     title: "Pampers KR",
   },
 ];
+const options = ["Pampers US", "Pampers UK", "Pampers IN", "Pampers KR"];
 
 const RetailerInsightTable = () => {
   const containerRef = useRef(null);
@@ -83,6 +85,11 @@ const RetailerInsightTable = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
   const [text, setText] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleSelect = (newOptions) => {
+    setSelectedOptions(newOptions);
+  };
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -121,35 +128,9 @@ const RetailerInsightTable = () => {
               <thead>
                 <tr>
                   <th className="px-4">
-                    <NavDropdown
-                      title={
-                        <OutlineButton
-                          text={"Websites"}
-                          iconName={"bi-plus-lg"}
-                        />
-                      }
-                      id="basic-nav-dropdown"
-                      className="btn-dropdown-container"
-                    >
-                      <NavDropdown.Item className="mt-2 text-center">
-                        <i class="bi bi-chevron-up" />
-                      </NavDropdown.Item>
-                      <NavDropdown.Item className="mt-2">
-                        {dropdownData.map((item) => (
-                          <div
-                            className="d-flex gap-2 mt-2 pt-2"
-                            onClick={() => setModalShow(true)}
-                          >
-                            <Form.Check // prettier-ignore
-                              type="checkbox"
-                              id={`default-checkbox`}
-                              label={""}
-                            />{" "}
-                            {item.title}
-                          </div>
-                        ))}
-                      </NavDropdown.Item>
-                    </NavDropdown>
+                    <div className="btn-dropdown-container">
+                      <CheckboxDropdown title="Websites" items={options} />
+                    </div>
                   </th>
 
                   <th className="px-4">

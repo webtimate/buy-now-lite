@@ -26,7 +26,7 @@ function App(props) {
             element={<GlobalRetailManagement />}
           />
           <Route path="/website-management" element={<WebsiteManagement />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/not-found" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
