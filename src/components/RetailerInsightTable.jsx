@@ -3,6 +3,12 @@ import Table from "react-bootstrap/Table";
 import OutlineButton from "./OutlineButton";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Form from "react-bootstrap/Form";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import CustomModal from "./Modal";
+import {
+  EXTERNAL_USER_MANAGEMENT_SCREEN,
+  externalUserManagementData,
+} from "../constant";
 
 const tableData = [
   {
@@ -51,6 +57,24 @@ const tableData = [
     noOfSecondaryLinks: 48,
   },
 ];
+const dropdownData = [
+  {
+    id: 1,
+    title: "Pampers US",
+  },
+  {
+    id: 2,
+    title: "Pampers UK",
+  },
+  {
+    id: 3,
+    title: "Pampers IN",
+  },
+  {
+    id: 4,
+    title: "Pampers KR",
+  },
+];
 
 const RetailerInsightTable = () => {
   const containerRef = useRef(null);
@@ -58,14 +82,8 @@ const RetailerInsightTable = () => {
   const [startX, setStartX] = useState(null);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
-  const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
-  const [confirmModalShow, setConfirmModalShow] = useState(false);
-  const handleModal = (args) => {
-    if (args.id === 1) {
-      setModalShow(true);
-    }
-  };
+
   const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.clientX - containerRef.current.offsetLeft);
@@ -83,7 +101,7 @@ const RetailerInsightTable = () => {
     setIsDragging(false);
   };
   return (
-    <div className="m-3 bg-white retailer-insight-container">
+    <div className="retailer-insight-container">
       {/* product  table section  */}
       <div
         className="horizontal-scroll-container"
@@ -94,21 +112,44 @@ const RetailerInsightTable = () => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div style={{ padding: 20 }}>
-          <div style={{ paddingLeft: 10, paddingTop: 10 }}>
-            <p className="product-insight-title">Retailer Insights</p>
+        <div>
+          <div className="mt-5 px-4">
+            <p className="product-insight-title px-3">Retailer Insights</p>
           </div>
           <div className="retailer-insight-table">
             <Table>
               <thead>
                 <tr>
                   <th className="px-4">
-                    <div className="d-flex justify-content-center">
-                      <OutlineButton
-                        text={"Websites"}
-                        iconName={"bi-plus-lg"}
-                      />
-                    </div>
+                    <NavDropdown
+                      title={
+                        <OutlineButton
+                          text={"Websites"}
+                          iconName={"bi-plus-lg"}
+                        />
+                      }
+                      id="basic-nav-dropdown"
+                      className="btn-dropdown-container"
+                    >
+                      <NavDropdown.Item className="mt-2 text-center">
+                        <i class="bi bi-chevron-up" />
+                      </NavDropdown.Item>
+                      <NavDropdown.Item className="mt-2">
+                        {dropdownData.map((item) => (
+                          <div
+                            className="d-flex gap-2 mt-2 pt-2"
+                            onClick={() => setModalShow(true)}
+                          >
+                            <Form.Check // prettier-ignore
+                              type="checkbox"
+                              id={`default-checkbox`}
+                              label={""}
+                            />{" "}
+                            {item.title}
+                          </div>
+                        ))}
+                      </NavDropdown.Item>
+                    </NavDropdown>
                   </th>
 
                   <th className="px-4">
@@ -203,6 +244,15 @@ const RetailerInsightTable = () => {
           </div>
         </div>
       </div>
+      <CustomModal
+        modalTitle="External User Management"
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        text={text}
+        setText={setText}
+        modalData={externalUserManagementData}
+        screen={EXTERNAL_USER_MANAGEMENT_SCREEN}
+      />
     </div>
   );
 };

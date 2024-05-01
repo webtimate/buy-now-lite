@@ -33,9 +33,9 @@ const miniCardsData = [
 function Dashboard() {
   return (
     <div className="main-container wrapper">
-      <Container className="pt-4 pb-4">
+      <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
-          <p className="table-title ">Retailer Summary</p>
+          <d className="table-title ">Dashboard</d>
 
           <OutlineButton text={"Download as Excel"} iconName={"bi-download"} />
         </div>

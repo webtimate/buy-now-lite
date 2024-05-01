@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import GlobalRetailManagement from "./components/GlobalRetailManagement";
 import WebsiteManagement from "./components/WebsiteManagement";
+import NotFound from "./components/NotFound";
 
 function App(props) {
   return (
@@ -25,6 +26,7 @@ function App(props) {
             element={<GlobalRetailManagement />}
           />
           <Route path="/website-management" element={<WebsiteManagement />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

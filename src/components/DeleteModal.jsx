@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Container from "react-bootstrap/Container";
+import OutlineButton from "./OutlineButton";
 
 const DeleteModal = (props) => {
   return (
@@ -24,36 +25,26 @@ const DeleteModal = (props) => {
 
       <Modal.Body>
         <Container>
-          {/* <div className="modal-spacing">
-            
-          </div> */}
-          <div className="confirm-modal-subtitle">
-            Are you sure you want to delete all?
-          </div>
-          <div className="warning-container mt-3">
-            <div className="d-flex  align-items-center">
-              <img
-                src={require("../assets/images/warning-icon.png")}
-                width="18"
-                height="18"
-                alt="warning "
-              />
-              <span className="confirm-modal-subtitle">Warning</span>
-            </div>
-            <div className="mt-3">
-              By deleting all, you won't be able to do undo{" "}
+          <div className="d-flex align-items-center gap-4 p-2">
+            <img
+              src={require("../assets/images/warning-icon.png")}
+              width="41"
+              height="36"
+              alt="warning "
+            />
+            <div className="confirm-modal-subtitle">
+              Are you sure you want to delete selected <br />
+              records? You won't be able to revert this
             </div>
           </div>
 
           <div className="d-flex align-item-right justify-content-end btn-container mt-4 mb-2">
-            <Button className="submit-btn">Yes, Delete</Button>
-            <Button
-              variant="Link"
-              className="close-btn"
+            <OutlineButton
+              text={"Cancel"}
               onClick={() => props.onHide()}
-            >
-              Cancel
-            </Button>
+              className="confirm-modal-btn"
+            />
+            <Button className="submit-btn ">Yes, Delete</Button>
           </div>
         </Container>
       </Modal.Body>
