@@ -3,7 +3,7 @@ import React from "react";
 function CountCard(props) {
   const { url, title, count } = props.item;
   return (
-    <div className="count-card d-flex bg-white">
+    <div className="count-card d-flex">
       <div>
         <img
           src={url}

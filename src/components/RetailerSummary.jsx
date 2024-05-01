@@ -10,6 +10,7 @@ import { RETAILER_SUMMARY_SCREEN, retailSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
+import FailureOrSuccessModal from "./FailureOrSuccessModal";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },

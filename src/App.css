@@ -1,5 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
+:root {
+  --primary-color: #003da5;
+  --secondary-color: #ffc107;
+  --white-color: #fff;
+  --gray-color: #f9f9f9;
+}
+
 /* navbar  or header css  */
 .navbar-wrapper {
   display: flex;
@@ -93,7 +100,7 @@ nav>link {
   /* Adjust the width as needed */
   height: 8px;
   /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png");
+  background-image: url("./assets//images/down-chevron-white.png");
   /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
@@ -186,31 +193,32 @@ thead {
   padding: 15px 10px !important;
 }
 
-thead th:first-child {
+.custom-table thead th:first-child {
   border-top-left-radius: 35px !important;
   border-bottom-left-radius: 35px !important;
-  background-color: rgba(239, 239, 239, 1) !important;
+  background-color: var(--primary-color);
 }
 
-thead th:last-child {
+.custom-table thead th:last-child {
   border-top-right-radius: 35px !important;
   border-bottom-right-radius: 35px !important;
-  background-color: rgba(239, 239, 239, 1) !important;
+  background-color: var(--primary-color);
 }
 
 .table thead th {
   border-style: none !important;
-  background-color: rgba(239, 239, 239, 1) !important;
+  background-color: var(--primary-color);
   font-size: 16px !important;
   font-weight: 400;
+  color: var(--white-color);
 }
 
-tbody tr td:first-child {
+.custom-table tbody tr td:first-child {
   border-top-left-radius: 35px !important;
   border-bottom-left-radius: 35px !important;
 }
 
-tbody tr td:last-child {
+.custom-table tbody tr td:last-child {
   border-top-right-radius: 35px !important;
   border-bottom-right-radius: 35px !important;
 }
@@ -315,7 +323,7 @@ tbody>tr:nth-child(even)>th {
   /* Adjust the width as needed */
   height: 8px;
   /* Adjust the height as needed */
-  background-image: url("./assets//images/downChevron.png");
+  background-image: url("./assets//images/down-chevron-white.png");
   /* Replace with your SVG file path */
   background-repeat: no-repeat;
   background-size: contain;
@@ -342,7 +350,7 @@ tbody>tr:nth-child(even)>th {
 
 /* footer css  */
 .custom-footer {
-  background-color: #009fe3;
+  background-color: var(--primary-color);
   height: 60px;
   display: flex;
   align-items: center;
@@ -585,7 +593,7 @@ button:not(:disabled) {
 
 /* dashboard css  */
 .wrapper {
-  background-color: #f2f6f8;
+  background-color: var(--white-color);
 }
 
 .count-card {
@@ -595,6 +603,7 @@ button:not(:disabled) {
   border-radius: 20px;
   height: 100px;
   border: 2px rgb(43, 87, 243, 1);
+  background-color: var(--gray-color);
 }
 
 .card-title {
@@ -639,7 +648,6 @@ button:not(:disabled) {
   background-color: #c5c5c5;
   width: 100px;
   height: 4px;
-
 }
 
 .product-insight-container tbody>tr:nth-child(even)>td,
@@ -670,19 +678,20 @@ tbody>tr:nth-child(odd)>th {
 
 .retailer-insight-container thead th {
   border-style: none !important;
-  background-color: white !important;
+  background-color: var(--gray-color) !important;
   font-size: 16px !important;
 }
 
 .retailer-insight-container tbody>tr:nth-child(even)>td,
 tbody>tr:nth-child(even)>th {
-  background-color: #fff;
-  border-bottom: 1px solid #C5C5C5 !important;
+  background-color: var(--gray-color);
+  border-bottom: 1px solid #c5c5c5 !important;
 }
+
 .retailer-insight-container tbody tr:nth-child(odd)>td,
 tbody>tr:nth-child(odd)>th {
-  background-color: #fff;
-  border-bottom: 1px solid #C5C5C5 !important;
+  background-color: var(--gray-color);
+  border-bottom: 1px solid #c5c5c5 !important;
 }
 
 .nav-link-highlighter {
@@ -729,14 +738,14 @@ tbody>tr:nth-child(odd)>th {
 }
 
 .confirm-modal-subtitle {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 26px;
   color: #000;
 }
 
 .warning-container {
-  background-color: #ffe7e7;
-  padding: 20px;
+  /* background-color: #ffe7e7; */
+  /* padding: 20px; */
   margin-top: 10px;
 }
 
@@ -813,6 +822,7 @@ tbody>tr:nth-child(odd)>th {
 .custom-search-input .react-dropdown-select-content {
   overflow: hidden;
   padding: 0px 10px;
+  /* font-size: 14px; */
 }
 
 .custom-search-input .react-dropdown-select-dropdown {
@@ -866,17 +876,18 @@ tbody>tr:nth-child(odd)>th {
   box-shadow: none !important;
   text-transform: capitalize;
   min-width: 275px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .search-input .react-dropdown-select-input {
   max-width: 300px;
   overflow: hidden;
+  font-size: 16px;
 }
 
 .search-input .react-dropdown-select-content {
   overflow: hidden;
-  padding: 0px 10px;
+  padding: 6px 10px;
 }
 
 .search-input .react-dropdown-select-dropdown {
@@ -919,14 +930,118 @@ tbody>tr:nth-child(odd)>th {
   box-shadow: none !important;
 }
 
-
 .first-child-border>th:first-child,
 .first-child-border>td:first-child {
   border-bottom: 1px solid #dee2e6 !important;
   margin-bottom: 5px !important;
-
 }
-.dashboard-content-container{
+
+.dashboard-content-container {
   border-radius: 20px;
   background-color: white;
+}
+
+.not-found-container {
+  background-color: #f2f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/images/brocken-link-icon\ 3.png");
+  /* Replace with your image path */
+  background-repeat: no-repeat;
+  /* Prevent image tiling */
+  background-position: bottom left;
+  /* Position at bottom left */
+  /* background-size: cover; */
+}
+
+.not-found-title {
+  font-size: 128px;
+  line-height: 153px;
+  color: #c2d2ed;
+  text-align: center;
+}
+
+.not-found-subtitle {
+  font-size: 32px;
+  line-height: 38px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.not-found-description {
+  font-size: 16px;
+  line-height: 19px;
+  color: #6b6b6b;
+  text-align: center;
+}
+
+.confirm-modal-title {
+  font-size: 20px;
+  line-height: 24px;
+  color: #191d3f;
+}
+
+.confirm-modal-description {
+  font-size: 14px;
+  line-height: 17px;
+  color: #6b6b6b;
+}
+
+.custom-btn {
+  min-width: 120px;
+  min-height: 40px;
+  background-color: #191d3f !important;
+  color: var(--white-color);
+}
+
+.btn-dropdown-container .navbar-chevron-down::after {
+  content: none;
+}
+
+.btn-dropdown-container {
+  height: 28px;
+  position: relative;
+}
+
+.btn-dropdown-container .dropdown-menu.show {
+  transform: translateX(0%) !important;
+  border-radius: 20px !important;
+  margin-top: 50px !important;
+  border: none;
+  padding: 25px 40px 25px 15px;
+}
+
+.btn-dropdown-container .dropdown-menu.show .dropdown-item:first-child {
+  margin: 0px !important;
+  background-color: var(--gray-color) !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.retailer-insight-table {
+  background-color: var(--gray-color);
+  padding: 15px;
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.page-not-found-btn {
+  border: 1px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background-color: #F2F7FF !important;
+  min-width: 201px;
+  min-height: 48px;
+  display: flex !important;
+  justify-content: center !important;
+}
+.confirm-modal-btn{
+  min-width: 120px;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.retailer-insight-table .dropdown-item:hover {
+  background-color: transparent;
 }

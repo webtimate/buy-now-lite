@@ -8,6 +8,7 @@ import CustomModal from "./Modal";
 import { PRODUCT_SUMMARY_SCREEN, productSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
 import DeleteModal from "./DeleteModal";
+import FailureOrSuccessModal from "./FailureOrSuccessModal";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
@@ -23,12 +24,21 @@ function ProductSummary() {
   const [startX, setStartX] = useState(null);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
+  const [showFailureModal, setShowFailureModal] = useState(false)
+
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
   const [confirmModalShow, setConfirmModalShow] = useState(false);
   const handleModal = (args) => {
     if (args.id === 1) {
       setModalShow(true);
+    }
+    if(args.id ===2){
+      setShowSuccessModal(true)
+    }
+    if(args.id ===3){
+      setShowFailureModal(true);
     }
   };
 
@@ -212,6 +222,20 @@ function ProductSummary() {
         modalTitle="DELETE CONFIRMATION"
         show={confirmModalShow}
         onHide={() => setConfirmModalShow(false)}
+      />
+      <FailureOrSuccessModal
+        modalTitle="Success"
+        description={"success"}
+        show={showSuccessModal}
+        onHide={() => setShowSuccessModal(false)}
+        success={true}
+      />
+      <FailureOrSuccessModal
+        modalTitle="Success"
+        description={"success"}
+        show={showFailureModal}
+        onHide={() => setShowFailureModal(false)}
+        success={false}
       />
     </div>
   );

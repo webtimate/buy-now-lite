@@ -57,15 +57,7 @@ const BrokenLinkInsight = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(null);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [modalShow, setModalShow] = React.useState(false);
-  const [isChevronDown, setIsChevronDown] = useState(true);
-  const [text, setText] = useState("");
-  const [confirmModalShow, setConfirmModalShow] = useState(false);
-  const handleModal = (args) => {
-    if (args.id === 1) {
-      setModalShow(true);
-    }
-  };
+ 
   const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.clientX - containerRef.current.offsetLeft);
@@ -83,7 +75,7 @@ const BrokenLinkInsight = () => {
     setIsDragging(false);
   };
   return (
-    <div className="m-3 bg-white retailer-insight-container">
+    <div className="retailer-insight-container">
       {/* product  table section  */}
       <div
         className="horizontal-scroll-container"
@@ -94,9 +86,9 @@ const BrokenLinkInsight = () => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div style={{ padding: 20 }}>
-          <div style={{ paddingLeft: 10, paddingTop: 10 }}>
-            <p className="product-insight-title">Broken Link Insights</p>
+        <div>
+          <div className="mt-5 px-4">
+            <p className="product-insight-title px-3">Broken Link Insights</p>
           </div>
           <div className="retailer-insight-table">
             <Table>
