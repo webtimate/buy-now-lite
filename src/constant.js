@@ -36,6 +36,17 @@ export const options = [
     name: "fig",
   },
 ];
+export const suggestions = [
+  "apple",
+  "banana",
+  "carrot",
+  "grapes",
+  "fig",
+  "orange",
+  "pineapple",
+  "guava",
+  "papaya",
+];
 
 export const userManagementData = [
   {

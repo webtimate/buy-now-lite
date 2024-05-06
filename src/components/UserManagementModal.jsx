@@ -11,13 +11,20 @@ import {
   options,
   PRODUCT_SUMMARY_SCREEN,
   RETAILER_SUMMARY_SCREEN,
+  suggestions,
 } from "../constant";
 import ActionButton from "./ActionButton";
 import ReactChipInput from "react-chip-input";
 import SearchInput from "./SearchInput";
+import ChipInput from "./ChipInput";
 
 const UserManagementModal = (props) => {
   const [chips, setChips] = useState([]);
+
+
+  const handleChange = (newChips) => {
+    setChips(newChips);
+  };
 
   const addChip = (value) => {
     setChips([...chips, value]);
@@ -41,7 +48,12 @@ const UserManagementModal = (props) => {
         return (
           <>
             <div className="modal-text-area-container">
-              {item.chips.length > 0 &&
+              <ChipInput
+                chips={chips}
+                handleChange={handleChange}
+                suggestions={suggestions}
+              />
+              {/* {item.chips.length > 0 &&
                 item.chips.map((chip) => (
                   <div
                     key={chip.id}
@@ -54,7 +66,7 @@ const UserManagementModal = (props) => {
                       onRemove={removeChip}
                     />
                   </div>
-                ))}
+                ))} */}
             </div>
             {item.manageButtons && (
               <div className="mt-3 d-flex">
