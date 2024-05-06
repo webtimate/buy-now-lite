@@ -772,7 +772,7 @@ tbody>tr:nth-child(odd)>th {
 }
 
 /* chip section css inside modal  */
-.modal-text-area-container .styles_shadow-primary__2LDux {
+.modal-text-area-container .input {
   outline: none;
   border: none;
   box-shadow: none;
@@ -783,22 +783,8 @@ tbody>tr:nth-child(odd)>th {
   border: none !important;
 }
 
-.modal-text-area-container .styles_chip-input__3aumB .styles_chip__i-PT7 {
-  display: flex;
-  align-items: center;
-  background-color: #efefef;
-  padding: 6px 20px;
-  border-radius: 20px;
-  width: fit-content;
-  margin-left: 5px;
-  gap: 10px;
-  border: none;
-  height: 34px;
-}
 
-.modal-text-area-container .styles_chip-input__3aumB .styles_chip__i-PT7 svg {
-  margin-top: 0px;
-}
+
 
 /* chip section css inside modal  */
 

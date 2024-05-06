@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import Table from "react-bootstrap/Table";
 import OutlineButton from "./OutlineButton";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import Form from "react-bootstrap/Form";
 
 const tableData = [
   {

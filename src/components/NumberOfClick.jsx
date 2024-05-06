@@ -1,58 +1,8 @@
 import React, { useRef, useState } from "react";
-import Table from "react-bootstrap/Table";
 import OutlineButton from "./OutlineButton";
-import ProgressBar from "react-bootstrap/ProgressBar";
-import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const tableData = [
-  {
-    id: 1,
-    title: "Pampers",
-    noOfRetailers: 22,
-    noOfLinks: 14,
-    noOfUniqueLinks: 44,
-    noOfPrimaryLinks: 40,
-    noOfSecondaryLinks: 40,
-  },
-  {
-    id: 2,
-    title: "Pampers",
-    noOfRetailers: 24,
-    noOfLinks: 16,
-    noOfUniqueLinks: 47,
-    noOfPrimaryLinks: 43,
-    noOfSecondaryLinks: 43,
-  },
-  {
-    id: 3,
-    title: "Pampers",
-    noOfRetailers: 27,
-    noOfLinks: 18,
-    noOfUniqueLinks: 48,
-    noOfPrimaryLinks: 46,
-    noOfSecondaryLinks: 46,
-  },
-  {
-    id: 4,
-    title: "Pampers",
-    noOfRetailers: 18,
-    noOfLinks: 11,
-    noOfUniqueLinks: 24,
-    noOfPrimaryLinks: 32,
-    noOfSecondaryLinks: 32,
-  },
-  {
-    id: 5,
-    title: "Pampers",
-    noOfRetailers: 32,
-    noOfLinks: 22,
-    noOfUniqueLinks: 49,
-    noOfPrimaryLinks: 48,
-    noOfSecondaryLinks: 48,
-  },
-];
 
 const NumberOfClick = () => {
   const containerRef = useRef(null);

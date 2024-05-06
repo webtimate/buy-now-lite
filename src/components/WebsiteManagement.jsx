@@ -11,7 +11,6 @@ import {
 } from "../constant";
 import withLayout from "../pages/Layout";
 import InputWithDropdown from "./InputWithDropdown";
-import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
 
 const globalManagementButtons = [
@@ -65,7 +64,6 @@ const tableData = [
 ];
 
 function WebsiteManagement(props) {
-  const location = useLocation();
   const [modalShow, setModalShow] = useState(false);
   const [confirmModalShow, setConfirmModalShow] = useState(false);
   const [text, setText] = useState("");
@@ -78,7 +76,6 @@ function WebsiteManagement(props) {
   };
   return (
     <div className="main-container">
-      {" "}
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}

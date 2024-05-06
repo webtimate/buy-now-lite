@@ -16,12 +16,10 @@ import {
   RETAILER_SUMMARY_SCREEN,
 } from "../constant";
 import Form from "react-bootstrap/Form";
-import InputWithDropdown from "./InputWithDropdown";
 import ButtonWithIcon from "./ButtonWithIcon";
 import SearchInput from "./SearchInput";
 
 const CustomModal = (props) => {
-  const [inputWithMenuText, setInputWithMenuText] = useState("");
   const fileInputRef = useRef(null);
 
   const handleClick = () => {

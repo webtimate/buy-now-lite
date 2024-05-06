@@ -1,9 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import ButtonWithIcon from "./ButtonWithIcon";
 
 const InputWithDropdown = ({ text, placeholderText, setTextValue }) => {
   return (
