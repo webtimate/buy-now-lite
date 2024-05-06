@@ -10,7 +10,6 @@ import { RETAILER_SUMMARY_SCREEN, retailSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
-import FailureOrSuccessModal from "./FailureOrSuccessModal";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
@@ -57,13 +56,10 @@ const tableData = [
 
 function RetailerSummary(props) {
   const location = useLocation();
-
-  console.log("props", location?.state?.navigatedFrom);
   const [modalShow, setModalShow] = useState(false);
   const [confirmModalShow, setConfirmModalShow] = useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
-  const [inputWithMenuText, setInputWithMenuText] = useState("");
 
   const handleModal = (args) => {
     if (args.id === 1) {

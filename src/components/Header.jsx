@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import Input from "./Input";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import CustomModal from "./Modal";
@@ -19,7 +18,6 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [navAutoFillText, setNavAutoFillText] = useState("");
   const [modalShow, setModalShow] = useState(false);
   const [userManageModalShow, setUserManageModalShow] = useState(false);
   const [text, setText] = useState("");
@@ -163,7 +161,7 @@ const Header = () => {
                       className="navbar-chevron-down reset-default-chevron"
                     >
                       <NavDropdown.Item href="#action/3.4">
-                        Logout
+                        <div className="dropdown-menu-title">Logout</div>
                       </NavDropdown.Item>
                     </NavDropdown>
                   </div>

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Select from "react-dropdown-select"; // Assuming 'react-dropdown-select'
+import Select from "react-dropdown-select";
 
 const SearchInput = ({ options, placeholder }) => {
-  const [selectedValues, setSelectedValues] = useState([]); // State for selected options
-
+  const [selectedValues, setSelectedValues] = useState([]);
   const handleChange = (values) => {
-    setSelectedValues(values); // Update state on selection change
+    setSelectedValues(values);
   };
 
   return (

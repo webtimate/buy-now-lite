@@ -13,7 +13,6 @@ import {
   retailSummaryData,
 } from "../constant";
 import withLayout from "../pages/Layout";
-import InputWithDropdown from "./InputWithDropdown";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
 import SearchInput from "./SearchInput";

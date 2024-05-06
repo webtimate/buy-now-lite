@@ -12,22 +12,20 @@ import {
   PRODUCT_SUMMARY_SCREEN,
   RETAILER_SUMMARY_SCREEN,
 } from "../constant";
-import InputWithDropdown from "./InputWithDropdown";
 import ActionButton from "./ActionButton";
 import ReactChipInput from "react-chip-input";
 import SearchInput from "./SearchInput";
 
 const UserManagementModal = (props) => {
-  const [inputWithMenuText, setInputWithMenuText] = useState("");
   const [chips, setChips] = useState([]);
 
   const addChip = (value) => {
-    setChips([...chips, value]); // Add new chip using spread operator
+    setChips([...chips, value]);
   };
 
   const removeChip = (index) => {
-    const updatedChips = [...chips]; // Create a copy using spread operator
-    updatedChips.splice(index, 1); // Remove chip at the specified index
+    const updatedChips = [...chips];
+    updatedChips.splice(index, 1);
     setChips(updatedChips);
   };
 

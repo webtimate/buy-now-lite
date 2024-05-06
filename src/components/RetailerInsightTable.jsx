@@ -1,9 +1,6 @@
 import React, { useRef, useState } from "react";
 import Table from "react-bootstrap/Table";
-import OutlineButton from "./OutlineButton";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import Form from "react-bootstrap/Form";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import CustomModal from "./Modal";
 import {
   EXTERNAL_USER_MANAGEMENT_SCREEN,
@@ -58,24 +55,7 @@ const tableData = [
     noOfSecondaryLinks: 48,
   },
 ];
-const dropdownData = [
-  {
-    id: 1,
-    title: "Pampers US",
-  },
-  {
-    id: 2,
-    title: "Pampers UK",
-  },
-  {
-    id: 3,
-    title: "Pampers IN",
-  },
-  {
-    id: 4,
-    title: "Pampers KR",
-  },
-];
+
 const options = ["Pampers US", "Pampers UK", "Pampers IN", "Pampers KR"];
 
 const RetailerInsightTable = () => {
@@ -85,11 +65,6 @@ const RetailerInsightTable = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
   const [text, setText] = useState("");
-  const [selectedOptions, setSelectedOptions] = useState([]);
-
-  const handleSelect = (newOptions) => {
-    setSelectedOptions(newOptions);
-  };
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
