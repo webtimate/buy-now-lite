@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import CustomModal from "./Modal";
 import { tableData, TEXT_INPUT } from "../constant";
 import withLayout from "../pages/Layout";
+import Pagination from "./Pagination";
 
 const brokenLinkData = [
   {
@@ -29,7 +30,7 @@ const brokenLinkData = [
 const Tables = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
-    const [text, setText] = useState("");
+  const [text, setText] = useState("");
 
   return (
     <div className="main-container">
@@ -141,7 +142,7 @@ const Tables = () => {
             ))}
           </tbody>
         </Table>
-
+        <Pagination />
         {/* modal  */}
         <CustomModal
           modalTitle="UPDATE PRODUCTS"

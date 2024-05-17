@@ -10,6 +10,7 @@ import { RETAILER_SUMMARY_SCREEN, retailSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
 import { useLocation } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
+import Pagination from "./Pagination";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
@@ -181,6 +182,7 @@ function RetailerSummary(props) {
             ))}
           </tbody>
         </Table>
+        <Pagination />
       </Container>
       {/* modal  */}
       <CustomModal

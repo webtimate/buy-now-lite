@@ -9,6 +9,7 @@ import { PRODUCT_SUMMARY_SCREEN, productSummaryData } from "../constant";
 import withLayout from "../pages/Layout";
 import DeleteModal from "./DeleteModal";
 import FailureOrSuccessModal from "./FailureOrSuccessModal";
+import Pagination from "./Pagination";
 
 const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
@@ -24,8 +25,8 @@ function ProductSummary() {
   const [startX, setStartX] = useState(null);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [modalShow, setModalShow] = React.useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false)
-  const [showFailureModal, setShowFailureModal] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showFailureModal, setShowFailureModal] = useState(false);
 
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
@@ -34,10 +35,10 @@ function ProductSummary() {
     if (args.id === 1) {
       setModalShow(true);
     }
-    if(args.id ===2){
-      setShowSuccessModal(true)
+    if (args.id === 2) {
+      setShowSuccessModal(true);
     }
-    if(args.id ===3){
+    if (args.id === 3) {
       setShowFailureModal(true);
     }
   };
@@ -206,6 +207,7 @@ function ProductSummary() {
                 ))}
               </tbody>
             </Table>
+            <Pagination />
           </div>
         </div>
       </Container>
