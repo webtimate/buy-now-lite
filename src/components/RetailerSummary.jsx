@@ -53,6 +53,52 @@ const tableData = [
     createdDate: "11 April 2024",
     lastUpdateDate: "11 April 2024",
   },
+  {
+    id: 4,
+    status: false,
+    retailerName: "Big Basket",
+    url: "https://www.bigbasket.b.co.in/en-in",
+    imageUrl: require("../assets/images/bigbasket.png"),
+    createdDate: "11 April 2024",
+    lastUpdateDate: "11 April 2024",
+  },
+  {
+    id: 4,
+    status: false,
+    retailerName: "Big Basket",
+    url: "https://www.bigbasket.b.co.in/en-in",
+    imageUrl: require("../assets/images/bigbasket.png"),
+    createdDate: "11 April 2024",
+    lastUpdateDate: "11 April 2024",
+  },
+  {
+    id: 4,
+    status: false,
+    retailerName: "Big Basket",
+    url: "https://www.bigbasket.b.co.in/en-in",
+    imageUrl: require("../assets/images/bigbasket.png"),
+    createdDate: "11 April 2024",
+    lastUpdateDate: "11 April 2024",
+  },
+  {
+    id: 4,
+    status: false,
+    retailerName: "Big Basket",
+    url: "https://www.bigbasket.b.co.in/en-in",
+    imageUrl: require("../assets/images/bigbasket.png"),
+    createdDate: "11 April 2024",
+    lastUpdateDate: "11 April 2024",
+  },
+  {
+    id: 4,
+    status: false,
+    retailerName: "Big Basket",
+    url: "https://www.bigbasket.b.co.in/en-in",
+    imageUrl: require("../assets/images/bigbasket.png"),
+    createdDate: "11 April 2024",
+    lastUpdateDate: "11 April 2024",
+  },
+  
 ];
 
 function RetailerSummary(props) {
