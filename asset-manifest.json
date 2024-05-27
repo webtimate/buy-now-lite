@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/buy-now-lite/static/css/main.9a255ef8.css",
-    "main.js": "/buy-now-lite/static/js/main.5d0573be.js",
+    "main.css": "/buy-now-lite/static/css/main.19e325bf.css",
+    "main.js": "/buy-now-lite/static/js/main.3e366793.js",
     "static/js/453.06bb834f.chunk.js": "/buy-now-lite/static/js/453.06bb834f.chunk.js",
     "index.html": "/buy-now-lite/index.html",
-    "main.9a255ef8.css.map": "/buy-now-lite/static/css/main.9a255ef8.css.map",
-    "main.5d0573be.js.map": "/buy-now-lite/static/js/main.5d0573be.js.map",
+    "main.19e325bf.css.map": "/buy-now-lite/static/css/main.19e325bf.css.map",
+    "main.3e366793.js.map": "/buy-now-lite/static/js/main.3e366793.js.map",
     "453.06bb834f.chunk.js.map": "/buy-now-lite/static/js/453.06bb834f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a255ef8.css",
-    "static/js/main.5d0573be.js"
+    "static/css/main.19e325bf.css",
+    "static/js/main.3e366793.js"
   ]
 }
