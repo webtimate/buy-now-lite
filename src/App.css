@@ -1068,9 +1068,11 @@ tbody>tr:nth-child(odd)>th {
 }
 
 .grab {
-  cursor: grab !important;
+  cursor: grab;
+  cursor: -webkit-grab;
 }
 
 .grabbing {
-  cursor: grabbing !important;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
