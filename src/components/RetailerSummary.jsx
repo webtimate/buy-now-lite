@@ -212,9 +212,9 @@ function RetailerSummary(props) {
                 className="custom-tr"
                 key={item.id}
                 draggable
-                onDragStart={(event) => onDragStart(event, item.id)}
-                onDrop={(event) => onDrop(event, item.id)}
-                onDragOver={(event) => onDragOver(event)}
+                onDragStart={(event) => onDragStart(event, item.id)}// user starts dragging this fn triggers
+                onDrop={(event) => onDrop(event, item.id)}// selected row is dropped handled by this method 
+                onDragOver={(event) => onDragOver(event)}// user has done with dragging
                 style={{ cursor: "grab" }}
               >
                 <td className="text-center ">
