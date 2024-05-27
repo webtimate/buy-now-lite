@@ -7,6 +7,7 @@ import Dashboard from "./components/Dashboard";
 import GlobalRetailManagement from "./components/GlobalRetailManagement";
 import WebsiteManagement from "./components/WebsiteManagement";
 import NotFound from "./components/NotFound";
+import RetailSummaryWithoutDrag from "./components/RetailSummaryWithoutDrag";
 
 function App(props) {
   return (
@@ -27,6 +28,10 @@ function App(props) {
           />
           <Route path="/website-management" element={<WebsiteManagement />} />
           <Route path="/not-found" element={<NotFound />} />
+          <Route
+            path="/retail-summary-without-draggable"
+            element={<RetailSummaryWithoutDrag />}
+          />
         </Routes>
       </BrowserRouter>
     </>

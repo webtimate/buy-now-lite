@@ -107,6 +107,12 @@ const Header = () => {
                       >
                         Page Not Found
                       </NavDropdown.Item>
+                      <NavDropdown.Item
+                        className="mt-2"
+                        onClick={() => navigate("/retail-summary-without-draggable")}
+                      >
+                        Retail Summary Without Draggable
+                      </NavDropdown.Item>
                     </NavDropdown>
                   </div>
                   <div className="d-flex align-items-center custom-search-input">

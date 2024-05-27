@@ -17,7 +17,7 @@ const buttons = [
   { id: 2, text: "Excel", iconText: "bi-upload" },
 ];
 
-function RetailerSummary(props) {
+function RetailSummaryWithoutDrag(props) {
   const [tableData, setTableData] = useState([
     {
       id: 1,
@@ -115,16 +115,15 @@ function RetailerSummary(props) {
 
   const onDragStart = (event, id) => {
     setIsGrabbing(true);
-    event.dataTransfer.dropEffect ='move'
-    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.dropEffect = "move";
+    event.dataTransfer.effectAllowed = "move";
     console.log(`Drag Start: ${id}`);
     event.dataTransfer.setData("text/plain", id);
   };
 
   const onDrop = (event, dropId) => {
-
     event.dataTransfer.dropEffect = "move";
-    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.effectAllowed = "move";
     event.preventDefault();
     const dragId = event.dataTransfer.getData("text");
     console.log(`Dropped: dragId ${dragId}, dropId ${dropId}`);
@@ -155,7 +154,7 @@ function RetailerSummary(props) {
   const onDragOver = (event) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
-    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.effectAllowed = "move";
   };
   const handleDragEnd = () => {
     setIsGrabbing(false);
@@ -221,13 +220,13 @@ function RetailerSummary(props) {
             {tableData.map((item, index) => (
               <tr
                 key={item.id}
-                draggable
-                onDragStart={(event) => onDragStart(event, item.id)} // user starts dragging this fn triggers
-                onDrop={(event) => onDrop(event, item.id)} // selected row is dropped handled by this method
-                onDragOver={(event) => onDragOver(event)} // user has done with dragging
-                onDragEnd={handleDragEnd}
-                className={`custom-tr ${isGrabbing ? "grabbing" : "grab"}`}
-                effectAllowed="move"
+                // draggable
+                // onDragStart={(event) => onDragStart(event, item.id)} // user starts dragging this fn triggers
+                // onDrop={(event) => onDrop(event, item.id)} // selected row is dropped handled by this method
+                // onDragOver={(event) => onDragOver(event)} // user has done with dragging
+                // onDragEnd={handleDragEnd}
+                // className={`custom-tr ${isGrabbing ? "grabbing" : "grab"}`}
+                // effectAllowed="move"
               >
                 <td className="text-center ">
                   <Form.Check // prettier-ignore
@@ -319,4 +318,4 @@ function RetailerSummary(props) {
   );
 }
 
-export default withLayout(RetailerSummary);
+export default withLayout(RetailSummaryWithoutDrag);
