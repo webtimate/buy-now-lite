@@ -1078,3 +1078,16 @@ tbody > tr:nth-child(odd) > th {
 .btn-dropdown-container .dropdown-toggle::after {
   content: none;
 }
+
+.main-container .iconContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.main-container .iconWrapper {
+  padding: 4px 8px;
+  background-color: #efefef;
+  border-radius: 50%;
+  font-size: 15px;
+}
