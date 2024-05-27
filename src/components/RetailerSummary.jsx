@@ -106,6 +106,7 @@ function RetailerSummary(props) {
   const [confirmModalShow, setConfirmModalShow] = useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
+  const [isGrabbing, setIsGrabbing] = useState(false);
 
   const handleModal = (args) => {
     if (args.id === 1) {
@@ -114,11 +115,14 @@ function RetailerSummary(props) {
   };
 
   const onDragStart = (event, id) => {
+    event.stopPropagation();
+    setIsGrabbing(true);
     console.log(`Drag Start: ${id}`);
     event.dataTransfer.setData("text/plain", id);
   };
 
   const onDrop = (event, dropId) => {
+
     event.preventDefault();
     const dragId = event.dataTransfer.getData("text");
     console.log(`Dropped: dragId ${dragId}, dropId ${dropId}`);
@@ -149,6 +153,11 @@ function RetailerSummary(props) {
   const onDragOver = (event) => {
     event.preventDefault();
   };
+  const handleDragEnd = () => {
+    console.log('drag end')
+    setIsGrabbing(false);
+  };
+
   return (
     <div className="main-container">
       {" "}
@@ -206,16 +215,18 @@ function RetailerSummary(props) {
               <th>Priority</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody
+            className={`custom-tr ${isGrabbing ? "grabbing" : "grab"}`}
+            style={{ cursor: "grabbing" }}
+          >
             {tableData.map((item, index) => (
               <tr
-                className="custom-tr"
                 key={item.id}
                 draggable
-                onDragStart={(event) => onDragStart(event, item.id)}// user starts dragging this fn triggers
-                onDrop={(event) => onDrop(event, item.id)}// selected row is dropped handled by this method 
-                onDragOver={(event) => onDragOver(event)}// user has done with dragging
-                style={{ cursor: "grab" }}
+                onDragStart={(event) => onDragStart(event, item.id)} // user starts dragging this fn triggers
+                onDrop={(event) => onDrop(event, item.id)} // selected row is dropped handled by this method
+                onDragOver={(event) => onDragOver(event)} // user has done with dragging
+                onDragEnd={handleDragEnd}
               >
                 <td className="text-center ">
                   <Form.Check // prettier-ignore
@@ -271,7 +282,7 @@ function RetailerSummary(props) {
                   </div>
                 </td>
                 <td className="text-center">{item.lastUpdateDate}</td>
-                <td className="text-center" style={{ cursor: "grab" }}>
+                <td className="text-center">
                   <div className="iconContainer">
                     <div className="iconWrapper">
                       <i class="bi bi-chevron-up"></i>
