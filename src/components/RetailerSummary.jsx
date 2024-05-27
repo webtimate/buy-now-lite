@@ -16,92 +16,91 @@ const buttons = [
   { id: 1, text: "Add", iconText: "bi-plus-lg" },
   { id: 2, text: "Excel", iconText: "bi-upload" },
 ];
-const tableData = [
-  {
-    id: 1,
-    isActive: true,
-    retailerName: "Amazon",
-    url: "https://www.amazon.b.co.in/en-in",
-    imageUrl: require("../assets/images/amazon.jpg"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 2,
-    isActive: false,
-    retailerName: "walmart",
-    url: "https://www.walmart.b.co.in/en-in",
-    imageUrl: require("../assets/images/wallamart.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 3,
-    isActive: true,
-    retailerName: "walgreens",
-    url: "https://www.walgreens.b.co.in/en-in",
-    imageUrl: require("../assets/images/walgreen.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 4,
-    status: false,
-    retailerName: "Big Basket",
-    url: "https://www.bigbasket.b.co.in/en-in",
-    imageUrl: require("../assets/images/bigbasket.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 4,
-    status: false,
-    retailerName: "Big Basket",
-    url: "https://www.bigbasket.b.co.in/en-in",
-    imageUrl: require("../assets/images/bigbasket.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 4,
-    status: false,
-    retailerName: "Big Basket",
-    url: "https://www.bigbasket.b.co.in/en-in",
-    imageUrl: require("../assets/images/bigbasket.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 4,
-    status: false,
-    retailerName: "Big Basket",
-    url: "https://www.bigbasket.b.co.in/en-in",
-    imageUrl: require("../assets/images/bigbasket.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 4,
-    status: false,
-    retailerName: "Big Basket",
-    url: "https://www.bigbasket.b.co.in/en-in",
-    imageUrl: require("../assets/images/bigbasket.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  {
-    id: 4,
-    status: false,
-    retailerName: "Big Basket",
-    url: "https://www.bigbasket.b.co.in/en-in",
-    imageUrl: require("../assets/images/bigbasket.png"),
-    createdDate: "11 April 2024",
-    lastUpdateDate: "11 April 2024",
-  },
-  
-];
 
 function RetailerSummary(props) {
+  const [tableData, setTableData] = useState([
+    {
+      id: 1,
+      isActive: true,
+      retailerName: "Amazon",
+      url: "https://www.amazon.b.co.in/en-in",
+      imageUrl: require("../assets/images/amazon.jpg"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 2,
+      isActive: false,
+      retailerName: "walmart",
+      url: "https://www.walmart.b.co.in/en-in",
+      imageUrl: require("../assets/images/wallamart.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 3,
+      isActive: true,
+      retailerName: "walgreens",
+      url: "https://www.walgreens.b.co.in/en-in",
+      imageUrl: require("../assets/images/walgreen.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 4,
+      isActive: false,
+      retailerName: "Big Basket",
+      url: "https://www.bigbasket.b.co.in/en-in",
+      imageUrl: require("../assets/images/bigbasket.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 5,
+      isActive: true,
+      retailerName: "Big Basket",
+      url: "https://www.bigbasket.b.co.in/en-in",
+      imageUrl: require("../assets/images/bigbasket.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 6,
+      isActive: false,
+      retailerName: "Big Basket",
+      url: "https://www.bigbasket.b.co.in/en-in",
+      imageUrl: require("../assets/images/bigbasket.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 7,
+      isActive: true,
+      retailerName: "Big Basket",
+      url: "https://www.bigbasket.b.co.in/en-in",
+      imageUrl: require("../assets/images/bigbasket.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 8,
+      isActive: false,
+      retailerName: "Big Basket",
+      url: "https://www.bigbasket.b.co.in/en-in",
+      imageUrl: require("../assets/images/bigbasket.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+    {
+      id: 9,
+      isActive: true,
+      retailerName: "Big Basket",
+      url: "https://www.bigbasket.b.co.in/en-in",
+      imageUrl: require("../assets/images/bigbasket.png"),
+      createdDate: "11 April 2024",
+      lastUpdateDate: "11 April 2024",
+    },
+  ]);
   const location = useLocation();
   const [modalShow, setModalShow] = useState(false);
   const [confirmModalShow, setConfirmModalShow] = useState(false);
@@ -112,6 +111,43 @@ function RetailerSummary(props) {
     if (args.id === 1) {
       setModalShow(true);
     }
+  };
+
+  const onDragStart = (event, id) => {
+    console.log(`Drag Start: ${id}`);
+    event.dataTransfer.setData("text/plain", id);
+  };
+
+  const onDrop = (event, dropId) => {
+    event.preventDefault();
+    const dragId = event.dataTransfer.getData("text");
+    console.log(`Dropped: dragId ${dragId}, dropId ${dropId}`);
+
+    if (!dragId || dragId === dropId) return;
+
+    const dragIndex = tableData.findIndex((item) => {
+      console.log("item", item.id, dragId);
+
+      return item.id == dragId;
+    });
+    const dropIndex = tableData.findIndex((item) => item.id == dropId);
+
+    console.log(`dragIndex ${dragIndex}, dropIndex ${dropIndex}`);
+
+    if (dragIndex === -1 || dropIndex === -1) return;
+
+    console.log("setting data");
+
+    const updatedData = [...tableData];
+    [updatedData[dragIndex], updatedData[dropIndex]] = [
+      updatedData[dropIndex],
+      updatedData[dragIndex],
+    ];
+    setTableData(updatedData);
+  };
+
+  const onDragOver = (event) => {
+    event.preventDefault();
   };
   return (
     <div className="main-container">
@@ -167,11 +203,20 @@ function RetailerSummary(props) {
               </th>
               <th>Created date</th>
               <th>Last updated date</th>
+              <th>Priority</th>
             </tr>
           </thead>
           <tbody>
             {tableData.map((item, index) => (
-              <tr className="custom-tr" key={item.id}>
+              <tr
+                className="custom-tr"
+                key={item.id}
+                draggable
+                onDragStart={(event) => onDragStart(event, item.id)}
+                onDrop={(event) => onDrop(event, item.id)}
+                onDragOver={(event) => onDragOver(event)}
+                style={{ cursor: "grab" }}
+              >
                 <td className="text-center ">
                   <Form.Check // prettier-ignore
                     type="checkbox"
@@ -180,18 +225,20 @@ function RetailerSummary(props) {
                     className={"initial-spacing-table"}
                   />
                 </td>
-                <td className="d-flex justify-content-around table-head-spacing">
-                  <div className="pointer-cursor">
-                    <i
-                      class="bi bi-pencil-fill"
-                      onClick={() => setModalShow(true)}
-                    ></i>
-                  </div>
-                  <div
-                    className="pointer-cursor"
-                    onClick={() => setConfirmModalShow(true)}
-                  >
-                    <i class="bi bi-trash3"></i>
+                <td>
+                  <div className="d-flex justify-content-around table-head-spacing">
+                    <div className="pointer-cursor">
+                      <i
+                        class="bi bi-pencil-fill"
+                        onClick={() => setModalShow(true)}
+                      ></i>
+                    </div>
+                    <div
+                      className="pointer-cursor"
+                      onClick={() => setConfirmModalShow(true)}
+                    >
+                      <i class="bi bi-trash3"></i>
+                    </div>
                   </div>
                 </td>
                 <td>
@@ -224,6 +271,17 @@ function RetailerSummary(props) {
                   </div>
                 </td>
                 <td className="text-center">{item.lastUpdateDate}</td>
+                <td className="text-center" style={{ cursor: "grab" }}>
+                  <div className="iconContainer">
+                    <div className="iconWrapper">
+                      <i class="bi bi-chevron-up"></i>
+                    </div>
+
+                    <div className="iconWrapper">
+                      <i class="bi bi-chevron-down"></i>
+                    </div>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
