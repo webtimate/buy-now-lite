@@ -183,6 +183,10 @@ function RetailerSummary(props) {
                 text={"Download as Excel"}
                 iconName={"bi-download"}
               />
+              <OutlineButton
+                text={"Download a Template"}
+                iconName={"bi-download"}
+              />
             </>
           </div>
         </div>
