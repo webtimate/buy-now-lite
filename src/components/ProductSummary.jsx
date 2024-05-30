@@ -10,13 +10,14 @@ import withLayout from "../pages/Layout";
 import DeleteModal from "./DeleteModal";
 import FailureOrSuccessModal from "./FailureOrSuccessModal";
 import Pagination from "./Pagination";
+import OutlineButton from "./OutlineButton";
 
 const buttons = [
-  { id: 1, text: "Add", iconText: "bi-plus-lg" },
+  { id: 1, text: "Add Product", iconText: "bi-plus-lg" },
   { id: 2, text: "Excel", iconText: "bi-upload" },
   { id: 3, text: "Feed", iconText: "bi-upload" },
   { id: 4, text: "Template", iconText: "bi-download" },
-  { id: 5, text: "Export", iconText: "bi-download" },
+  // { id: 5, text: "Export", iconText: "bi-download" },
 ];
 
 function ProductSummary() {
@@ -75,6 +76,10 @@ function ProductSummary() {
                 onClick={() => handleModal(item)}
               />
             ))}
+            <OutlineButton
+              text={"Download a Template"}
+              iconName={"bi-download"}
+            />
           </div>
         </div>
         {/* profile summary bottom table section  */}
