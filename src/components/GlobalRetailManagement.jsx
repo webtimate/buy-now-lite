@@ -87,7 +87,7 @@ function GlobalRetailManagement(props) {
       <Container className="mt-4 mb-4">
         <div className="d-flex justify-content-between  align-items-center">
           {/* profile summary upper button section  */}
-          <p className="table-title ">Global Retailer Management</p>
+          <div className="table-title ">GLOBAL RETAILER MANAGEMENT</div>
           <div className="d-flex ">
             <SearchInputWithIcon />
 
@@ -111,11 +111,13 @@ function GlobalRetailManagement(props) {
             </>
           </div>
         </div>
-        {/* profile summary bottom table section  */}
-        <Table className="custom-table mt-4">
-          <thead>
-            <tr>
-              <th>
+      </Container>
+      {/* profile summary bottom table section  */}
+      <Table className="custom-table mt-4">
+        <thead>
+          <tr>
+            <th>
+              <div className="initial-padding-left">
                 <Form.Check // prettier-ignore
                   type="checkbox"
                   id={`default-checkbox`}
@@ -124,18 +126,20 @@ function GlobalRetailManagement(props) {
                     "initial-spacing-table d-flex  justify-content-center"
                   }
                 />
-              </th>
-              <th>Select all</th>
-              <th>Retailer Name</th>
-              <th>Retailer Url</th>
-              <th>Site</th>
-              <th>logo</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((item, index) => (
-              <tr className="custom-tr" key={item.id}>
-                <td className="">
+              </div>
+            </th>
+            <th>Select all</th>
+            <th>Retailer Name</th>
+            <th>Retailer Url</th>
+            <th>Site</th>
+            <th>logo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((item, index) => (
+            <tr className="custom-tr" key={item.id}>
+              <td className="">
+                <div className="initial-padding-left">
                   <Form.Check // prettier-ignore
                     type="checkbox"
                     id={`default-checkbox`}
@@ -144,42 +148,42 @@ function GlobalRetailManagement(props) {
                       "initial-spacing-table d-flex  justify-content-center"
                     }
                   />
-                </td>
-                <td className="d-flex   gap-4 ">
-                  <div className="pointer-cursor">
-                    <i
-                      class="bi bi-pencil-fill"
-                      onClick={() => setModalShow(true)}
-                    ></i>
-                  </div>
-                  <div
-                    className="pointer-cursor"
-                    onClick={() => setConfirmModalShow(true)}
-                  >
-                    <i class="bi bi-trash3"></i>
-                  </div>
-                </td>
-                <td>
-                  <b>Amazon</b>{" "}
-                </td>
-                <td>{item.url}</td>
-                <td>{item.id === 1 && item.url} </td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center">
-                    <img
-                      src={item.imageUrl}
-                      width="60px"
-                      height="15px"
-                      className="image-spacing"
-                      alt="warning logo"
-                    />
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
+                </div>
+              </td>
+              <td className="d-flex   gap-4 ">
+                <div className="pointer-cursor">
+                  <i
+                    class="bi bi-pencil-fill"
+                    onClick={() => setModalShow(true)}
+                  ></i>
+                </div>
+                <div
+                  className="pointer-cursor"
+                  onClick={() => setConfirmModalShow(true)}
+                >
+                  <i class="bi bi-trash3"></i>
+                </div>
+              </td>
+              <td>
+                <b>Amazon</b>{" "}
+              </td>
+              <td>{item.url}</td>
+              <td>{item.id === 1 && item.url} </td>
+              <td className="text-center">
+                <div className="d-flex align-items-center">
+                  <img
+                    src={item.imageUrl}
+                    width="60px"
+                    height="15px"
+                    className="image-spacing"
+                    alt="warning logo"
+                  />
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
       {/* modal  */}
       <CustomModal
         modalTitle="ADD RETAILER"
