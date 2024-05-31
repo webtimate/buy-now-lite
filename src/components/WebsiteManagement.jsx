@@ -107,68 +107,70 @@ function WebsiteManagement(props) {
             </>
           </div>
         </div>
-        {/* profile summary bottom table section  */}
-        <Table className="custom-table mt-4">
-          <thead>
-            <tr>
-              <th className="text-center ">
-                <div className={"initial-spacing-table"}>Edit</div>
-              </th>
-              <th className={"text-center"}>Brand</th>
-              <th>Retailer Url</th>
-              <th>Locale</th>
-              <th>Passkey</th>
-              <th className="text-center">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((item, index) => (
-              <tr className="custom-tr" key={item.id}>
-                <td className="text-center ">
-                  <div className="pointer-cursor">
-                    <i
-                      class="bi bi-pencil-fill"
-                      onClick={() => setModalShow(true)}
-                    ></i>
+      </Container>
+      {/* profile summary bottom table section  */}
+      <Table className="custom-table mt-4">
+        <thead>
+          <tr>
+            <th className="text-center ">
+              <div className={"initial-spacing-table initial-padding-left"}>
+                Edit
+              </div>
+            </th>
+            <th className={"text-center"}>Brand</th>
+            <th>Retailer Url</th>
+            <th>Locale</th>
+            <th>Passkey</th>
+            <th className="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((item, index) => (
+            <tr className="custom-tr" key={item.id}>
+              <td className="text-center ">
+                <div className="pointer-cursor initial-padding-left">
+                  <i
+                    class="bi bi-pencil-fill"
+                    onClick={() => setModalShow(true)}
+                  ></i>
+                </div>
+              </td>
+              <td className="text-center">
+                <div>
+                  <b>{item.brand}</b>
+                </div>
+              </td>
+              <td>{item.url}</td>
+              <td>{item.locale}</td>
+              <td>{item.passkey}</td>
+              <td>
+                <div className="d-flex align-items-center justify-content-center gap-3">
+                  <div className="table-custom-btn ">
+                    <div>Generate</div>
                   </div>
-                </td>
-                <td className="text-center">
                   <div>
-                    <b>{item.brand}</b>
-                  </div>
-                </td>
-                <td>{item.url}</td>
-                <td>{item.locale}</td>
-                <td>{item.passkey}</td>
-                <td>
-                  <div className="d-flex align-items-center justify-content-center gap-3">
-                    <div className="table-custom-btn ">
-                      <div>Generate</div>
-                    </div>
-                    <div>
-                      <div className="table-custom-btn gap-2">
-                        <div className="icon">
-                          <i
-                            class={`bi ${
-                              item.isActivated ? "bi-check2" : "bi-ban"
-                            }`}
-                            style={{
-                              color: item.isActivated ? "#13C803" : "#C00101",
-                            }}
-                          />
-                        </div>
-                        <div>
-                          {item.isActivated ? "Activated" : "DeActivated"}
-                        </div>
+                    <div className="table-custom-btn gap-2">
+                      <div className="icon">
+                        <i
+                          class={`bi ${
+                            item.isActivated ? "bi-check2" : "bi-ban"
+                          }`}
+                          style={{
+                            color: item.isActivated ? "#13C803" : "#C00101",
+                          }}
+                        />
+                      </div>
+                      <div>
+                        {item.isActivated ? "Activated" : "DeActivated"}
                       </div>
                     </div>
                   </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
       {/* modal  */}
       <CustomModal
         modalTitle="ADD RETAILER"
