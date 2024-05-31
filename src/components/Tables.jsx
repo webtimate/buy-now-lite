@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import CustomModal from "./Modal";
 import { tableData, TEXT_INPUT } from "../constant";
 import withLayout from "../pages/Layout";
 import Pagination from "./Pagination";
+import SearchInputWithIcon from "./SearchInputWithIcon";
 
 const brokenLinkData = [
   {
@@ -28,38 +29,73 @@ const brokenLinkData = [
 ];
 
 const Tables = () => {
+  const containerRef = useRef(null);
   const [modalShow, setModalShow] = React.useState(false);
   const [isChevronDown, setIsChevronDown] = useState(true);
   const [text, setText] = useState("");
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(null);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.clientX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const x = e.clientX - containerRef.current.offsetLeft;
+    const scrollOffset = x - startX;
+    containerRef.current.scrollLeft = scrollLeft - scrollOffset;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   return (
     <div className="main-container">
       <Container className="mt-4">
-        <div className="d-flex justify-content-between">
-          <p className="table-title">Broken Link Summary</p>
-          <div className="d-flex ">
-            <p className="table-subTitle table-subTitle-spacing">
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="table-title">BROKEN LINK SUMMARY</div>
+          <div className="d-flex  justify-content-between align-items-center">
+            <SearchInputWithIcon placeholderText={"Search by SKU/GTINS"} />
+            <div className="table-subTitle table-subTitle-spacing">
               Primary Broken Links{" "}
               <span style={{ marginLeft: 10 }}>
                 <b>12</b>
               </span>{" "}
-            </p>
-            <p className="table-subTitle">
+            </div>
+            <div className="table-subTitle">
               Secondary Broken Links{" "}
               <span style={{ marginLeft: 10 }}>
                 <b>8</b>
               </span>{" "}
-            </p>
+            </div>
           </div>
         </div>
         <div className="mt-3"></div>
-        {/* table section */}
+      </Container>
+      {/* table section */}
+      <div
+        className="horizontal-scroll-container"
+        ref={containerRef}
+        style={{ overflowX: "auto", cursor: "grab" }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
         <Table className="custom-table">
           <thead>
             <tr>
-              <th className="text-center">
-                <div className="initial-spacing-table ">Actions</div>{" "}
+              <th>
+                <div className="initial-spacing-table initial-padding-left">
+                  Actions
+                </div>{" "}
               </th>
+              <th>Status</th>
               <th>SKU GTINS</th>
               <th
                 className="d-flex align-items-center"
@@ -85,6 +121,7 @@ const Tables = () => {
                   Secondary Broken Links
                 </span>
               </th>
+              <th>Last updated date</th>
             </tr>
           </thead>
           <tbody className="custom-tr">
@@ -95,6 +132,15 @@ const Tables = () => {
                     class="bi bi-pencil-fill"
                     onClick={() => setModalShow(true)}
                   ></i>
+                </td>
+                <td>
+                  <div className="pt-2">
+                    <div
+                      className={
+                        item.isActive ? "active-circle" : "inActive-circle"
+                      }
+                    ></div>
+                  </div>
                 </td>
                 <td>{item.gtins}</td>
                 <td>
@@ -138,20 +184,24 @@ const Tables = () => {
                       />
                     ))}
                 </td>
+                <td></td>
               </tr>
             ))}
           </tbody>
         </Table>
+      </div>
+      <Container>
         <Pagination />
-        {/* modal  */}
-        <CustomModal
-          modalTitle="UPDATE PRODUCTS"
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-          modalData={brokenLinkData}
-          setText={setText}
-        />
       </Container>
+
+      {/* modal  */}
+      <CustomModal
+        modalTitle="UPDATE PRODUCTS"
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        modalData={brokenLinkData}
+        setText={setText}
+      />
     </div>
   );
 };

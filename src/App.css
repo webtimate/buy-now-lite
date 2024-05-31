@@ -190,7 +190,8 @@ nav>link {
 }
 
 .table-subTitle-spacing {
-  padding-right: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 tbody,
@@ -206,14 +207,14 @@ thead {
 }
 
 .custom-table thead th:first-child {
-  border-top-left-radius: 35px !important;
-  border-bottom-left-radius: 35px !important;
+  /* border-top-left-radius: 35px !important; */
+  /* border-bottom-left-radius: 35px !important; */
   background-color: var(--primary-color);
 }
 
 .custom-table thead th:last-child {
-  border-top-right-radius: 35px !important;
-  border-bottom-right-radius: 35px !important;
+  /* border-top-right-radius: 35px !important; */
+  /* border-bottom-right-radius: 35px !important; */
   background-color: var(--primary-color);
 }
 
@@ -226,13 +227,13 @@ thead {
 }
 
 .custom-table tbody tr td:first-child {
-  border-top-left-radius: 35px !important;
-  border-bottom-left-radius: 35px !important;
+  /* border-top-left-radius: 35px !important; */
+  /* border-bottom-left-radius: 35px !important; */
 }
 
 .custom-table tbody tr td:last-child {
-  border-top-right-radius: 35px !important;
-  border-bottom-right-radius: 35px !important;
+  /* border-top-right-radius: 35px !important; */
+  /* border-bottom-right-radius: 35px !important; */
 }
 
 .bi-pencil-fill {
@@ -538,6 +539,7 @@ button:not(:disabled) {
 
 .custom-table .table-head-spacing {
   padding-left: 0px !important;
+  gap:20px
 }
 
 .modal-upload-file-title {
@@ -1075,4 +1077,12 @@ tbody>tr:nth-child(odd)>th {
 .grabbing {
   cursor: grabbing;
   cursor: -webkit-grabbing;
+}
+
+.initial-padding-left {
+  padding-left: 50px;
+}
+
+.initial-padding-right {
+  padding-right: 25px;
 }
