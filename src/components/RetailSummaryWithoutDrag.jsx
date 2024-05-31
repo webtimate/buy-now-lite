@@ -182,121 +182,131 @@ function RetailSummaryWithoutDrag(props) {
                 text={"Download as Excel"}
                 iconName={"bi-download"}
               />
+              <OutlineButton
+                text={"Download a Template"}
+                iconName={"bi-download"}
+              />
             </>
           </div>
         </div>
-        {/* profile summary bottom table section  */}
-        <Table className="custom-table mt-4">
-          <thead>
-            <tr>
-              <th>
+      </Container>
+      {/* profile summary bottom table section  */}
+      <Table className="custom-table mt-4">
+        <thead>
+          <tr>
+            <th>
+              <div className="initial-padding-left">
                 <Form.Check // prettier-ignore
                   type="checkbox"
                   id={`default-checkbox`}
                   label={""}
                   className="initial-spacing-table"
                 />
-              </th>
-              <th className="table-head-spacing">Select all</th>
+              </div>
+            </th>
+            <th className="table-head-spacing">Select all</th>
 
-              <th>Status</th>
-              <th onClick={() => setIsChevronDown(!isChevronDown)}>
-                <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
-                  Retailer Name
-                </span>
-              </th>
-              <th>Url</th>
-              <th onClick={() => setIsChevronDown(!isChevronDown)}>
-                <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
-                  logo
-                </span>
-              </th>
-              <th>Created date</th>
-              <th>Last updated date</th>
-              <th>Priority</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((item, index) => (
-              <tr
-                key={item.id}
-                // draggable
-                // onDragStart={(event) => onDragStart(event, item.id)} // user starts dragging this fn triggers
-                // onDrop={(event) => onDrop(event, item.id)} // selected row is dropped handled by this method
-                // onDragOver={(event) => onDragOver(event)} // user has done with dragging
-                // onDragEnd={handleDragEnd}
-                // className={`custom-tr ${isGrabbing ? "grabbing" : "grab"}`}
-                // effectAllowed="move"
-              >
-                <td className="text-center ">
+            <th>Status</th>
+            <th onClick={() => setIsChevronDown(!isChevronDown)}>
+              <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
+                Retailer Name
+              </span>
+            </th>
+            <th>Url</th>
+            <th onClick={() => setIsChevronDown(!isChevronDown)}>
+              <span class={isChevronDown ? "chevron-down" : "chevron-up"}>
+                logo
+              </span>
+            </th>
+            <th>Created date</th>
+            <th>Last updated date</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((item, index) => (
+            <tr
+              key={item.id}
+              // draggable
+              // onDragStart={(event) => onDragStart(event, item.id)} // user starts dragging this fn triggers
+              // onDrop={(event) => onDrop(event, item.id)} // selected row is dropped handled by this method
+              // onDragOver={(event) => onDragOver(event)} // user has done with dragging
+              // onDragEnd={handleDragEnd}
+              // className={`custom-tr ${isGrabbing ? "grabbing" : "grab"}`}
+              // effectAllowed="move"
+            >
+              <td className="text-center ">
+                <div className="initial-padding-left">
                   <Form.Check // prettier-ignore
                     type="checkbox"
                     id={`default-checkbox`}
                     label={""}
                     className={"initial-spacing-table"}
                   />
-                </td>
-                <td>
-                  <div className="d-flex justify-content-around table-head-spacing">
-                    <div className="pointer-cursor">
-                      <i
-                        class="bi bi-pencil-fill"
-                        onClick={() => setModalShow(true)}
-                      ></i>
-                    </div>
-                    <div
-                      className="pointer-cursor"
-                      onClick={() => setConfirmModalShow(true)}
-                    >
-                      <i class="bi bi-trash3"></i>
-                    </div>
+                </div>
+              </td>
+              <td>
+                <div className="d-flex justify-content-around table-head-spacing">
+                  <div className="pointer-cursor">
+                    <i
+                      class="bi bi-pencil-fill"
+                      onClick={() => setModalShow(true)}
+                    ></i>
                   </div>
-                </td>
-                <td>
-                  <div className="d-flex justify-content-center">
-                    <div
-                      className={
-                        item.isActive ? "active-circle" : "inActive-circle"
-                      }
-                    ></div>
+                  <div
+                    className="pointer-cursor"
+                    onClick={() => setConfirmModalShow(true)}
+                  >
+                    <i class="bi bi-trash3"></i>
                   </div>
-                </td>
-                <td>
-                  <b>Amazon</b>{" "}
-                </td>
-                <td>https://www.amazon.b.co.in/en-in</td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center">
-                    <img
-                      src={item.imageUrl}
-                      width="60px"
-                      height="15px"
-                      className="image-spacing"
-                      alt="warning logo"
-                    />
+                </div>
+              </td>
+              <td>
+                <div className="d-flex justify-content-center">
+                  <div
+                    className={
+                      item.isActive ? "active-circle" : "inActive-circle"
+                    }
+                  ></div>
+                </div>
+              </td>
+              <td>
+                <b>Amazon</b>{" "}
+              </td>
+              <td>https://www.amazon.b.co.in/en-in</td>
+              <td className="text-center">
+                <div className="d-flex align-items-center">
+                  <img
+                    src={item.imageUrl}
+                    width="60px"
+                    height="15px"
+                    className="image-spacing"
+                    alt="warning logo"
+                  />
+                </div>
+              </td>
+              <td className="text-center">
+                <div className="d-flex align-items-center">
+                  {item.createdDate}
+                </div>
+              </td>
+              <td className="text-center">{item.lastUpdateDate}</td>
+              <td className="text-center">
+                <div className="iconContainer">
+                  <div className="iconWrapper">
+                    <i class="bi bi-chevron-up"></i>
                   </div>
-                </td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center">
-                    {item.createdDate}
-                  </div>
-                </td>
-                <td className="text-center">{item.lastUpdateDate}</td>
-                <td className="text-center">
-                  <div className="iconContainer">
-                    <div className="iconWrapper">
-                      <i class="bi bi-chevron-up"></i>
-                    </div>
 
-                    <div className="iconWrapper">
-                      <i class="bi bi-chevron-down"></i>
-                    </div>
+                  <div className="iconWrapper">
+                    <i class="bi bi-chevron-down"></i>
                   </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <Container>
         <Pagination />
       </Container>
       {/* modal  */}
