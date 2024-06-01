@@ -5,6 +5,7 @@
   --secondary-color: #ffc107;
   --white-color: #fff;
   --gray-color: #f9f9f9;
+  --black-color: #000
 }
 
 /*pagination css */
@@ -217,7 +218,13 @@ thead {
   /* border-bottom-right-radius: 35px !important; */
   background-color: var(--primary-color);
 }
-
+.modal-table-container .table thead th{
+  background-color: #EFEFEF;
+  color: var(--black-color);
+}
+.modal-table-container{
+  margin: -15px;
+}
 .table thead th {
   border-style: none !important;
   background-color: var(--primary-color);

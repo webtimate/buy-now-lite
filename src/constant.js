@@ -211,3 +211,19 @@ export const tableData = [
     isActive: false,
   },
 ];
+export const tableModalData = [
+  {
+    id: 1,
+    gtins: "4902430725675",
+    productName: "Walgreens",
+    primaryBrokenLink: require("./assets/images/amazon.png"),
+    isActive: false,
+  },
+  {
+    id: 2,
+    gtins: "4902430725334",
+    productName: "Big Basket",
+    primaryBrokenLink: require("./assets/images/wallamart.png"),
+    isActive: true,
+  },
+];

@@ -5,6 +5,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TextInput from "./TextInput";
 import Container from "react-bootstrap/Container";
+import Table from "react-bootstrap/Table";
+
 import {
   CHECKBOX,
   DROPDOWN,
@@ -14,10 +16,13 @@ import {
   options,
   PRODUCT_SUMMARY_SCREEN,
   RETAILER_SUMMARY_SCREEN,
+  tableData,
+  tableModalData,
 } from "../constant";
 import Form from "react-bootstrap/Form";
 import ButtonWithIcon from "./ButtonWithIcon";
 import SearchInput from "./SearchInput";
+import CommonTable from "./CommonTable";
 
 const CustomModal = (props) => {
   const fileInputRef = useRef(null);
@@ -225,11 +230,19 @@ const CustomModal = (props) => {
                 </Row>
               </div>
             ))}
+        </Container>
+        {/* table inside modal  */}
+        {props.screen === PRODUCT_SUMMARY_SCREEN && (
+          <div className="modal-table-container mb-3">
+            <CommonTable />
+          </div>
+        )}
+        <Container>
           {/* submit button layout is diff for admin cases so hiding buttons */}
           {props.screen === EXTERNAL_USER_MANAGEMENT_SCREEN ? (
             ""
           ) : (
-            <div className="d-flex align-item-center justify-content-center btn-container mt-3 mb-4">
+            <div className="d-flex align-item-center justify-content-center btn-container  mb-4">
               <Button className="submit-btn">
                 {renderDynamicBtnTitle().submitBtn}
               </Button>
