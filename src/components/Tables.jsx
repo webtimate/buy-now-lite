@@ -123,6 +123,14 @@ const Tables = () => {
                 </span>
               </th>
               <th>Last updated date</th>
+              <th>Last updated date</th>
+              <th>Last updated date</th>
+
+              <th>Last updated date</th>
+              <th>Last updated date</th>
+              <th>Last updated date</th>
+              <th>Last updated date</th>
+              
             </tr>
           </thead>
           <tbody className="custom-tr">
