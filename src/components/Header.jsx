@@ -22,6 +22,8 @@ const Header = () => {
   const [userManageModalShow, setUserManageModalShow] = useState(false);
   const [text, setText] = useState("");
   const [notificationCount, setNotificationCount] = useState(1);
+  const [show, setShow] = useState(false);
+
 
   return (
     <>
@@ -109,7 +111,9 @@ const Header = () => {
                       </NavDropdown.Item>
                       <NavDropdown.Item
                         className="mt-2"
-                        onClick={() => navigate("/retail-summary-without-draggable")}
+                        onClick={() =>
+                          navigate("/retail-summary-without-draggable")
+                        }
                       >
                         Retail Summary Without Draggable
                       </NavDropdown.Item>
@@ -152,6 +156,8 @@ const Header = () => {
                   </Nav.Link>
                   <div className="d-flex align-items-center user-drop-menu">
                     <NavDropdown
+                      show={show}
+                      onClick={() => setShow(!show)}
                       title={
                         <>
                           <img
