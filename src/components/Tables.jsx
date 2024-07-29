@@ -6,6 +6,7 @@ import { tableData, TEXT_INPUT } from "../constant";
 import withLayout from "../pages/Layout";
 import Pagination from "./Pagination";
 import SearchInputWithIcon from "./SearchInputWithIcon";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const brokenLinkData = [
   {
@@ -81,7 +82,7 @@ const Tables = () => {
       <div
         className="horizontal-scroll-container"
         ref={containerRef}
-        style={{ overflowX: "auto", cursor: "grab" }}
+        style={{ cursor: "grab" }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
@@ -143,8 +144,17 @@ const Tables = () => {
                   </div>
                 </td>
                 <td>{item.gtins}</td>
-                <td>
-                  <b>{item.productName}</b>
+                <td className="pointer-cursor">
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={
+                      <Tooltip id={`tooltip-${item.gtins}`}>
+                        {item.productName}
+                      </Tooltip>
+                    }
+                  >
+                    <b>{item.productName}</b>
+                  </OverlayTrigger>
                 </td>
                 <td className="text-center">
                   <img

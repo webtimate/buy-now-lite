@@ -505,7 +505,7 @@ button:not(:disabled) {
 }
 
 .horizontal-scroll-container::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
   /* Hide the scrollbar for WebKit browsers */
 }
 
